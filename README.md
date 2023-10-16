@@ -6,9 +6,9 @@ Integrantes del grupo 4:
 
    - Alda Celeste Paez; Como estudiante de Digital House, estoy entusiasmada por aprender e ir aplicando todo lo que vamos aprendiendo en este emocionante proyecto. He trabajado como administrativa, generalmente de manera indivual.Y en varias ocasiones he sido encargada de sucursal, por lo cual se que  seguramente sortearemos muchos obstaculo a nivel grupal, como del proyecto en si, pero cuento con el respaldo de mis compañeros y los profes.
 
-   - Facundo exequiel Unzaga;
+   - Facundo Exequiel Unzaga; Estoy emocionado de trabajar en este proyecto con mis compañeros y la guía de nuestros profesores. Como estudiante de DH, tengo la esperanza de mejorar mis habilidades y conocimientos en programación. Mi meta es emplear mi pasión y preparación para trabajar en lo que más me gusta. Aprecio profundamente esta oportunidad y estoy comprometido con el éxito del proyecto. Estoy listo para aprender, colaborar y contribuir con mi mejor esfuerzo para lograr nuestros objetivos.
 
-En nuestra busqueda de sitios similares decidimos elegir estos para guiarnos en la creacion de nuestro propio sitio:
+-> En nuestra busqueda de sitios similares decidimos elegir estos para guiarnos en la creacion de nuestro propio sitio:
 
 ° https://www.tripadvisor.com.ar/
 ° https://www.kayak.com.ar/
