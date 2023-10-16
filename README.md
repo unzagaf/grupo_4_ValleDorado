@@ -4,9 +4,9 @@ Nuestro sitio web de viajes te ofrece una experiencia única para descubrir dest
 
 Integrantes del grupo 4:
 
-	- Alda Celeste Paez; Como estudiante de Digital House, estoy entusiasmada por aprender e ir aplicando todo lo que vamos aprendiendo en este emocionante proyecto. He trabajado como administrativa, generalmente de manera indivual.Y en varias ocasiones he sido encargada de sucursal, por lo cual se que  seguramente sortearemos muchos obstaculo a nivel grupal, como del proyecto en si, pero cuento con el respaldo de mis compañeros y los profes.
+   - Alda Celeste Paez; Como estudiante de Digital House, estoy entusiasmada por aprender e ir aplicando todo lo que vamos aprendiendo en este emocionante proyecto. He trabajado como administrativa, generalmente de manera indivual.Y en varias ocasiones he sido encargada de sucursal, por lo cual se que  seguramente sortearemos muchos obstaculo a nivel grupal, como del proyecto en si, pero cuento con el respaldo de mis compañeros y los profes.
 
-	- Facundo exequiel Unzaga;
+   - Facundo exequiel Unzaga;
 
 En nuestra busqueda de sitios similares decidimos elegir estos para guiarnos en la creacion de nuestro propio sitio:
 
