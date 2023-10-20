@@ -8,6 +8,8 @@ Integrantes del grupo 4:
 
    - Facundo Exequiel Unzaga; Estoy emocionado de trabajar en este proyecto con mis compañeros y la guía de nuestros profesores. Como estudiante de DH, tengo la esperanza de mejorar mis habilidades y conocimientos en programación. Mi meta es emplear mi pasión y preparación para trabajar en lo que más me gusta. Aprecio profundamente esta oportunidad y estoy comprometido con el éxito del proyecto. Estoy listo para aprender, colaborar y contribuir con mi mejor esfuerzo para lograr nuestros objetivos.
 
+   - Marcos Gabriel Quinteros; Aparte de formar parte del programa de Digital House, soy estudiante de ultimo año en una  Tecnicatura Superior en Desarrollo en Software. Cuento con gran motivación para dar mis primeros pasos en el mundo IT. Me destaco por mi compromiso, análisis y búsqueda de resolución de problemas de la manera más eficiente posible. Cuento ya con experiencias previas como organizador de grupos de trabajo IT asi como tambien fui participe en proyectos ya armados. Poseo la paciencia y dedicacion para ayudar a mis compañeros de trabajo en lo que necesiten para cumplir el objetivo común y aprender tambien en el proceso.
+
 -> En nuestra busqueda de sitios similares decidimos elegir estos para guiarnos en la creacion de nuestro propio sitio:
 
 ° https://www.tripadvisor.com.ar/
