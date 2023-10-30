@@ -1,0 +1,28 @@
+{
+  "name": "grupo_4_valledorado",
+  "version": "1.0.0",
+  "description": "trabajo integrador",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unzagaf/grupo_4_ValleDorado.git"
+  },
+  "keywords": [
+    "agencia",
+    "de",
+    "turismo"
+  ],
+  "author": "grupo4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unzagaf/grupo_4_ValleDorado/issues"
+  },
+  "homepage": "https://github.com/unzagaf/grupo_4_ValleDorado#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
