@@ -9,6 +9,7 @@
     <meta name="description"
         content="aqui podemos poner una pequeña reseña sobre nuestra pagina aprox entre 70 y 100 caracteres">
     <meta http-equiv=" X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
     <!-- links -->
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/normalize.css">
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -28,12 +30,24 @@
 <body>
 
     <header>
-
-    <h1>Soy el Registro</h1>
-        <nav>
-            
+        <img class="header__logo" src="img/logo.png" alt="logo">
+        <img id="header__hamburguer" src="img/menu.png" alt="menu">
+        <nav id="nav__menu" class="nav__menu nav__menu-hidden">
+            <ul class="ul__menu__perfil">
+                <li id="li__menu__close__hamburguer">X</li>
+                <li class="li__menu__nombre">Hola! Nombre persona</li>
+                <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
+                <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
+            </ul>
+            <ul class="ul__menu__navegacion">
+                <li><a href="#">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
+                <li class="li__menu__login"><a href="#">Login</a></li>
+                <li class="li__menu__paquetes"><a href="#">Paquetes<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
+                <li class="li__menu__servicios"><a href="#">Servicios <i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
+                <li class="li__menu__servicios"><a href="#">Contacto <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
+                <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
+            </ul>
         </nav>
-
     </header>
 
     <main>

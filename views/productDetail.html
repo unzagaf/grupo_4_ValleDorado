@@ -10,6 +10,7 @@
         content="aqui podemos poner una pequeña reseña sobre nuestra pagina aprox entre 70 y 100 caracteres">
     <meta http-equiv=" X-UA-Compatible" content="IE=edge">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- links -->
     <link rel="stylesheet" href="css/productDetail.css">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/normalize.css">
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -28,16 +30,158 @@
 <body>
 
     <header>
-        <h1>Soy el Producto</h1>
-        <nav>
-            
+        <img class="header__logo" src="img/logo.png" alt="logo">
+        <img id="header__hamburguer" src="img/menu.png" alt="menu">
+        <nav id="nav__menu" class="nav__menu nav__menu-hidden">
+            <ul class="ul__menu__perfil">
+                <li id="li__menu__close__hamburguer">X</li>
+                <li class="li__menu__nombre">Hola! Nombre persona</li>
+                <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
+                <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
+            </ul>
+            <ul class="ul__menu__navegacion">
+                <li><a href="#">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
+                <li class="li__menu__login"><a href="#">Login</a></li>
+                <li class="li__menu__paquetes"><a href="#">Paquetes<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
+                <li class="li__menu__servicios"><a href="#">Servicios <i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
+                <li class="li__menu__servicios"><a href="#">Contacto <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
+                <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
+            </ul>
         </nav>
-
     </header>
 
     <main>
+        <section class="main__carousel__search">
+            <div class="main__carousel">
+                <div id="main__carousel__container">
+                    <div class="main__carousel__one">
+                        <div class="main__carousel__txt">
+                            <h3>Nueva Zelanda</h3>
+                            <p>Descubre este lugar, con sus paisajes y comida</p>
+                        </div>
+                        <img class="main__carousel__img"src="https://dam.ngenespanol.com/wp-content/uploads/2022/05/4-pasos-para-hacer-realidad-ese-viaje-que-no-has-podido-emprender.jpg" alt="">
+                    </div>
+                    <div class="main__carousel__one">
+                        <div class="main__carousel__txt">
+                            <h3>Vancouver</h3>
+                            <p>Montañas, playas, y grandes edificios puedes ver en este lugar</p>
+                        </div>
+                        <img class="main__carousel__img"src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg" alt="">
+                    </div>
+                    <div class="main__carousel__one">
+                        <div class="main__carousel__txt">
+                            <h3>New York</h3>
+                            <p>No te pierdas la noche de año nuevo en el Time Square, reservalo ahora</p>
+                        </div>
+                        <img class="main__carousel__img"src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="main__slider__btn main__slider__btn--right" id="main__btn__right">&#62</div>
+                <div class="main__slider__btn main__slider__btn--left " id="main__btn__left">&#60</div>
+            </div>
+            <form action="" class="form__search">
+                <label for="" class="input__txt__places">A donde viajas?</label>
+                <input type="text" id="input__places" >
+                <label for="" class="label__txt__date label__txt__date--go">Ida</label>
+                <label for="" class="label__txt__date label__txt__date-back">Vuelta</label>
+                <input type="date" name="" id="" placeholder="Ida" class="input__date input__date--go">
+                <input type="date" name="" id="" placeholder="Vuelta" class="input__date input__date--back">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
 
 
+
+        <section class="main__packages">
+            <h3>LUGARES RELACIONADOS</h3>
+            <div class="main__all__cards__container">
+                <div class="main__card__container">
+                    <div class="main__card__img__container">
+                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                    </div>
+                    <div class="main__card__txt__container">
+                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                        <p class="p__txt__togheter--label">Ida</p>
+                        <p class="p__txt__togheter--label">Vuelta</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                        <p class="p__txt__togheter--label">Personas</p>
+                        <p class="p__txt__togheter--label">Precio</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                        <button type="submit">Ver mas</button>
+                    </div>
+                </div>
+                <div class="main__card__container">
+                    <div class="main__card__img__container">
+                        <img src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg" alt="">
+                    </div>
+                    <div class="main__card__txt__container">
+                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>Vancouver</p>
+                        <p class="p__txt__togheter--label">Ida</p>
+                        <p class="p__txt__togheter--label">Vuelta</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/02/2024</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/03/2024</p>
+                        <p class="p__txt__togheter--label">Personas</p>
+                        <p class="p__txt__togheter--label">Precio</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>1</p>
+                        <p class="p__txt__togheter p__txt__togheter--price">$1600</p>
+                        <button type="submit">Ver mas</button>
+                    </div>
+                </div>
+                <div class="main__card__container">
+                    <div class="main__card__img__container">
+                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                    </div>
+                    <div class="main__card__txt__container">
+                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                        <p class="p__txt__togheter--label">Ida</p>
+                        <p class="p__txt__togheter--label">Vuelta</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                        <p class="p__txt__togheter--label">Personas</p>
+                        <p class="p__txt__togheter--label">Precio</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                        <button type="submit">Ver mas</button>
+                    </div>
+                </div>
+                <div class="main__card__container">
+                    <div class="main__card__img__container">
+                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                    </div>
+                    <div class="main__card__txt__container">
+                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                        <p class="p__txt__togheter--label">Ida</p>
+                        <p class="p__txt__togheter--label">Vuelta</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                        <p class="p__txt__togheter--label">Personas</p>
+                        <p class="p__txt__togheter--label">Precio</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                        <button type="submit">Ver mas</button>
+                    </div>
+                </div>
+                <div class="main__card__container">
+                    <div class="main__card__img__container">
+                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                    </div>
+                    <div class="main__card__txt__container">
+                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                        <p class="p__txt__togheter--label">Ida</p>
+                        <p class="p__txt__togheter--label">Vuelta</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                        <p class="p__txt__togheter--label">Personas</p>
+                        <p class="p__txt__togheter--label">Precio</p>
+                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                        <button type="submit">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
