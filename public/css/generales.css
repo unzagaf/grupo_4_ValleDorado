@@ -575,7 +575,7 @@ Medias Queries
     header{
         width: 100%;
         height: 5rem;
-        padding: 0.5rem 6rem;
+        padding: 0.5rem 4.8rem;
     }
 
     header img{
@@ -666,7 +666,7 @@ Medias Queries
 
     /*Carrusel*/
     .main__packages{
-        padding: 1.5rem 6rem;
+        padding: 1.5rem 4.8rem;
     }
 
     .main__carousel__img{
@@ -764,22 +764,23 @@ Medias Queries
         grid-row: 2;
     }
     /*Card*/
-
     .main__packages{
-        width: 100vw;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: row;
-        flex-wrap: wrap;
-        background-color: #3D348B;
-        padding: 1.5rem 6rem;
+        padding: 1.5rem 4.8rem;
         overflow: visible;
         overflow-x: hidden;
         position: relative;
     }
 
+    .main__all__cards__container{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: normal;
+        row-gap: 2rem;
+        justify-content: space-between;
+    }
+
     .main__card__container{
-        width: 21vw;
+        width: 20vw;
     }
 
     .p__txt__places{
