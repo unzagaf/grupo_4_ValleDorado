@@ -2,196 +2,319 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content=""><!-- alummno que corresponda -->
-    <meta name="keywords" content=" aqui van las palabras claves, para los motores de busqueda separadas por coma">
-    <meta name="description"
-        content="aqui podemos poner una pequeña reseña sobre nuestra pagina aprox entre 70 y 100 caracteres">
-    <meta http-equiv=" X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content=""><!-- alummno que corresponda -->
+  <meta name="keywords" content=" aqui van las palabras claves, para los motores de busqueda separadas por coma">
+  <meta name="description"
+    content="aqui podemos poner una pequeña reseña sobre nuestra pagina aprox entre 70 y 100 caracteres">
+  <meta http-equiv=" X-UA-Compatible" content="IE=edge">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- links -->
-    <link rel="stylesheet" href="css/productDetail.css">
-    <link rel="stylesheet" href="css/generales.css">
-    <link rel="stylesheet" href="css/normalize.css">
+  <!-- links -->
+  <link rel="stylesheet" href="/css/productDetail.Css">
+  <link rel="stylesheet" href="/css/generales.css">
+  <!-- <link rel="stylesheet" href="/css/normalize.css"> -->
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&display=swap"
+    rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-    <!-- Titulo -->
-    <title>Producto</title>
+  <!-- Titulo -->
+  <title>Product Detail</title>
 </head>
 
 <body>
-
-    <header>
-        <img class="header__logo" src="img/logo.png" alt="logo">
-        <img id="header__hamburguer" src="img/menu.png" alt="menu" onclick="displayMenu('nav__menu-visible', 'nav__menu-hidden')">
-        <nav id="nav__menu" class="nav__menu nav__menu-hidden">
-            <ul class="ul__menu__perfil">
-                <li id="li__menu__close__hamburguer" onclick="displayMenu('nav__menu-hidden', 'nav__menu-visible')">X</li>
-                <li class="li__menu__nombre">Hola! Nombre persona</li>
-                <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
-                <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
-            </ul>
-            <ul class="ul__menu__navegacion">
-                <li><a href="#">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
-                <li class="li__menu__login"><a href="#">Login</a></li>
-                <li class="li__menu__paquetes"><a href="#">Paquetes<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
-                <li class="li__menu__servicios"><a href="#">Servicios <i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
-                <li class="li__menu__servicios"><a href="#">Contacto <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
-                <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="main__carousel__search">
-            <div class="main__carousel">
-                <div id="main__carousel__container">
-                    <div class="main__carousel__one">
-                        <div class="main__carousel__txt">
-                            <h3>Nueva Zelanda</h3>
-                            <p>Descubre este lugar, con sus paisajes y comida</p>
-                        </div>
-                        <img class="main__carousel__img"src="https://dam.ngenespanol.com/wp-content/uploads/2022/05/4-pasos-para-hacer-realidad-ese-viaje-que-no-has-podido-emprender.jpg" alt="">
-                    </div>
-                    <div class="main__carousel__one">
-                        <div class="main__carousel__txt">
-                            <h3>Vancouver</h3>
-                            <p>Montañas, playas, y grandes edificios puedes ver en este lugar</p>
-                        </div>
-                        <img class="main__carousel__img"src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg" alt="">
-                    </div>
-                    <div class="main__carousel__one">
-                        <div class="main__carousel__txt">
-                            <h3>New York</h3>
-                            <p>No te pierdas la noche de año nuevo en el Time Square, reservalo ahora</p>
-                        </div>
-                        <img class="main__carousel__img"src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="main__slider__btn main__slider__btn--right" id="main__btn__right">&#62</div>
-                <div class="main__slider__btn main__slider__btn--left " id="main__btn__left">&#60</div>
-            </div>
-            <form action="" class="form__search">
-                <label for="" class="input__txt__places">A donde viajas?</label>
-                <input type="text" id="input__places" >
-                <label for="" class="label__txt__date label__txt__date--go">Ida</label>
-                <label for="" class="label__txt__date label__txt__date-back">Vuelta</label>
-                <input type="date" name="" id="" placeholder="Ida" class="input__date input__date--go">
-                <input type="date" name="" id="" placeholder="Vuelta" class="input__date input__date--back">
-                <button type="submit">Buscar</button>
-            </form>
-        </section>
+  <header>
+    <img class="header__logo" src="img/logo.png" alt="logo">
+    <img id="header__hamburguer" src="img/menu.png" alt="menu">
+    <nav id="nav__menu" class="nav__menu nav__menu-hidden">
+      <ul class="ul__menu__perfil">
+        <li id="li__menu__close__hamburguer">X</li>
+        <li class="li__menu__nombre">Hola! Nombre persona</li>
+        <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
+        <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
+      </ul>
+      <ul class="ul__menu__navegacion">
+        <li><a href="#">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
+        <li class="li__menu__login"><a href="#">Login</a></li>
+        <li class="li__menu__paquetes"><a href="#">Paquetes<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a>
+        </li>
+        <li class="li__menu__servicios"><a href="#">Servicios <i
+              class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
+        <li class="li__menu__servicios"><a href="#">Contacto <i class="fa-solid fa-address-book li__menu__icon"></i></a>
+        </li>
+        <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i
+              class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
+      </ul>
+    </nav>
+  </header>
 
 
+  <!-- MAIN -->
+  <main>
+    <h1 class="titulo-h1">PUNTA CANA <br> <span>TU MEJOR EXPERIENCIA</span></h1>
 
-        <section class="main__packages">
-            <h3>LUGARES RELACIONADOS</h3>
-            <div class="main__all__cards__container">
-                <div class="main__card__container">
-                    <div class="main__card__img__container">
-                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
-                    </div>
-                    <div class="main__card__txt__container">
-                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-                        <p class="p__txt__togheter--label">Ida</p>
-                        <p class="p__txt__togheter--label">Vuelta</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-                        <p class="p__txt__togheter--label">Personas</p>
-                        <p class="p__txt__togheter--label">Precio</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-                        <button type="submit">Ver mas</button>
-                    </div>
-                </div>
-                <div class="main__card__container">
-                    <div class="main__card__img__container">
-                        <img src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg" alt="">
-                    </div>
-                    <div class="main__card__txt__container">
-                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>Vancouver</p>
-                        <p class="p__txt__togheter--label">Ida</p>
-                        <p class="p__txt__togheter--label">Vuelta</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/02/2024</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/03/2024</p>
-                        <p class="p__txt__togheter--label">Personas</p>
-                        <p class="p__txt__togheter--label">Precio</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>1</p>
-                        <p class="p__txt__togheter p__txt__togheter--price">$1600</p>
-                        <button type="submit">Ver mas</button>
-                    </div>
-                </div>
-                <div class="main__card__container">
-                    <div class="main__card__img__container">
-                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
-                    </div>
-                    <div class="main__card__txt__container">
-                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-                        <p class="p__txt__togheter--label">Ida</p>
-                        <p class="p__txt__togheter--label">Vuelta</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-                        <p class="p__txt__togheter--label">Personas</p>
-                        <p class="p__txt__togheter--label">Precio</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-                        <button type="submit">Ver mas</button>
-                    </div>
-                </div>
-                <div class="main__card__container">
-                    <div class="main__card__img__container">
-                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
-                    </div>
-                    <div class="main__card__txt__container">
-                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-                        <p class="p__txt__togheter--label">Ida</p>
-                        <p class="p__txt__togheter--label">Vuelta</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-                        <p class="p__txt__togheter--label">Personas</p>
-                        <p class="p__txt__togheter--label">Precio</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-                        <button type="submit">Ver mas</button>
-                    </div>
-                </div>
-                <div class="main__card__container">
-                    <div class="main__card__img__container">
-                        <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
-                    </div>
-                    <div class="main__card__txt__container">
-                        <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-                        <p class="p__txt__togheter--label">Ida</p>
-                        <p class="p__txt__togheter--label">Vuelta</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-                        <p class="p__txt__togheter--label">Personas</p>
-                        <p class="p__txt__togheter--label">Precio</p>
-                        <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-                        <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-                        <button type="submit">Ver mas</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section class="contenedor-galeria">
 
-    <footer>
+      <!-- IMAGEN GRANDE DE LA IZQUIERDA -->
+      <div class=imagen-principal-izquierda>
+        <img class="imagen-grande" src="/img/descanso_producto.jpg" alt="imagen de Punta Cana">
+      </div>
 
-    </footer>
+      <!-- IMAGENES CHICAS DE LA DERECHA -->
+      <div class="imagen-derecha">
+        <img class="fotos-varias" src="/img/descanso_producto.jpg" alt="imagen de descanso">
+        <img class="fotos-varias" src="/img/estadia.jfif" alt="imagen de estadia">
+        <img class="fotos-varias" src="/img/excursiones_producto.jpg" alt="imagenes de excursion">
+        <img class="fotos-varias" src="/img/bienvenida_producto.jfif" alt="imagen del lugar">
+      </div>
+    </section>
 
-    <script>
+    <!-- ------------------------ -->
+    <!-- cAJAS CUADRADAS DETALLES -->
+    <!-- ------------------------ -->
 
-    </script>
+    <section class="contenedor-detalles">
+      <article class="detalle">
+        <i class="fa-solid fa-clock"></i>
+        <h5> Duración: 10 dias <br> 7 noches</h5>
+      </article>
+
+      <article class="detalle">
+        <i class="fa-solid fa-tags"></i>
+        <h5> Desde: $175.000 </h5>
+      </article>
+
+      <article class="detalle">
+        <i class="fa-solid fa-location-dot"></i>
+        <h5> Salidas desde Córdoba</h5>
+      </article>
+
+      <article class="detalle">
+        <i class="fa-solid fa-user"></i>
+        <h5> Personas desde: 0 años</h5>
+      </article>
+    </section>
+
+    <!-- -------------------- -->
+    <!-- INCLUYE - NO INCLUYE -->
+    <!-- -------------------- -->
+
+    <section class="pack-incluye">
+
+      <article class="si-incluye">
+        <h2>Incluye</h2>
+        <hr>
+        <ul>
+          <li><i class="fa-solid fa-user-doctor"></i>Asistencia al Viajero</li>
+          <li><i class="fa-solid fa-hotel"></i>Hoteles 5 estrellas</li>
+          <li><i class="fa-solid fa-user"></i>Coordinador y guias locales</li>
+          <li><i class="fa-solid fa-utensils"></i>Régimen de comidas todo incluido</li>
+          <li><i class="fa-solid fa-map-location-dot"></i>Excursiones según programa</li>
+          <li><i class="fa-solid fa-bus"></i>Traslados de ingreso y egreso</li>
+        </ul>
+      </article>
+      <article class="no-incluye">
+        <h2>No Incluye</h2>
+        <hr>
+        <ul>
+          <li><i class="fa-solid fa-user-doctor"></i>Asistencia al Viajero</li>
+          <li><i class="fa-solid fa-hotel"></i>Hoteles 5 estrellas</li>
+          <li><i class="fa-solid fa-user"></i>Coordinador y guias locales</li>
+          <li><i class="fa-solid fa-utensils"></i>Régimen de comidas todo incluido</li>
+          <li><i class="fa-solid fa-map-location-dot"></i>Excursiones según programa</li>
+          <li><i class="fa-solid fa-bus"></i>Traslados de ingreso y egreso</li>
+        </ul>
+      </article>
+
+      <button class="boton-confirmacion" type="submit">Solicitar</button>
+    </section>
+
+    <article class="itinerario">
+      <h2>Itinerario</h2>
+      <hr>
+      <p>
+        <em><strong>Primer día: CÓRDOBA, ARGENTINA</strong></em>
+        <br>
+        <em>Salida desde Córdoba hacia Punta Cana en vuelo directo.</em>
+        <br>
+        <br>
+        <em><strong>Segundo día: PUNTA CANA</strong></em>
+        <br>
+        <em>Llegada a Punta Cana y traslado al hotel. Check-in y tiempo libre para relajarse en la playa.</em>
+        <br>
+        <br>
+        <em><strong>Tercer día: PUNTA CANA</strong></em>
+        <br>
+        <em>Día libre para disfrutar de las playas de Punta Cana o participar en actividades opcionales.</em>
+        <br>
+        <br>
+        <em><strong>Cuarto día: PUNTA CANA</strong></em>
+        <br>
+        <em>Excursión a Isla Saona para disfrutar de hermosas playas y aguas cristalinas.</em>
+        <br>
+        <br>
+        <strong><em>Quinto día: PUNTA CANA</em></strong>
+        <br>
+        <em>Día libre para actividades de tu elección, como explorar la vida nocturna local o relajarte en el
+          resort.</em>
+        <br>
+        <br>
+        <em><strong>Sexto día: PUNTA CANA</strong></em>
+        <br>
+        <em>Excursión a las cuevas de Los Tres Ojos y exploración de la cultura local.</em>
+        <br>
+        <br>
+        <em><strong>Séptimo día: PUNTA CANA</strong></em>
+        <br>
+        <em>Día libre para actividades opcionales como snorkel, buceo o un paseo en catamarán.</em>
+        <br>
+        <br>
+        <em><strong>Octavo día: PUNTA CANA</strong></em>
+        <br>
+        <em>Día libre para disfrutar de las instalaciones del resort o explorar la ciudad.</em>
+        <br>
+        <br>
+        <em><strong>Noveno día: PUNTA CANA</strong></em>
+        <br>
+        <em>Otro día relajante en las hermosas playas de Punta Cana.</em>
+        <br>
+        <br>
+        <em><strong>Décimo día: PUNTA CANA / REGRESO A CÓRDOBA, ARGENTINA</strong></em>
+        <br>
+        <em>Check-out del hotel y traslado al aeropuerto para tomar el vuelo de regreso a Córdoba, Argentina.</em>
+
+      </p>
+    </article>
+
+    <!-- Buscar Destino -->
+    <section class="buscarDestino">
+      <form action="" class="form__search">
+        <label for="input__places" class="input__txt__places">A donde viajas?</label>
+        <input type="text" id="input__places">
+        <label for="ida" class="label__txt__date label__txt__date--go">Ida</label>
+        <label for="vuelta" class="label__txt__date label__txt__date-back">Vuelta</label>
+        <input type="date" name="ida" placeholder="Ida" class="input__date input__date--go">
+        <input type="date" name="vuelta" placeholder="Vuelta" class="input__date input__date--back">
+        <button type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <!-- Tarjetas del main -->
+
+    <section class="main__packages">
+      <h3>PAQUETES</h3>
+      <div class="main__all__cards__container">
+        <div class="main__card__container">
+          <div class="main__card__img__container">
+            <img
+              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
+              alt="">
+          </div>
+          <div class="main__card__txt__container">
+            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+            <p class="p__txt__togheter--label">Ida</p>
+            <p class="p__txt__togheter--label">Vuelta</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+            <p class="p__txt__togheter--label">Personas</p>
+            <p class="p__txt__togheter--label">Precio</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+            <button type="submit">Ver mas</button>
+          </div>
+        </div>
+        <div class="main__card__container">
+          <div class="main__card__img__container">
+            <img
+              src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg"
+              alt="">
+          </div>
+          <div class="main__card__txt__container">
+            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>Vancouver</p>
+            <p class="p__txt__togheter--label">Ida</p>
+            <p class="p__txt__togheter--label">Vuelta</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/02/2024</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/03/2024</p>
+            <p class="p__txt__togheter--label">Personas</p>
+            <p class="p__txt__togheter--label">Precio</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>1</p>
+            <p class="p__txt__togheter p__txt__togheter--price">$1600</p>
+            <button type="submit">Ver mas</button>
+          </div>
+        </div>
+        <div class="main__card__container">
+          <div class="main__card__img__container">
+            <img
+              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
+              alt="">
+          </div>
+          <div class="main__card__txt__container">
+            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+            <p class="p__txt__togheter--label">Ida</p>
+            <p class="p__txt__togheter--label">Vuelta</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+            <p class="p__txt__togheter--label">Personas</p>
+            <p class="p__txt__togheter--label">Precio</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+            <button type="submit">Ver mas</button>
+          </div>
+        </div>
+        <div class="main__card__container">
+          <div class="main__card__img__container">
+            <img
+              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
+              alt="">
+          </div>
+          <div class="main__card__txt__container">
+            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+            <p class="p__txt__togheter--label">Ida</p>
+            <p class="p__txt__togheter--label">Vuelta</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+            <p class="p__txt__togheter--label">Personas</p>
+            <p class="p__txt__togheter--label">Precio</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+            <button type="submit">Ver mas</button>
+          </div>
+        </div>
+        <div class="main__card__container">
+          <div class="main__card__img__container">
+            <img
+              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
+              alt="">
+          </div>
+          <div class="main__card__txt__container">
+            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+            <p class="p__txt__togheter--label">Ida</p>
+            <p class="p__txt__togheter--label">Vuelta</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+            <p class="p__txt__togheter--label">Personas</p>
+            <p class="p__txt__togheter--label">Precio</p>
+            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+            <button type="submit">Ver mas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+
+  </footer>
+  <script src="https://kit.fontawesome.com/c2d7c9299d.js" crossorigin="anonymous"></script>
+  <script src="js/general.js"></script>
+
 
 </body>
-<script src="js/general.js"></script>
-</html>

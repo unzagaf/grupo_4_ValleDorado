@@ -2,20 +2,262 @@
 Estilos Generales 
  */
 
+* {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
 
+}
+
+ul {
+  padding: 0px;
+}
 
 /*
 Header 
  */
- h1{
-    color:red;
-}
+
 
 
 
 /*
 Main 
  */
+
+
+main {
+  background-color: #7678ED;
+  ;
+}
+
+main img{
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 0.6);
+}
+
+.titulo-h1 {
+  background-color: #f18701;
+  color: #3D348B;
+  text-align: left;
+  padding: 0.5rem 1rem;
+}
+
+.titulo-h1 h1 {
+  margin: 0.1875rem 0.3125rem;
+}
+
+.titulo-h1 span {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* CONTENEDOR GRANDE*/
+
+section.contenedor-galeria {
+  display: flex;
+  width: 95%;
+  max-width: 768px;
+  height: 60vw;
+  max-height: 60vh;
+  align-items: flex-start;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+/*IMAGEN GRANDE IZQUIERDA*/
+
+.imagen-principal-izquierda {
+  flex: 0 0 80%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.60rem;
+  -webkit-border-radius: 0.60rem;
+  -moz-border-radius: 0.60rem;
+  -ms-border-radius: 0.60rem;
+  -o-border-radius: 0.60rem;
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 0.6);
+}
+
+.imagen-grande {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/*IMAGENES CHICAS DE LA DERECHA*/
+
+.imagen-derecha {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  flex: 0 0 20%;
+  height: 100%;
+  width: 100%;
+}
+
+.fotos-varias {
+  width: 80%;
+  height: calc(100% / 4 - 0.625rem);
+  /* Distribuir uniformemente en 4 columnas con espacio de 10px */
+  object-fit: cover;
+  margin-right: 0;
+}
+
+/*--------*/
+/*DETALLES*/
+/*--------*/
+
+section.contenedor-detalles {
+  background-color: #3D348B;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  padding: 0.2rem;
+  margin-top: 1rem;
+}
+
+article.detalle {
+  background-color: whitesmoke;
+  color: #F35B04;
+
+  border: #F35B04 0.125rem solid;
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 0.8rem;
+  text-align: center;
+
+  width: 8rem;
+  height: 6rem;
+  padding: 1rem;
+  margin: 0.5rem;
+
+  border-radius: 0.60rem;
+  -webkit-border-radius: 0.60rem;
+  -moz-border-radius: 0.60rem;
+  -ms-border-radius: 0.60rem;
+  -o-border-radius: 0.60rem;
+}
+
+.contenedor-detalles i {
+  color: #7678ED;
+  font-size: 1.5rem;
+}
+
+/* --------------------  */
+/* INCLUYE - NO INCLUYE  */
+/* --------------------  */
+
+.pack-incluye {
+  width: 95%;
+  margin: auto;
+}
+
+.pack-incluye h2 {
+  color: white;
+  text-shadow: 4px 4px 4px rgba(60, 51, 140, 0.5);
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.pack-incluye ul {
+  margin-top: 1rem;
+}
+
+.pack-incluye li {
+  color: #3D348B;
+  width: 95%;
+  margin: auto;
+  font-weight: bold;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.pack-incluye li i {
+  font-size: 1.5rem;
+  background-color: #F35B04;
+  color: white;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+
+.boton-confirmacion {
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  outline: none;
+  border: 0;
+  box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  color: #7678ED;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+/* Itinerario */
+
+.itinerario {
+  width: 95%;
+  margin: auto;
+  font-weight: bold;
+}
+
+.itinerario h2 {
+  color: white;
+  text-shadow: 4px 4px 4px rgba(60, 51, 140, 0.5);
+  padding-left: 1rem;
+  margin-top: 1rem; 
+  margin-bottom: 1rem;
+}
+
+.itinerario p {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #3D348B;
+}
+
+/* Buscar Destino */
+
+.buscarDestino{
+  width: 95vw;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+/* Tarjetas del Main */
+
+.main__packages h3{
+  margin-bottom: 1rem!important;
+}
+
+.main__card__container{
+  margin-bottom: 1rem;
+}
 
 
 /*
