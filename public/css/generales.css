@@ -7,7 +7,8 @@
 
 /* Encabezado*/
 body{
-    width: 100vw;
+    /* width: 100vw; */
+    background-color: #F18701;
 }
 
 header{
@@ -18,6 +19,7 @@ header{
     width: 100%;
     padding: .5rem 1rem;
     border-bottom: 1px solid #3D348B;
+    background-color: #ffffff;
 }
 
 header img{
@@ -294,7 +296,7 @@ button:hover{
 
 /*Cards*/
 .main__packages{
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -403,12 +405,58 @@ button:hover{
 /* 
 Footer
 */
+footer{
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+.contactanos{
+    margin-top: 1rem;
+}
+.input_mail{
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: rgba(128, 128, 128, 0.418);
+    color: black;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.container-datos-footer{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.container-datos-footer p{
+    text-align: start;
+}
+.container-datos-footer i{
+    margin-right: 5px;
+}
 
 /* 
 Medias Queries 
 */
+/* MOVIL */
+@media screen and (max-width: 768px) {
+    
+    .main_destinos_vid .video {
+      display: none; /* Oculta todos los videos en pantallas de móvil */
+    }
+    .main_destinos_vid .video:nth-child(-n+2) {
+        margin: auto;
+        margin-bottom: 1rem;
+      display: block; /* Muestra los primeros 2 videos en pantallas */
+    }
+  }
+
 
 @media screen and (min-width: 768px) {
+    .main_destinos_vid iframe{
+        width:700px;
+        height: 400px;
+    }
     header{
         width: 100%;
         padding: 0.5rem 2.5rem;
