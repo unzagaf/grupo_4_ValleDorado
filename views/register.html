@@ -13,7 +13,7 @@
 
 
     <!-- links -->
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/generales.css">
     <link rel="stylesheet" href="css/normalize.css">
 
@@ -31,10 +31,10 @@
 
     <header>
         <img class="header__logo" src="img/logo.png" alt="logo">
-        <img id="header__hamburguer" src="img/menu.png" alt="menu">
+        <img id="header__hamburguer" src="img/menu.png" alt="menu" onclick="displayMenu('nav__menu-visible', 'nav__menu-hidden')">
         <nav id="nav__menu" class="nav__menu nav__menu-hidden">
             <ul class="ul__menu__perfil">
-                <li id="li__menu__close__hamburguer">X</li>
+                <li id="li__menu__close__hamburguer" onclick="displayMenu('nav__menu-hidden', 'nav__menu-visible')">X</li>
                 <li class="li__menu__nombre">Hola! Nombre persona</li>
                 <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
                 <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
@@ -50,9 +50,29 @@
         </nav>
     </header>
 
-    <main>
-
-
+    <main class="main__login">
+        <section class="section__login">
+            <h2 >Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
+            <form action="" class="form__search">
+                <label for="" class="input__txt__places section__login--label">Nombre</label>
+                <input type="text" >
+                <label for="" class="input__txt__places section__login--label">Apellido</label>
+                <input type="text" >
+                <label for="" class="input__txt__places section__login--label">Fecha de nacimiento</label>
+                <input type="date" >
+                <label for="" class="input__txt__places section__login--label">DNI</label>
+                <input type="number" >
+                <label for="" class="input__txt__places section__login--label">Telefono</label>
+                <input type="number" >
+                <label for="" class="input__txt__places section__login--label">Email</label>
+                <input type="email" >
+                <label for="" class="input__txt__places section__login--label">Contraseña</label>
+                <input type="text" >
+                <label for="" class="input__txt__places section__login--label">Repetir Contraseña</label>
+                <input type="text" >
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -64,5 +84,5 @@
     </script>
 
 </body>
-
+<script src="js/general.js"></script>
 </html>
