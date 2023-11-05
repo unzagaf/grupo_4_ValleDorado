@@ -1,15 +1,7 @@
-let hamburguerMenuVisible = document.getElementById('header__hamburguer')
-hamburguerMenuVisible.addEventListener('click', ()=>{
-    document.getElementById('nav__menu').classList.add('nav__menu-visible')
-    document.getElementById('nav__menu').classList.remove('nav__menu-hidden')
-})
-
-let hamburguerMenuHidden = document.getElementById('li__menu__close__hamburguer')
-hamburguerMenuHidden.addEventListener('click', ()=>{
-    document.getElementById('nav__menu').classList.remove('nav__menu-visible')
-    document.getElementById('nav__menu').classList.add('nav__menu-hidden')
-})
-
+let displayMenu = (visible, hidden)=>{
+    document.getElementById('nav__menu').classList.add(visible)
+    document.getElementById('nav__menu').classList.remove(hidden)
+}
 
 const slider = document.getElementById("main__carousel__container");
 let sliderSection = document.getElementsByClassName("main__carousel__one");
@@ -29,10 +21,10 @@ let sliderFunction = (margin, position, section)=>{
     }, 1500);
 }
 
-btnRight.addEventListener('click', ()=>{sliderFunction("-180vw", "beforeend", sliderSection[0])})
-btnLeft.addEventListener('click', ()=>{sliderFunction("0.7vw", "afterbegin", sliderSection[sliderSection.length -1])})
+btnRight.addEventListener('click', ()=>{clearInterval(interval); sliderFunction("-180vw", "beforeend", sliderSection[0])})
+btnLeft.addEventListener('click', ()=>{clearInterval(interval); sliderFunction("0.7vw", "afterbegin", sliderSection[sliderSection.length -1])})
 
-setInterval(()=>{
+const interval = setInterval(()=>{
     sliderFunction("-180vw", "beforeend", sliderSection[0])
 }, 4000)
 

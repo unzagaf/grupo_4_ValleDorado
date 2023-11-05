@@ -31,10 +31,10 @@
 
     <header>
         <img class="header__logo" src="img/logo.png" alt="logo">
-        <img id="header__hamburguer" src="img/menu.png" alt="menu">
+        <img id="header__hamburguer" src="img/menu.png" alt="menu" onclick="displayMenu('nav__menu-visible', 'nav__menu-hidden')">
         <nav id="nav__menu" class="nav__menu nav__menu-hidden">
             <ul class="ul__menu__perfil">
-                <li id="li__menu__close__hamburguer">X</li>
+                <li id="li__menu__close__hamburguer" onclick="displayMenu('nav__menu-hidden', 'nav__menu-visible')">X</li>
                 <li class="li__menu__nombre">Hola! Nombre persona</li>
                 <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
                 <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
@@ -64,5 +64,5 @@
     </script>
 
 </body>
-
+<script src="js/general.js"></script>
 </html>
