@@ -60,7 +60,7 @@ header img{
     }
 }
 
-ul{
+.ul__menu__perfil, .ul__menu__navegacion{
     list-style: none;
     text-align: end;
 }
@@ -256,7 +256,8 @@ a:hover{
    padding: 0 .5rem;
    outline: none;
    border: 0;
-   box-shadow: inset 1px -1px 9px rgba(0, 0, 0, 0.3);
+   box-shadow: inset -1px 1px 9px rgba(0, 0, 0, 0.3);
+   box-shadow: inset 1px -1px 9px rgba(255, 255, 255, 0.3), inset -1px 1px 9px rgba(0, 0, 0, 0.3);
 }
 
 #input__places{
