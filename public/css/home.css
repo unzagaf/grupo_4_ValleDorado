@@ -7,17 +7,64 @@ Estilos Generales
 /*
 Header 
  */
-h1{
-    color:red;
-}
+
 
 
 
 /*
 Main 
  */
+.main_destinos{
+    margin-top: 3rem;
+}
+.main_destinos h1{
+    text-align: center;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: .1rem;
+}
+.main_destinos_txt{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+/*VIDEOS*/
+.main_destinos_vid{
+    text-align: center;
+}
+.main_destinos_vid iframe{
+    width:100vw;
+    height: 315px;
+    padding: 0 10px 0 10px;
+    margin-bottom: 1rem;
+}
+.video h2{
+    text-align: start;
+    padding-left: 10px;
+    margin-bottom: 1rem;
+    font-style: italic;
+    letter-spacing: .1rem;
+    text-decoration: underline ;
+}
 
 
+/* CARRUSEL */
+.tips_container{
+    background-color: #3D348B;
+    padding-top: 1rem;
+}
+.tips_container h1{
+    text-align: center;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: .1rem;
+
+}
+.max-height-cards{
+    height: 250px;
+}
 /*
 Footer
  */
