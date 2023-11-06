@@ -20,3 +20,8 @@ Integrantes del grupo 4:
 ° https://www.buteler.tur.ar/
 
 Estos cinco sitios web son plataformas de viajes y turismo que ofrecen una amplia gama de productos y servicios relacionados con la planificación y reserva de viajes. Su público objetivo incluye viajeros y personas interesadas en la industria turística, tanto jovenes y mayores que buscan una nueva oportunidad de nuevas experiencias. Estos sitios se destacan por su enfoque en la comunidad de viajeros, ofreciendo información detallada sobre destinos, opciones de alojamiento, vuelos y actividades, junto con funcionalidades que permiten a los usuarios comparar precios y realizar reservas en línea. Cada sitio tiene una estética y diseño únicos que reflejan su marca y valores.
+
+
+## Enlace al tabero de trabajo
+
+>https://github.com/users/unzagaf/projects/1/views/1
