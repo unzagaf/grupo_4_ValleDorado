@@ -40,6 +40,14 @@ Main
     padding: 0 10px 0 10px;
     margin-bottom: 1rem;
 }
+.video h2{
+    text-align: start;
+    padding-left: 10px;
+    margin-bottom: 1rem;
+    font-style: italic;
+    letter-spacing: .1rem;
+    text-decoration: underline ;
+}
 
 
 /* CARRUSEL */

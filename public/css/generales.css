@@ -455,8 +455,8 @@ Medias Queries
 
 @media screen and (min-width: 768px) {
     .main_destinos_vid iframe{
-        width:700px;
-        height: 400px;
+        width:970px;
+        height: 500px;
     }
     header{
         width: 100%;
