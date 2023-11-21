@@ -36,15 +36,15 @@
             <ul class="ul__menu__perfil">
                 <li id="li__menu__close__hamburguer" onclick="displayMenu('nav__menu-hidden', 'nav__menu-visible')">X</li>
                 <li class="li__menu__nombre">Hola! Nombre persona</li>
-                <li class="li__menu__miPerfil"><a href="#">Mi perfil</a></li>
+                <li class="li__menu__miPerfil"><a href="/login">Mi perfil</a></li>
                 <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
             </ul>
             <ul class="ul__menu__navegacion">
-                <li><a href="#">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
+                <li><a href="/">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
                 <li class="li__menu__login"><a href="#">Login</a></li>
-                <li class="li__menu__paquetes"><a href="#">Paquetes<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
-                <li class="li__menu__servicios"><a href="#">Servicios <i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
-                <li class="li__menu__servicios"><a href="#">Contacto <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
+                <li class="li__menu__paquetes"><a href="/productCart">Tu Reserva<i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li class="li__menu__servicios"><a href="/productDetail">Servicios <i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
+                <li class="li__menu__servicios"><a href="/register"> Registrate <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
                 <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
             </ul>
         </nav>
@@ -55,21 +55,21 @@
             <h2 >Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
             <form action="" class="form__search">
                 <label for="" class="input__txt__places section__login--label">Nombre</label>
-                <input type="text" >
+                <input type="text" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">Apellido</label>
-                <input type="text" >
+                <input type="text" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">Fecha de nacimiento</label>
-                <input type="date" >
+                <input type="date" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">DNI</label>
-                <input type="number" >
+                <input type="number" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">Telefono</label>
-                <input type="number" >
+                <input type="number" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">Email</label>
-                <input type="email" >
+                <input type="email" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">Contraseña</label>
-                <input type="text" >
+                <input type="text" placeholder="x">
                 <label for="" class="input__txt__places section__login--label">Repetir Contraseña</label>
-                <input type="text" >
+                <input type="text" placeholder="x">
                 <button type="submit">Registrarse</button>
             </form>
         </section>
@@ -78,8 +78,8 @@
     <footer>
         <h2>Recibe ofertas a tu email</h2>
         <form action="" method="post">
-            <input class="input_mail" type="email" name="email" id="email" placeholder="Ingresa tu email">
-            <button>Quiero recibirlas</button>
+            <input class="input_mail" type="email" name="email" id="email" placeholder="Ingresa tu email"placeholder="x">
+            <button type="submit">Quiero recibirlas</button>
         </form>
     
         <div class="contactanos">
