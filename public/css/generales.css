@@ -50,6 +50,7 @@ header img{
     animation-direction: alternate;
 }
 
+
 @keyframes slidein {
     from {
       transform: translateX(100%);
@@ -151,7 +152,17 @@ nav li{
 a:hover{
     color: #F18701;
 }
-
+.ul__menu__navegacion a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent; /* Agregado para crear un borde inicial transparente */
+  }
+  
+  /* Efecto de subrayado al pasar el mouse sobre el enlace */
+  .ul__menu__navegacion a:hover {
+    border-bottom: 1px solid #000; /* Cambia #000 al color que prefieras */
+    transition: border-bottom 1s ease; /* Movido a :hover para que solo se aplique al pasar el mouse */
+  }
+  
 
 /*Carousel*/
 .main__carousel__search{
@@ -765,6 +776,11 @@ Medias Queries
 
     .main__card__container{
         width: 20vw;
+        margin-right: 10px;
+    }
+    .max-height-cards{
+        width: 550px;
+        height: 300px;
     }
 
     .p__txt__places{
@@ -775,6 +791,19 @@ Medias Queries
     .main__carousel__txt{
         width: 40%;
         padding: 1rem 2rem;
+    }
+
+    /*Footer*/
+    footer{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    footer form{
+        margin: auto;
+        max-width: 50%;
+    }
+    .container-datos-footer{
+        justify-content: space-around;
     }
     
 }
