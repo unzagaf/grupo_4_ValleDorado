@@ -47,6 +47,7 @@ Main
     font-style: italic;
     letter-spacing: .1rem;
     text-decoration: underline ;
+    color:#ffffff
 }
 
 
@@ -65,6 +66,25 @@ Main
 .max-height-cards{
     height: 250px;
 }
+
+/* Estilos generales para las tarjetas */
+.tips_container .main__card__container {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Estilos para las imágenes dentro de las tarjetas */
+  .main__card__img__container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto de escala al hacer hover en la tarjeta */
+  .tips_container .main__card__container:hover {
+    transform: scale(1.05); /* Puedes ajustar el valor según tu preferencia */
+  }
 /*
 Footer
  */
@@ -73,3 +93,11 @@ Footer
 /*
 Medias Queries
  */
+
+ /* tips de viajes*/
+ @media screen and (min-width: 1024px){
+    .video h2{
+        padding-left: 3rem;
+    }
+    
+ }
