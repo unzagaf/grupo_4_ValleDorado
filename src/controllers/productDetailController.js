@@ -5,7 +5,7 @@ const app = express();
 
 const productDetailController = {
     index : app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/productDetail.html'))
+        res.render('./products/productDetail.ejs');
     }),
 }
 

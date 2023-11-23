@@ -5,10 +5,7 @@ const app = express();
 
 const registerController = {
     index : app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/register.html'))
+        res.render('./users/register.ejs');
     }),
 }
-
-
-
 module.exports = registerController;
