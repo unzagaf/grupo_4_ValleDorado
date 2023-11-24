@@ -1,3 +1,53 @@
+# Retrospectiva del Segundo Sprint
+## Segundo Sprint (concluido el 08/11/23)
+
+## 📌Comenzar a hacer:
+
+1. **Establecer un procedimiento claro para el uso del tablero de gestión:**
+   - Reforzaremos el uso del tablero de trabajo para un seguimiento más eficiente del trabajo.
+   - Definiremos un procedimiento claro sobre cómo deben utilizarse las tarjetas, etiquetas y listas. 📜📃
+
+2. **Saber y conocer cómo se siente cada integrante del equipo:**
+   - Iniciaremos conversaciones individuales para comprender las preocupaciones de los colaboradores.
+   - Estableceremos expectativas claras sobre el compromiso y la participación en el equipo.👩👧🧒👦
+
+## 📌Hacer más:
+
+1. **Enfoque en dispositivos móviles:**
+   - Aseguraremos un enfoque más completo del diseño y la usabilidad en dispositivos móviles, considerando las lecciones aprendidas del primer sprint.📳📳
+
+2. **Comunicación efectiva:**
+   - Reforzaremos la comunicación efectiva durante las reuniones y en las interacciones diarias.
+
+## 📌Continuar haciendo:
+
+1. **Reuniones efectivas:**
+   - Mantendremos la práctica de celebrar reuniones efectivas para establecer la forma de trabajo y mantener una comunicación sólida dentro del equipo.
+
+2. **Cumplir con los plazos:**
+   - Continuaremos con el buen trabajo de completar el sprint dentro de los plazos establecidos.
+
+## 📌Hacer menos:
+
+1. **Abandono de herramientas de gestión:**
+   - Evitaremos abandonar herramientas de gestión de proyectos una vez establecidas.
+   - Actualizaremos y utilizaremos el tablero de trabajo de manera constante a lo largo del proyecto.
+
+## 📌Dejar de hacer:
+
+1. **Reuniones sin propósito claro:**
+   - Dejar de tener reuniones sin un propósito claro. Asegurarse de que cada reunión tenga objetivos específicos y resultados tangibles.
+
+## Conclusiones Finales:
+
+En esta retrospectiva, reconocemos tanto los éxitos como las áreas de mejora. La positiva devolución de los profesores refuerza nuestro compromiso y capacidad para superar desafíos. Aprenderemos de nuestros errores y continuaremos trabajando juntos  de manera efectiva, manteniendo la comunicación abierta y cumpliendo con nuestros plazos. 
+
+
+
+
+
+***
+
 
 # Retrospectiva del Equipo
 ## Primer Sprint (concluido el 23/10/23)
