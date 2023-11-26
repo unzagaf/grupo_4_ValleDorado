@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <!-- HEADE -->
+    <%- include("../partials/head") %>
+    <body>
+        <!-- HEADER -->
+        <%- include("../partials/header.ejs") %>
+        <main>
+            <section class="main__carousel__search">
+                <div class="main__carousel">
+                    <div id="main__carousel__container">
+                        <div class="main__carousel__one">
+                            <div class="main__carousel__txt">
+                                <h3>Nueva Zelanda</h3>
+                                <p>Descubre este lugar, con sus paisajes y comida</p>
+                            </div>
+                            <img class="main__carousel__img"src="https://dam.ngenespanol.com/wp-content/uploads/2022/05/4-pasos-para-hacer-realidad-ese-viaje-que-no-has-podido-emprender.jpg" alt="">
+                        </div>
+                        <div class="main__carousel__one">
+                            <div class="main__carousel__txt">
+                                <h3>Vancouver</h3>
+                                <p>Montañas, playas, y grandes edificios puedes ver en este lugar</p>
+                            </div>
+                            <img class="main__carousel__img"src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg" alt="">
+                        </div>
+                        <div class="main__carousel__one">
+                            <div class="main__carousel__txt">
+                                <h3>New York</h3>
+                                <p>No te pierdas la noche de año nuevo en el Time Square, reservalo ahora</p>
+                            </div>
+                            <img class="main__carousel__img"src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="main__slider__btn main__slider__btn--right" id="main__btn__right">&#62</div>
+                    <div class="main__slider__btn main__slider__btn--left " id="main__btn__left">&#60</div>
+                </div>
+                <form action="" class="form__search">
+                    <label for="" class="input__txt__places">A donde viajas?</label>
+                    <input type="text" id="input__places" placeholder="Destino" >
+                    <label for="" class="label__txt__date label__txt__date--go">Ida</label>
+                    <label for="" class="label__txt__date label__txt__date-back">Vuelta</label>
+                    <input type="date" name="" id="" placeholder="Ida" class="input__date input__date--go">
+                    <input type="date" name="" id="" placeholder="Vuelta" class="input__date input__date--back">
+                    <button type="submit">Buscar</button>
+                </form>
+            </section>
+            <section class="main__packages">
+                <h3>PAQUETES</h3>
+                <div class="main__all__cards__container">
+                    <div class="main__card__container">
+                        <div class="main__card__img__container">
+                            <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                        </div>
+                        <div class="main__card__txt__container">
+                            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                            <p class="p__txt__togheter--label">Ida</p>
+                            <p class="p__txt__togheter--label">Vuelta</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                            <p class="p__txt__togheter--label">Personas</p>
+                            <p class="p__txt__togheter--label">Precio</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                            <button type="submit">Ver mas</button>
+                        </div>
+                    </div>
+                    <div class="main__card__container">
+                        <div class="main__card__img__container">
+                            <img src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg" alt="">
+                        </div>
+                        <div class="main__card__txt__container">
+                            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>Vancouver</p>
+                            <p class="p__txt__togheter--label">Ida</p>
+                            <p class="p__txt__togheter--label">Vuelta</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/02/2024</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/03/2024</p>
+                            <p class="p__txt__togheter--label">Personas</p>
+                            <p class="p__txt__togheter--label">Precio</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>1</p>
+                            <p class="p__txt__togheter p__txt__togheter--price">$1600</p>
+                            <button type="submit">Ver mas</button>
+                        </div>
+                    </div>
+                    <div class="main__card__container">
+                        <div class="main__card__img__container">
+                            <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                        </div>
+                        <div class="main__card__txt__container">
+                            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                            <p class="p__txt__togheter--label">Ida</p>
+                            <p class="p__txt__togheter--label">Vuelta</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                            <p class="p__txt__togheter--label">Personas</p>
+                            <p class="p__txt__togheter--label">Precio</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                            <button type="submit">Ver mas</button>
+                        </div>
+                    </div>
+                    <div class="main__card__container">
+                        <div class="main__card__img__container">
+                            <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+                        </div>
+                        <div class="main__card__txt__container">
+                            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
+                            <p class="p__txt__togheter--label">Ida</p>
+                            <p class="p__txt__togheter--label">Vuelta</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
+                            <p class="p__txt__togheter--label">Personas</p>
+                            <p class="p__txt__togheter--label">Precio</p>
+                            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
+                            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
+                            <button type="submit">Ver mas</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main_destinos">
+                <h1>DESTINOS</h1>
+
+                <div class="main_destinos_txt">
+                    <p>Explora estos hermosos destinos de viaje a través de nuestros videos. Descubre lugares increíbles para tus próximas aventuras.</p>
+                </div>
+
+                <div class="main_destinos_vid">
+                    <div class="video">
+                        <h2>Conoce Dinamarca</h2>
+                        <iframe class="video" src="https://www.youtube.com/embed/__9asAzfeDM?si=IcUCu3ImxAdt0JlB" frameborder="0" allowfullscreen></iframe> 
+                    </div>
+                    <div class="video">
+                        <h2>Conoce la Patagonia</h2>
+                        <iframe src="https://www.youtube.com/embed/SMBrn8kRfec?si=YrKgmL62EXbvc9J1" title="YouTube video player" frameborder="0" encrypted-media; allowfullscreen></iframe>
+                    </div>
+                    <div class="video">
+                        <h2>Conoce Grecia</h2>
+                        <iframe src="https://www.youtube.com/embed/RSRKFAmfqnI?si=YsVehZ2_2wXzjLzK" title="YouTube video player" frameborder="0" encrypted-media; allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </section>
+            <section class="tips_container">
+                <h1>TIPS PARA TUS VIAJES</h1>
+                <div class="main__packages">
+                    <div class="main__all__cards__container">
+                        <div class="main__card__container max-height-cards">
+                            <div class="main__card__img__container">
+                                <img src="https://img.freepik.com/foto-gratis/verano-diversion-hombres-mujeres-jugando-agua_1150-20556.jpg?w=740&t=st=1698869024~exp=1698869624~hmac=25ca398035cddbe1c905dd0ae45123ee0616980c501be71e94ff3859432a43ef" alt="">
+                            </div>
+                            <div class="main__card__txt__container">
+                                <p class="p__txt__places">Planificación y Flexibilidad</p>
+                                <h4>Tener un itinerario base es esencial, pero mantén la mente abierta para aprovechar oportunidades inesperadas.</h4>
+                            </div>
+                        </div>
+                        <div class="main__card__container max-height-cards">
+                            <div class="main__card__img__container">
+                                <img src="https://img.freepik.com/free-photo/travel-concept-with-baggage-passport_23-2149030573.jpg?w=740&t=st=1699219996~exp=1699220596~hmac=87a7197b4c89b4feef891cccf8a1d18c197140b54df6c8770d89874e8621ba9c" alt="">
+                            </div>
+                            <div class="main__card__txt__container">
+                                <p class="p__txt__places">Empaque Inteligente</p>
+                                <h4> Menos equipaje te da más movilidad y ahorra tiempo y dinero.</h4>
+                            </div>
+                        </div>
+                        <div class="main__card__container max-height-cards">
+                            <div class="main__card__img__container">
+                                <img src="https://img.freepik.com/premium-photo/travel-tourism-suitcase-landmarks_744409-16.jpg?w=740" alt="">
+                            </div>
+                            <div class="main__card__txt__container">
+                                <p class="p__txt__places">Interacción Local</p>
+                                <h4>Aprende del lugar y la cultura a través de las personas que viven allí.</h4>
+                            </div>
+                        </div>
+                        <div class="main__card__container max-height-cards">
+                            <div class="main__card__img__container">
+                                <img src="https://img.freepik.com/free-photo/life-insurance-concept-with-stethoscope_23-2149191411.jpg?w=740&t=st=1699220251~exp=1699220851~hmac=64018dc75904a19cc992c8531a8030b9a7745166c2d67da7f8178b72b938ae05" alt="">
+                            </div>
+                            <div class="main__card__txt__container">
+                                <p class="p__txt__places">Seguridad y Salud</p>
+                                <h4>Investiga la seguridad en tu destino, mantén tus pertenencias seguras y ten un seguro de viaje para emergencias médicas.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- FOOTER -->
+        <%- include("../partials/footer.ejs") %>
+    </body>
+    <script src="js/general.js"></script>
+</html>

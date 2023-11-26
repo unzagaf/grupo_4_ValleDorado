@@ -4,7 +4,7 @@ const app = express();
 
 const homeController = {
     index : app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/home.html'))
+        res.render('./products/home.ejs');
     }),
 }
 

@@ -5,7 +5,7 @@ const app = express();
 
 const loginController = {
     index : app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/login.html'))
+        res.render('./users/login.ejs');
     }),
 }
 

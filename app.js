@@ -6,10 +6,11 @@ const rutaProductDetail = require('./src/router/productDetail.js');
 const rutaProductCart = require('./src/router/productCart.js');
 const rutaLogin= require('./src/router/login.js');
 const rutaRegister= require('./src/router/register.js');
-
 const publicFolderPath = path.resolve(__dirname, './public');
-app.use(express.static(publicFolderPath));
 
+app.use(express.static(publicFolderPath));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.listen(3000,()=> {
     console.log("Servidor corriendo en el puerto 3000");
 });
