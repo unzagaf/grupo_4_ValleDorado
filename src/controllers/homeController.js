@@ -4,7 +4,7 @@ const app = express();
 
 const homeController = {
     index : app.get('/', (req, res) => {
-        res.render('./products/home.ejs');
+        res.render('./products/home.ejs', { stylesheetPath: 'css/home.css' });
     }),
 }
 

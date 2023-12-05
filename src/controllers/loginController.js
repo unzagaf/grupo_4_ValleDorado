@@ -5,7 +5,7 @@ const app = express();
 
 const loginController = {
     index : app.get('/', (req, res) => {
-        res.render('./users/login.ejs');
+        res.render('./users/login.ejs', { stylesheetPath: 'css/login.css' });
     }),
 }
 
