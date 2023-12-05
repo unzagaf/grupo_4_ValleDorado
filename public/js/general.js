@@ -6,9 +6,12 @@ let displayMenu = (visible, hidden)=>{
 let displayAdmin = ()=>{
     document.getElementById('crear_paquete').classList.toggle('underline')
     document.getElementById('lista_paquete').classList.toggle('underline')
-    document.getElementById('crear__paquetes__admin').classList.toggle('hidden')
-    document.getElementById('lista__paquetes__admin').classList.toggle('hidden')
-    console.log("holi")
+    document.getElementById('crear__paquetes__admin').classList.toggle('table__hidden')
+    document.getElementById('lista__paquetes__admin').classList.toggle('table__hidden')
+}
+
+let displayModal = ()=>{
+    document.getElementById('modificar__paquetes__admin').classList.toggle('table__hidden')
 }
 
 const slider = document.getElementById("main__carousel__container");
