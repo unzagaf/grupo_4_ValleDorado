@@ -3,6 +3,14 @@ let displayMenu = (visible, hidden)=>{
     document.getElementById('nav__menu').classList.remove(hidden)
 }
 
+let displayAdmin = ()=>{
+    document.getElementById('crear_paquete').classList.toggle('underline')
+    document.getElementById('lista_paquete').classList.toggle('underline')
+    document.getElementById('crear__paquetes__admin').classList.toggle('hidden')
+    document.getElementById('lista__paquetes__admin').classList.toggle('hidden')
+    console.log("holi")
+}
+
 const slider = document.getElementById("main__carousel__container");
 let sliderSection = document.getElementsByClassName("main__carousel__one");
     
@@ -29,7 +37,4 @@ const interval = setInterval(()=>{
 }, 4000)
 
 
-
-
 /******************************************* */
-
