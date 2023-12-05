@@ -50,7 +50,11 @@
     align-items: center;
 }
 .table__hidden{
-    display: none!important;
+    display: none;
+}
+
+.admin__hidden{
+  display: none!important;
 }
 
 .underline{
@@ -108,10 +112,13 @@ table {
     font-weight: 800;
   }
   
+  .modal__hidden{
+    display: none;
+  }
 
 @media screen and (min-width: 768px) {
     .table__hidden{
-        display: block;
+        display: table-cell!important;
     }
 
     #lista__paquetes__admin table{
@@ -125,5 +132,17 @@ table {
     #lista__paquetes__admin td{
         display: table-cell;
         text-align: center;
+    }
+    
+    .form__search-admin{
+      width: 70%;
+    }
+
+    .form__search-admin-modal{
+      width: 300%;
+      transform: translate(-40%, 0%);
+    }
+    .close__modify{
+      top: 1rem;
     }
 }
