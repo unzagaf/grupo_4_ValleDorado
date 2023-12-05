@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <main>
+            <section class="titulo__admin">
+                <p id="crear_paquete" class="underline" onclick="displayAdmin()">Crear paquetes</p>
+                <p id="lista_paquete" onclick="displayAdmin()">Lista de paquetes</p>
+            </section>
+            <section id="crear__paquetes__admin">
+                <form action="POST" class="form__search-admin">
+                    <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
+                    <input type="text" placeholder="Ingrese el nombre del paquete">
+                    <label for="" class="input__txt__places section__login--label">Descripcion</label>
+                    <input type="text" placeholder="Ingrese descripcion del paquete">
+                    <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
+                    <input type="text" placeholder="Ingrese provincia de salida">
+                    <label for="" class="input__txt__places section__login--label">Precio</label>
+                    <input type="text" placeholder="Ingrese precio del paquete">
+                    <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
+                    <input type="date" placeholder="Ingrese fecha de inicio del paquete">
+                    <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
+                    <input type="date" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <label for="" class="input__txt__places section__login--label">Imagen</label>
+                    <input type="text" placeholder="Ingrese imagen del paquete">
+                    <label for="" class="input__txt__places section__login--label">Incluye</label>
+                    <input type="text" placeholder="Ingrese provincia de salida">
+                    <button type="submit">Crear paquete</button>
+                </form>
+            </section>
+            <section id="lista__paquetes__admin" class="hidden">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th class="table__hidden">Descripción</th>
+                            <th class="table__hidden">Cantidad de Personas</th>
+                            <th>Precio</th>
+                            <th class="table__hidden">Fecha de Inicio</th>
+                            <th class="table__hidden">Fecha de Finalización</th>
+                            <th class="table__hidden">Imagen</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Paquete 1</td>
+                            <td class="table__hidden">Descripción del paquete 1</td>
+                            <td class="table__hidden">3</td>
+                            <td>$100.00</td>
+                            <td class="table__hidden">2023-01-01</td>
+                            <td class="table__hidden">2023-01-10</td>
+                            <td class="table__hidden"><img src="imagen1.jpg" alt="Imagen del paquete 1" width="50"></td>
+                            <td onclick=""><i class="fa-solid fa-pen-to-square"></i></td>
+                            <td><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Paquete 2</td>
+                            <td class="table__hidden">Descripción del paquete 2</td>
+                            <td class="table__hidden">2</td>
+                            <td>$80.00</td>
+                            <td class="table__hidden">2023-02-01</td>
+                            <td class="table__hidden">2023-02-15</td>
+                            <td class="table__hidden"><img src="imagen2.jpg" alt="Imagen del paquete 2" width="50"></td>
+                            <td><i class="fa-solid fa-pen-to-square"></i></td>
+                            <td><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="modificar__paquetes__admin" class="hidden">
+                <form action="PUT" class="form__search-admin">
+                    <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
+                    <input type="text" placeholder="Ingrese el nombre del paquete">
+                    <label for="" class="input__txt__places section__login--label">Descripcion</label>
+                    <input type="text" placeholder="Ingrese descripcion del paquete">
+                    <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
+                    <input type="text" placeholder="Ingrese provincia de salida">
+                    <label for="" class="input__txt__places section__login--label">Precio</label>
+                    <input type="text" placeholder="Ingrese precio del paquete">
+                    <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
+                    <input type="date" placeholder="Ingrese fecha de inicio del paquete">
+                    <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
+                    <input type="date" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <label for="" class="input__txt__places section__login--label">Imagen</label>
+                    <input type="text" placeholder="Ingrese imagen del paquete">
+                    <label for="" class="input__txt__places section__login--label">Incluye</label>
+                    <input type="text" placeholder="Ingrese provincia de salida">
+                    <button type="submit">Modificar paquete</button>
+                </form>
+            </section>
+        </main>
+        <%- include("../partials/footer.ejs") %>
+    </body>
+    <script src="js/general.js"></script>
+    
+    
+</html>
