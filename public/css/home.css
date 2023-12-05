@@ -83,7 +83,7 @@ Main
   
   /* Efecto de escala al hacer hover en la tarjeta */
   .tips_container .main__card__container:hover {
-    transform: scale(1.05); /* Puedes ajustar el valor según tu preferencia */
+    transform: scale(1.05); 
   }
 /*
 Footer

@@ -4,12 +4,81 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main>
-            <h1>PROXIMAMENTE SOLO EN CINES</h1>
+        <div class="ultimosDetallesfondo">
+            <h1>Estas a unos pocos clicks del viaje de tu vida!</h1>
+            <h2>Veamos los ultimos detalles:</h2>
+        </div>
 
+        <h4 class="enunciadoForm">Por favor ingrese el número de personas que viajaran y seleccione los agregados que desee. (Dichos agregados pueden modificar el valor final del paquete)</h4>
+        
+        <div class="contenedorPricipal">
+
+            <div class="formExtrasContainer">
+                <div class="agregados">
+                    <h2>Personas:</h2>
+                    <label for="">Número de personas que viajarán: </label>
+                    <input class="inputPersonas" type="number" name="" id="">
+                </div>
+
+                <div class="agregados">
+                    <h2>Alojamiento:</h2>
+                    <h4>Preferencias de habitación :</h4>
+                    <div class="inputsRadio">
+                        <p>Cama individual</p>
+                        <input type="radio" name="" id="">
+                    </div>
+                    <div class="inputsRadio">
+                        <p>Doble</p>
+                        <input type="radio" name="" id="">
+                    </div>
+                    <div class="inputsRadio">
+                        <p>Suit</p>
+                        <input type="radio" name="" id="">
+                    </div>
+                </div>
+
+                <div class="agregados">
+                    <h2>Seguro de viaje:</h2>
+                    <div class="inputsRadio">
+                        <p>Desea agregar un seguro de viaje.</p>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <input type="radio" name="" id="">
+                    </div>
+                </div>
+
+                <div class="agregados">
+                    <h2>Transporte:</h2>
+                    <div class="inputsRadio">
+                        <p>Necesita transporte del aeropuerto al hotel: </p>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                    <div class="inputsRadio">
+                        <p>Desea alquilar un coche por su estadia: </p>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="incluyeContainer">
+                <h3>Aqui el nombre del pack seleccionado</h3>
+                <h2>El pack incluye:</h2>
+                <ul class="listaIncluye">
+                    <li>Caracteristicas del paquete</li>
+                    <li>Caracteristicas del paquete</li>
+                    <li>Caracteristicas del paquete</li>
+                    <li>Caracteristicas del paquete</li>
+                </ul>
+
+                <div class="botones">
+                    <button id="continuarBtn">Continuar</button>
+                    <button id="elegirOtroBtn">Elegir otro paquete</button>
+                </div>
+            </div>
+
+        </div>
     </main>
     <%- include("../partials/footer.ejs") %>
     <script>
-
     </script>
 </body>
 <script src="js/general.js"></script>

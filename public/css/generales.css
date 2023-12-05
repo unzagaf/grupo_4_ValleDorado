@@ -461,8 +461,7 @@ Medias Queries
         margin-bottom: 1rem;
       display: block; /* Muestra los primeros 2 videos en pantallas */
     }
-  }
-
+}
 
 @media screen and (min-width: 768px) {
     .main_destinos_vid iframe{
@@ -494,8 +493,7 @@ Medias Queries
         height: 0%;
         background-color: transparent;
     }
-
-    ul{
+    .nav__menu ul{
         text-align: center;
     }
     
