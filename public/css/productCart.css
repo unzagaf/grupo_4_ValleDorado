@@ -7,8 +7,8 @@ Estilos Generales
 /*
 Header 
  */
- h1,h2{
-    color: white;
+ h1{
+    color:red;
 }
 
 
@@ -16,83 +16,7 @@ Header
 /*
 Main 
  */
- .contenedorPricipal{
-   margin-left: 1rem;
-   margin-right: 1rem;
-   margin-top: 1rem;
- }
-.ultimosDetallesfondo{
-    background-color: #3D348B;
-    padding-top: 0.5rem;
-    text-align: center;
-}
-.inputsRadio{
-    display: flex;
-    margin-bottom: 1rem;
-}
-.inputsRadio input{
-   margin-left: 1rem;
-}
-.incluyeContainer{
-    border-top: 1px solid black;
-    margin-top: 1rem;
-    padding-top: 0.5rem;
-}
-.listaIncluye{
-    padding-left: 1rem;
-}
-.listaIncluye li{
-    margin-bottom: 1rem;
-}
 
-.inputPersonas{
-    width: 4rem;
-    margin-left: 0.5rem;
-    border-radius: 5px;
-}
-
-.agregados{
-    margin-bottom: 1.5rem;
-}
-.agregados h2{
-    margin-bottom: 0.5rem;
-}
-.agregados h4{
-    margin-bottom: 1rem;
-}
-
-.enunciadoForm{
-    background-color: rgba(255, 235, 205, 0.623);
-    padding: 3px;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-/* Ajusta el tamaño de los checkbox y radio */
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-}
-input[type="radio"] {
-    width: 20px;
-    height: 20px;
-}
-.incluyeContainer h2{
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-/* BOTONES FINALES */
-#continuarBtn{
-    background-color: green;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-#elegirOtroBtn{
-    background-color: red;
-    margin-bottom: 1.5rem;
-}
 
 /*
 Footer
@@ -102,38 +26,3 @@ Footer
 /*
 Medias Queries
  */
- @media screen and (min-width: 768px){
-   
-}
- @media screen and (min-width: 1024px){
-    .enunciadoForm{
-       max-width: 50rem;
-       height: 5rem;
-       margin: auto;
-       font-size: 1.3rem;
-       font-weight: 400;
-       padding: 10px;
-       margin-bottom: 2rem;
-       margin-top: 1.5rem;
-    } 
-
-    .contenedorPricipal{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.356);
-    }
-    .formExtrasContainer{
-        padding-top: 1.5rem;
-        padding-right: 10rem;
-        margin-bottom: 3rem;
-    }
-    .incluyeContainer{
-        border-top: none;
-        border-left: 2px solid black;
-        padding-left: 10rem;
-        margin-bottom: 2rem;
-        
-    }
- }
