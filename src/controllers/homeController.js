@@ -3,9 +3,9 @@ const path = require('path');
 const app = express();
 
 const homeController = {
-    index : app.get('/', (req, res) => {
+    index : (req, res) => {
         res.render('./products/home.ejs', { stylesheetPath: 'css/home.css' });
-    }),
+    }
 }
 
 

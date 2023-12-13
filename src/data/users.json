@@ -6,6 +6,7 @@
     "dni":25366478,
     "email": "juan.perez@gmail.com",
     "password": "contrasena123",
+    "confirmarPassword":"contrasena123",
     "categoria": "Cliente",
     "imagen": "image.jpg"
   },
@@ -16,6 +17,7 @@
     "dni":25366478,
     "email": "maria.gomez@gmial.com",
     "password": "contrasena456",
+    "confirmarPassword":"contrasena456",
     "categoria": "Cliente",
     "imagen": "image.jpg"
   },
@@ -26,6 +28,7 @@
     "dni":25366478,
     "email": "carlos.lopez@gmail.com",
     "password": "contrasena789",
+    "confirmarPassword":"contrasena789",
     "categoria": "Cliente",
     "imagen": "image.jpg"
   }

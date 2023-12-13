@@ -1,19 +1,19 @@
 <header>
-    <a href="/"><img class="header__logo" src="img/logo.png" alt="logo"></a>
-    <img id="header__hamburguer" src="img/menu.png" alt="menu" onclick="displayMenu('nav__menu-visible', 'nav__menu-hidden')">
+    <a href="/"><img class="header__logo" src="/img/logo.png" alt="logo"></a>
+    <img id="header__hamburguer" src="/img/menu.png" alt="menu" onclick="displayMenu('nav__menu-visible', 'nav__menu-hidden')">
     <nav id="nav__menu" class="nav__menu nav__menu-hidden">
         <ul class="ul__menu__perfil">
             <li id="li__menu__close__hamburguer" onclick="displayMenu('nav__menu-hidden', 'nav__menu-visible')">X</li>
             <li class="li__menu__nombre">Hola! Nombre persona</li>
-            <li class="li__menu__miPerfil"><a href="/login">Mi perfil</a></li>
-            <li class="li__menu__img__user"><img src="img/logo.png" alt="User"></li>
+            <li class="li__menu__miPerfil"><a href="/users/login">Mi perfil</a></li>
+            <li class="li__menu__img__user"><img src="/img/logo.png" alt="User"></li>
         </ul>
         <ul class="ul__menu__navegacion">
             <li><a href="/">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
-            <li class="li__menu__login"><a href="/login">Login</a></li>
-            <li class="li__menu__paquetes"><a href="productCart">Tu Reserva<i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li class="li__menu__login"><a href="/users/login">Login</a></li>
+            <li class="li__menu__paquetes"><a href="/productCart">Tu Reserva<i class="fa-solid fa-cart-shopping"></i></a></li>
             <li class="li__menu__servicios"><a href="/admin">Administrar<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
-            <li class="li__menu__servicios"><a href="/register">Registrate <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
+            <li class="li__menu__servicios"><a href="/users/register">Registrate <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
             <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
         </ul>
     </nav>
