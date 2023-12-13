@@ -1,5 +1,55 @@
+
+# Retrospectiva del Tercer Sprint
+**Tercer Sprint: 08/11/23 al 27/11/23**
+
+## 📌.Comenzar a hacer:
+
+1. **Organización de tareas pendientes:**
+   - Iniciar una revisión detallada de las tareas pendientes del último sprint.
+   - Establecer un plan claro para organizar y abordar las tareas pendientes, asignando responsabilidades de manera equitativa.
+
+2. **Adaptación a la pérdida de un integrante:**
+   - Evaluar las nuevas circunstancias con la ausencia de un integrante.
+   - Reorganizar roles y responsabilidades para compensar la pérdida, garantizando una distribución equitativa de la carga de trabajo.
+
+3. **Compromiso con clases al día:**
+   - Comprometernos a mantenernos al día con las clases y actualizar constantemente nuestros conocimientos. 📖📗📘
+   - Establecer un plan para coordinar sesiones de estudio entre los miembros del equipo.
+
+## 📌Hacer más:
+
+1. **Comunicación eficiente:**
+   - Fortalecer la comunicación entre los miembros del equipo para abordar de manera proactiva cualquier desafío o inquietud.
+   - Fomentar el uso de canales de comunicación efectivos para garantizar la transparencia y colaboración constante.
+
+2. **Reuniones breves y productivas:**
+   - Hacer hincapié en que las reuniones sean breves y enfocadas en objetivos específicos.
+   - Establecer agendas claras para cada reunión y asignar tiempos específicos para mantener la eficiencia.
+
+## 📌Continuar haciendo:
+
+1. **Revisión constante del tablero de trabajo:**
+   - Mantener una revisión constante del tablero de trabajo para asegurar que esté actualizado y refleje con precisión el estado del proyecto.
+
+2. **Cumplir con los plazos y consignas:**
+   - Continuar con el compromiso de cumplir los plazos establecidos y seguir respetando las consignas del proyecto.
+
+  ## Conclusiones Finales:
+
+En esta retrospectiva del Tercer Sprint, hemos identificado áreas clave para mejorar y adaptarnos a las circunstancias actuales. La organización de tareas pendientes, la adaptación a la pérdida de un integrante y el compromiso con mantenernos al día en clases son aspectos cruciales que abordaremos de manera proactiva.
+
+Nos enfrentamos a los desafíos con determinación y mantenemos nuestro objetivo de alcanzar el éxito del proyecto.
+
+¡Vamos hacia adelante con energía positiva y un firme compromiso con la mejora continua!
+ 
+
+
+
+
+
+******✅✅✅✅✅✅✅✅✅**********
 # Retrospectiva del Segundo Sprint
-## Segundo Sprint (concluido el 08/11/23)
+# Segundo Sprint (concluido el 08/11/23)
 
 ## 📌Comenzar a hacer:
 
@@ -46,11 +96,11 @@ En esta retrospectiva, reconocemos tanto los éxitos como las áreas de mejora. 
 
 
 
-***
+******✅✅✅✅✅✅✅✅✅**********
 
 
 # Retrospectiva del Equipo
-## Primer Sprint (concluido el 23/10/23)
+# Primer Sprint (concluido el 23/10/23)
 
 ## Comenzar a hacer:
 

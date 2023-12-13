@@ -1,0 +1,32 @@
+[
+  {
+    "idUsuario": 1,
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "dni":25366478,
+    "email": "juan.perez@gmail.com",
+    "password": "contrasena123",
+    "categoria": "Cliente",
+    "imagen": "image.jpg"
+  },
+  {
+    "idUsuario": 2,
+    "nombre": "María",
+    "apellido": "Gómez",
+    "dni":25366478,
+    "email": "maria.gomez@gmial.com",
+    "password": "contrasena456",
+    "categoria": "Cliente",
+    "imagen": "image.jpg"
+  },
+  {
+    "idUsuario": 3,
+    "nombre": "Carlos",
+    "apellido": "López",
+    "dni":25366478,
+    "email": "carlos.lopez@gmail.com",
+    "password": "contrasena789",
+    "categoria": "Cliente",
+    "imagen": "image.jpg"
+  }
+]
