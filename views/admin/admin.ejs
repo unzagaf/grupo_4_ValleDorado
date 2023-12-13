@@ -8,27 +8,31 @@
                 <p id="crear_paquete" class="underline" onclick="displayAdmin()">Crear paquetes</p>
                 <p id="lista_paquete" onclick="displayAdmin()">Lista de paquetes</p>
             </section>
+            <!-- FORMULARIO PARA CREAR -->
             <section id="crear__paquetes__admin">
-                <form action="POST" class="form__search-admin">
+                <form method="POST" action="/admin" class="form__search-admin">
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" placeholder="Ingrese el nombre del paquete">
-                    <label for="" class="input__txt__places section__login--label">Descripcion</label>
-                    <input type="text" placeholder="Ingrese descripcion del paquete">
+                    <input type="text" name="nombrePaquete" placeholder="Ingrese el nombre del paquete">
+                    <!-- <label for="" class="input__txt__places section__login--label">Descripcion</label>
+                    <input type="text" placeholder="Ingrese descripcion del paquete"> -->
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" placeholder="Ingrese provincia de salida">
+                    <input type="text" name="provinciaSalida" placeholder="Ingrese provincia de salida">
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="text" placeholder="Ingrese precio del paquete">
+                    <input type="number" name="precio" placeholder="Ingrese precio del paquete">
+                    <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
+                    <input type="number" name="cantidadPersonas" placeholder="Ingrese la cantidad base de personas">
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" placeholder="Ingrese fecha de inicio del paquete">
+                    <input type="date" name="fechaInicio" placeholder="Ingrese fecha de inicio del paquete">
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <input type="date" name="fechaFin" placeholder="Ingrese fecha de finalizacion del paquete">
                     <label for="" class="input__txt__places section__login--label">Imagen</label>
-                    <input type="text" placeholder="Ingrese imagen del paquete">
+                    <input type="text" name="imagen" placeholder="Ingrese imagen del paquete">
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
-                    <input type="text" placeholder="Ingrese provincia de salida">
+                    <input type="text" name="incluye" placeholder="Ingrese provincia de salida">
                     <button type="submit">Crear paquete</button>
                 </form>
             </section>
+            <!-- TABLA PAQUETES -->
             <section id="lista__paquetes__admin" class="admin__hidden">
                 <table>
                     <thead>
@@ -45,18 +49,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% products.forEach(products => { %>
                         <tr>
-                            <td>Paquete 1</td>
+                            <td><%= products.nombre_producto %></td>
                             <td class="table__hidden">Descripción del paquete 1</td>
-                            <td class="table__hidden">3</td>
-                            <td>$100.00</td>
-                            <td class="table__hidden">2023-01-01</td>
-                            <td class="table__hidden">2023-01-10</td>
+                            <td class="table__hidden"><%= products.cantidad_personas %></td>
+                            <td>$<%= products.precio_producto %></td>
+                            <td class="table__hidden"><%= products.fecha_inicio %></td>
+                            <td class="table__hidden"><%= products.fecha_fin %></td>
                             <td class="table__hidden"><img src="imagen1.jpg" alt="Imagen del paquete 1" width="50"></td>
                             <td><i class="fa-solid fa-pen-to-square"  onclick="displayModal()"></i></td>
                             <td><i class="fa-solid fa-trash"></i></td>
                         </tr>
-                        <tr>
+                        <% }) %>
+                        <!-- <tr>
                             <td>Paquete 2</td>
                             <td class="table__hidden">Descripción del paquete 2</td>
                             <td class="table__hidden">2</td>
@@ -66,10 +72,11 @@
                             <td class="table__hidden"><img src="imagen2.jpg" alt="Imagen del paquete 2" width="50"></td>
                             <td><i class="fa-solid fa-pen-to-square"  onclick="displayModal()"></i></td>
                             <td><i class="fa-solid fa-trash"></i></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </section>
+            <!-- MODAL PARA EDITAR -->
             <section id="modificar__paquetes__admin" class="modal__hidden modificar__paquetes__admin">
                 <form action="PUT" class="form__search-admin form__search-admin-modal">
                     <p class="close__modify" onclick="displayModal()">X</p>
