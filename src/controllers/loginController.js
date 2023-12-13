@@ -4,9 +4,9 @@ const app = express();
 
 
 const loginController = {
-    index : app.get('/', (req, res) => {
+    index : (req, res) => {
         res.render('./users/login.ejs', { stylesheetPath: 'css/login.css' });
-    }),
+    }
 }
 
 

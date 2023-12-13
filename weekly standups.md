@@ -1,4 +1,77 @@
-# Weekly Standup Summary 🚀
+
+# Weekly Standup Summary 4* Sprint(27/11 al 12/12/23.-)
+
+
+**Duración:**  27/11/23 12/12/2023
+
+## Introducción
+
+Este informe refleja la evaluación del equipo durante el cuarto sprint, destacando logros, desafíos y próximos pasos.
+
+## Reuniones Programadas por Semana: 2 🗓️
+
+### Reunión 1 - Semana del 28/11/2023 al 05/12/2023
+
+- **Participantes:** Grupo N* 3
+- **Temas Destacados:**
+  - Cierre del 3º Sprint
+  - Avances individuales y del equipo
+  - Desafíos encontrados durante el desarrollo del sprint
+- **Impedimentos:**
+  - Ausencia de un integrante .-
+
+### Reunión 2 - Semana
+
+- **Participantes:** Grupo 2
+- **Temas Claves:**
+  - Coordinación de la actualización del tablero de trabajo.
+  - Asignación de responsabilidades individuales.
+  - Finalización de tareas pendientes del sprint anterior.
+
+### Reunión 3
+
+- **Participantes:** Grupo 2
+- **Tareas de Implementación de JSON y Métodos de HTTP 🛠️**
+  1. Definir Campos y Generar archivo JSON para Productos
+     - Campos Definidos: Identificador (id), Nombre del producto (name), Descripción (description), Imagen (image), Categoría (category), Colores (colors), Precio (price)
+  2. Definir Campos y Generar archivo JSON para Usuarios
+     - Campos Definidos: Identificador (id), Nombre (firstName), Apellido (lastName), Email (email), Contraseña (password), Categoría (category), Imagen (image)
+  3. Implementación CRUD de Productos
+     - Rutas Implementadas:
+        1. /products (GET) - Listado de productos
+        2. /products/create (GET) - Formulario de creación de productos
+        3. /products/:id (GET) - Detalle de un producto particular
+        4. /products (POST) - Acción de creación
+        5. /products/:id/edit (GET) - Formulario de edición
+        6. /products/:id (PUT) - Acción de edición
+        7. /products/:id (DELETE) - Acción de borrado
+
+### Reunión 4 - Semana 
+
+- **Participantes:** Menos Integrantes ❗
+- **Temas Importantes:**
+  - Revisión nuevamente de los puntos del sprint.
+  - Seguimiento del progreso de las tareas asignadas en las tarjetas del tablero.
+  - Establecimiento de una última reunión antes del cierre del sprint.
+
+## Logros y Desafíos Recientes 🚀
+
+**Logros:**
+1. Definición de Campos y Generación de Archivo JSON para Productos.
+2. Definición de Campos y Generación de Archivo JSON para Usuarios.
+3. Implementación Exitosa del CRUD de Productos:
+   - Se han establecido siete rutas para la funcionalidad CRUD de productos, permitiendo la creación, lectura, actualización y borrado.
+
+**Desafíos:**
+- Coordinación de Horarios para las Reuniones.
+  - Exploración de Opciones para Optimizar Coordinación de Horarios.
+
+
+
+
+***
+# Weekly Standup Summary 3* Sprint(08 al 27/23.-)
+ 🚀
 
 **Introducción:**
 Este resumen destaca los aspectos clave de las dos reuniones semanales del equipo, ofreciendo una visión clara del progreso, desafíos y soluciones encontradas durante la ejecución de los sprints.
