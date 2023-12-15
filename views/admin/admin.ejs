@@ -10,25 +10,48 @@
             </section>
             <!-- FORMULARIO PARA CREAR -->
             <section id="crear__paquetes__admin">
-                <form method="POST" action="/admin" class="form__search-admin">
+                <form method="POST" action="/admin" class="form__search-admin" enctype="multipart/form-data">
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" name="nombrePaquete" placeholder="Ingrese el nombre del paquete">
-                    <!-- <label for="" class="input__txt__places section__login--label">Descripcion</label>
-                    <input type="text" placeholder="Ingrese descripcion del paquete"> -->
+                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete">
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="provinciaSalida" placeholder="Ingrese provincia de salida">
+                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida">
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="precio" placeholder="Ingrese precio del paquete">
+                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete">
                     <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="cantidadPersonas" placeholder="Ingrese la cantidad base de personas">
+                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas">
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="fechaInicio" placeholder="Ingrese fecha de inicio del paquete">
+                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete">
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="fechaFin" placeholder="Ingrese fecha de finalizacion del paquete">
-                    <label for="" class="input__txt__places section__login--label">Imagen</label>
-                    <input type="text" name="imagen" placeholder="Ingrese imagen del paquete">
+                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <label for="" class="input__txt__places section__login--label">Imagen 1</label>
+                    <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1">
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
-                    <input type="text" name="incluye" placeholder="Ingrese provincia de salida">
+                    <div id="incluye-options">
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Asistencia al Viajero">
+                            <label>Asistencia al Viajero</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Hoteles 5 estrellas">
+                            <label>Hoteles 5 estrellas</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Coordinador y guias locales">
+                            <label>Coordinador y guias locales</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido">
+                            <label>Régimen de comidas todo incluido</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Excursiones según programa">
+                            <label>Excursiones según programa</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso">
+                            <label>Traslados de ingreso y egreso</label>
+                        </div>
+                    </div>
                     <button type="submit">Crear paquete</button>
                 </form>
             </section>
@@ -81,21 +104,46 @@
                 <form action="PUT" class="form__search-admin form__search-admin-modal">
                     <p class="close__modify" onclick="displayModal()">X</p>
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" value="Paquete 1">
-                    <label for="" class="input__txt__places section__login--label">Descripcion</label>
-                    <input type="text" value="Descripcion">
+                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete">
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" value="Provincia">
+                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida">
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="text" value="$100000">
+                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete">
+                    <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
+                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas">
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" placeholder="Ingrese fecha de inicio del paquete">
+                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete">
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" value="2015-14-19">
-                    <label for="" class="input__txt__places section__login--label">Imagen</label>
-                    <input type="text" value="imagen">
+                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <label for="" class="input__txt__places section__login--label">Imagen 1</label>
+                    <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1">
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
-                    <input type="text" value="Incluye">
+                    <div id="incluye-options">
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Asistencia al Viajero">
+                            <label>Asistencia al Viajero</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Hoteles 5 estrellas">
+                            <label>Hoteles 5 estrellas</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Coordinador y guias locales">
+                            <label>Coordinador y guias locales</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido">
+                            <label>Régimen de comidas todo incluido</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Excursiones según programa">
+                            <label>Excursiones según programa</label>
+                        </div>
+                        <div class="incluye-option">
+                            <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso">
+                            <label>Traslados de ingreso y egreso</label>
+                        </div>
+                    </div>
                     <button type="submit">Modificar paquete</button>
                 </form>
             </section>

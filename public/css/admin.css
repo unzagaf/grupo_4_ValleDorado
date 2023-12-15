@@ -116,6 +116,15 @@ table {
     display: none;
   }
 
+.incluye-option{
+  display: flex;
+  align-items: center;
+}
+.incluye-option input{
+  box-shadow: none;
+  margin-right: 0.5rem;
+}
+
 @media screen and (min-width: 768px) {
     .table__hidden{
         display: table-cell!important;

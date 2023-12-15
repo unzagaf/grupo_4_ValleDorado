@@ -13,18 +13,11 @@
 
       <!-- IMAGEN GRANDE DE LA IZQUIERDA -->
       <div class=imagen-principal-izquierda>
-        <img class="imagen-grande" src="/img/descanso_producto.jpg" alt="imagen de Punta Cana">
+        <img class="imagen-grande" src="/img/<%= product.imagen_producto %>" alt="imagen de Punta Cana">
       </div>
 
       <!-- IMAGENES CHICAS DE LA DERECHA -->
-      <div class="imagen-derecha">
-        <% product.imagen_producto.forEach(function(imagen) { %>
-        <img class="fotos-varias" src="<%= imagen %>" alt="imagen de descanso">
-        <% }) %>
-        <!-- <img class="fotos-varias" src="/img/estadia.jfif" alt="imagen de estadia">
-        <img class="fotos-varias" src="/img/excursiones_producto.jpg" alt="imagenes de excursion">
-        <img class="fotos-varias" src="/img/bienvenida_producto.jfif" alt="imagen del lugar"> -->
-      </div>
+      
     </section>
 
     <!-- ------------------------ -->
