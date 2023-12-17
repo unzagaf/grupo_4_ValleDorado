@@ -1,10 +1,14 @@
 const express = require ('express');
 const path = require ('path');
 const app = express();
+const methodOverride = require('method-override');
 
 // *** Middlewares ***
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// *** Dependencias ***
+app.use(methodOverride('_method'));
 
 //*** RUTAS ***
 const rutaHome = require('./src/router/home.js');
@@ -22,6 +26,7 @@ app.use(express.static(publicFolderPath));
 
 // *** Motor de Plantilla EJS ***
 app.set('view engine', 'ejs');
+app.use(express.json());
 app.set('views', path.join(__dirname, 'views'));
 
 
@@ -40,7 +45,6 @@ app.use ('/productCart', rutaProductCart);
 // app.use ('/login', rutaLogin);
 // app.use ('/register', rutaRegister);
 app.use('/admin', rutaAdmin);
-
 
 app.use('/users',rutaUser);
 

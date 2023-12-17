@@ -7,22 +7,17 @@
   <%- include("../partials/header.ejs") %>
   <!-- MAIN -->
   <main>
-    <h1 class="titulo-h1">PUNTA CANA <br> <span>TU MEJOR EXPERIENCIA</span></h1>
+    <h1 class="titulo-h1"><%= product.nombre_producto %> <br> <span>TU MEJOR EXPERIENCIA</span></h1>
 
     <section class="contenedor-galeria">
 
       <!-- IMAGEN GRANDE DE LA IZQUIERDA -->
       <div class=imagen-principal-izquierda>
-        <img class="imagen-grande" src="/img/descanso_producto.jpg" alt="imagen de Punta Cana">
+        <img class="imagen-grande" src="/img/<%= product.imagen_producto %>" alt="imagen de Punta Cana">
       </div>
 
       <!-- IMAGENES CHICAS DE LA DERECHA -->
-      <div class="imagen-derecha">
-        <img class="fotos-varias" src="/img/descanso_producto.jpg" alt="imagen de descanso">
-        <img class="fotos-varias" src="/img/estadia.jfif" alt="imagen de estadia">
-        <img class="fotos-varias" src="/img/excursiones_producto.jpg" alt="imagenes de excursion">
-        <img class="fotos-varias" src="/img/bienvenida_producto.jfif" alt="imagen del lugar">
-      </div>
+      
     </section>
 
     <!-- ------------------------ -->
@@ -37,18 +32,18 @@
 
       <article class="detalle">
         <i class="fa-solid fa-tags"></i>
-        <h5> Desde: $175.000 </h5>
+        <h5> Desde: $<%= product.precio_producto %> </h5>
       </article>
 
       <article class="detalle">
         <i class="fa-solid fa-location-dot"></i>
-        <h5> Salidas desde Córdoba</h5>
+        <h5> Salidas desde <%= product.provincia_salida %></h5>
       </article>
 
-      <article class="detalle">
+      <!-- <article class="detalle">
         <i class="fa-solid fa-user"></i>
         <h5> Personas desde: 0 años</h5>
-      </article>
+      </article> -->
     </section>
 
     <!-- -------------------- -->
@@ -61,12 +56,14 @@
         <h2>Incluye</h2>
         <hr>
         <ul>
-          <li><i class="fa-solid fa-user-doctor"></i>Asistencia al Viajero</li>
-          <li><i class="fa-solid fa-hotel"></i>Hoteles 5 estrellas</li>
+          <% product.incluye.forEach(function(item) { %>
+            <li><i class="fa-solid "></i><%= item %></li>
+          <% }); %>
+          <!-- <li><i class="fa-solid fa-hotel"></i>Hoteles 5 estrellas</li>
           <li><i class="fa-solid fa-user"></i>Coordinador y guias locales</li>
           <li><i class="fa-solid fa-utensils"></i>Régimen de comidas todo incluido</li>
           <li><i class="fa-solid fa-map-location-dot"></i>Excursiones según programa</li>
-          <li><i class="fa-solid fa-bus"></i>Traslados de ingreso y egreso</li>
+          <li><i class="fa-solid fa-bus"></i>Traslados de ingreso y egreso</li> -->
         </ul>
       </article>
       <article class="no-incluye">
@@ -84,7 +81,7 @@
 
       <button class="boton-confirmacion" type="submit">Solicitar</button>
     </section>
-
+    <!-- ITINERARIOS -->
     <article class="itinerario">
       <h2>Itinerario</h2>
       <hr>
@@ -155,87 +152,30 @@
       </form>
     </section>
 
-    <!-- Tarjetas del main -->
+    <!-- Tarjetas de paquetes -->
 
     <section class="main__packages">
       <h3>PAQUETES</h3>
       <div class="main__all__cards__container">
-        <div class="main__card__container">
-          <div class="main__card__img__container">
-            <img
-              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
-              alt="">
+        <% products.forEach(products => { %>
+          <div class="main__card__container">
+              <div class="main__card__img__container">
+                  <img src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg" alt="">
+              </div>
+              <div class="main__card__txt__container">
+                  <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i><%= products.nombre_producto %></p>
+                  <p class="p__txt__togheter--label">Ida</p>
+                  <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i><%= products.fecha_inicio %></p>
+                  <p class="p__txt__togheter--label">Vuelta</p>
+                  <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i><%= products.fecha_fin %></p>
+                  <p class="p__txt__togheter--label">Personas</p>
+                  <p class="p__txt__togheter"><i class="fa-regular fa-user"></i><%= products.cantidad_personas %></p>
+                  <p class="p__txt__togheter--label">Precio</p>
+                  <p class="p__txt__togheter p__txt__togheter--price">$<%= products.precio_producto%></p>
+                  <a href="/productDetail/<%= products.id_producto %>"><button type="submit">Ver mas</button></a>
+              </div>
           </div>
-          <div class="main__card__txt__container">
-            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-            <p class="p__txt__togheter--label">Ida</p>
-            <p class="p__txt__togheter--label">Vuelta</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-            <p class="p__txt__togheter--label">Personas</p>
-            <p class="p__txt__togheter--label">Precio</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-            <button type="submit">Ver mas</button>
-          </div>
-        </div>
-        <div class="main__card__container">
-          <div class="main__card__img__container">
-            <img
-              src="https://disfrutaventura.com/wp-content/uploads/2022/09/1663203162_Explora-la-agreste-naturaleza-de-la-isla-de-Vancouver-Canada.jpg"
-              alt="">
-          </div>
-          <div class="main__card__txt__container">
-            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>Vancouver</p>
-            <p class="p__txt__togheter--label">Ida</p>
-            <p class="p__txt__togheter--label">Vuelta</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/02/2024</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>29/03/2024</p>
-            <p class="p__txt__togheter--label">Personas</p>
-            <p class="p__txt__togheter--label">Precio</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>1</p>
-            <p class="p__txt__togheter p__txt__togheter--price">$1600</p>
-            <button type="submit">Ver mas</button>
-          </div>
-        </div>
-        <div class="main__card__container">
-          <div class="main__card__img__container">
-            <img
-              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
-              alt="">
-          </div>
-          <div class="main__card__txt__container">
-            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-            <p class="p__txt__togheter--label">Ida</p>
-            <p class="p__txt__togheter--label">Vuelta</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-            <p class="p__txt__togheter--label">Personas</p>
-            <p class="p__txt__togheter--label">Precio</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-            <button type="submit">Ver mas</button>
-          </div>
-        </div>
-        <div class="main__card__container">
-          <div class="main__card__img__container">
-            <img
-              src="https://imagenes.heraldo.es/files/article_default_content/uploads/imagenes/2020/01/01/new-years-eve-celebr-33431190.jpeg"
-              alt="">
-          </div>
-          <div class="main__card__txt__container">
-            <p class="p__txt__places"><i class="fa-solid fa-location-dot fa-bounce"></i>New York</p>
-            <p class="p__txt__togheter--label">Ida</p>
-            <p class="p__txt__togheter--label">Vuelta</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>15/02/2024</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-calendar"></i>01/03/2024</p>
-            <p class="p__txt__togheter--label">Personas</p>
-            <p class="p__txt__togheter--label">Precio</p>
-            <p class="p__txt__togheter"><i class="fa-regular fa-user"></i>2</p>
-            <p class="p__txt__togheter p__txt__togheter--price">$1200</p>
-            <button type="submit">Ver mas</button>
-          </div>
-        </div>
+      <% }) %>
       </div>
     </section>
 
@@ -243,7 +183,7 @@
   <!-- FOOTER -->
   <%- include("../partials/footer.ejs") %>
   <script src="https://kit.fontawesome.com/c2d7c9299d.js" crossorigin="anonymous"></script>
-  <script src="js/general.js"></script>
+  <script src="/js/general.js"></script>
 
 
 </body>

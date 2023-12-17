@@ -1,0 +1,102 @@
+[
+  {
+    "id_producto": 1,
+    "nombre_producto": "Sri Lanka",
+    "precio_producto": 26.623,
+    "imagen_producto": [
+      "/img/descanso_producto.jpg",
+      "/img/descanso_producto.jpg",
+      "/img/estadia.jfif",
+      "/img/excursiones_producto.jpg",
+      "/img/bienvenida_producto.jfif"
+    ],
+    "provincia_salida": "Kilinochchi",
+    "incluye": [
+      "Asistencia al AUROOOO",
+      "Hoteles 5 estrellas",
+      "Coordinador y guías locales",
+      "Régimen de comidas todo incluido",
+      "Excursiones según programa",
+      "Traslados de ingreso y egreso"
+    ],
+    "cantidad_personas": 2,
+    "fecha_inicio": "12/07/2022",
+    "fecha_fin": "02/03/2023",
+    "fecha_creacion": "10/03/2023"
+  },
+  {
+    "id_producto": 2,
+    "nombre_producto": "Costa Rica",
+    "precio_producto": 69.953,
+    "imagen_producto": "http://dummyimage.com/101x100.png/ff4444/ffffff",
+    "provincia_salida": "Tejar",
+    "incluye": [
+      "Asistencia al Viajero",
+      "Hoteles 5 estrellas",
+      "Coordinador y guías locales",
+      "Régimen de comidas todo incluido",
+      "Excursiones según programa",
+      "Traslados de ingreso y egreso"
+    ],
+    "cantidad_personas": 2,
+    "fecha_inicio": "06/22/2023",
+    "fecha_fin": "05/04/2023",
+    "fecha_creacion": "01/04/2023"
+  },
+  {
+    "id_producto": 3,
+    "nombre_producto": "Panama",
+    "precio_producto": 54.869,
+    "imagen_producto": "http://dummyimage.com/196x100.png/ff4444/ffffff",
+    "provincia_salida": "Plaza de Caisán",
+    "incluye": [
+      "Asistencia al Viajero",
+      "Hoteles 5 estrellas",
+      "Coordinador y guías locales",
+      "Régimen de comidas todo incluido",
+      "Excursiones según programa",
+      "Traslados de ingreso y egreso"
+    ],
+    "cantidad_personas": 1,
+    "fecha_inicio": "06/03/2023",
+    "fecha_fin": "08/17/2023",
+    "fecha_creacion": "03/03/2023"
+  },
+  {
+    "id_producto": 4,
+    "nombre_producto": "Indonesia",
+    "precio_producto": 44.857,
+    "imagen_producto": "http://dummyimage.com/142x100.png/cc0000/ffffff",
+    "provincia_salida": "Napel",
+    "incluye": [
+      "Asistencia al Viajero",
+      "Hoteles 5 estrellas",
+      "Coordinador y guías locales",
+      "Régimen de comidas todo incluido",
+      "Excursiones según programa",
+      "Traslados de ingreso y egreso"
+    ],
+    "cantidad_personas": 4,
+    "fecha_inicio": "09/17/2023",
+    "fecha_fin": "10/14/2023",
+    "fecha_creacion": "04/18/2023"
+  },
+  {
+    "id_producto": 5,
+    "nombre_producto": "edito",
+    "provincia_salida": "edito",
+    "precio_producto": "23",
+    "cantidad_personas": "23",
+    "fecha_inicio": "2023-12-05",
+    "fecha_fin": "2023-12-06",
+    "incluye": [
+      "Asistencia al Viajero",
+      "Excursiones según programa",
+      "Traslados de ingreso y egreso"
+    ],
+    "fecha_creacion": "15/12/2023",
+    "imagen_producto": [
+      "/img/1702851303365.jpg"
+    ]
+  }
+]

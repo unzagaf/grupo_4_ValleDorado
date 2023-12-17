@@ -1,3 +1,4 @@
+// console.log("general.js cargado");
 let displayMenu = (visible, hidden)=>{
     document.getElementById('nav__menu').classList.add(visible)
     document.getElementById('nav__menu').classList.remove(hidden)
@@ -10,9 +11,10 @@ let displayAdmin = ()=>{
     document.getElementById('lista__paquetes__admin').classList.toggle('admin__hidden')
 }
 
-let displayModal = ()=>{
-    document.getElementById('modificar__paquetes__admin').classList.toggle('modal__hidden')
-}
+// let displayModal = ()=>{
+//     document.getElementById('modificar__paquetes__admin').classList.toggle('modal__hidden')
+// }
+
 
 const slider = document.getElementById("main__carousel__container");
 let sliderSection = document.getElementsByClassName("main__carousel__one");
@@ -41,3 +43,19 @@ const interval = setInterval(()=>{
 
 
 /******************************************* */
+
+
+// funcion para poder calcular duracion de viaje
+function calcularDuracion(fechaInicio, fechaFin) {
+    const fechaInicioObj = new Date(fechaInicio);
+    const fechaFinObj = new Date(fechaFin);
+
+    // Diferencia en milisegundos
+    const diferenciaMs = fechaFinObj - fechaInicioObj;
+
+    // Convertir la diferencia a días y noches
+    const dias = Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));
+    const noches = Math.floor(dias / 2);
+
+    return `${dias} días ${noches} noches`;
+}
