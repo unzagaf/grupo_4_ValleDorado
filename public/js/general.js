@@ -11,9 +11,10 @@ let displayAdmin = ()=>{
     document.getElementById('lista__paquetes__admin').classList.toggle('admin__hidden')
 }
 
-let displayModal = ()=>{
-    document.getElementById('modificar__paquetes__admin').classList.toggle('modal__hidden')
-}
+// let displayModal = ()=>{
+//     document.getElementById('modificar__paquetes__admin').classList.toggle('modal__hidden')
+// }
+
 
 const slider = document.getElementById("main__carousel__container");
 let sliderSection = document.getElementsByClassName("main__carousel__one");

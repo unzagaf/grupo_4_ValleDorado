@@ -83,70 +83,20 @@
   },
   {
     "id_producto": 5,
-    "nombre_producto": "ssss",
-    "provincia_salida": "dssss",
-    "precio_producto": "2",
-    "cantidad_personas": "2",
-    "fecha_inicio": "2023-12-15",
-    "fecha_fin": "2023-12-16",
+    "nombre_producto": "edito",
+    "provincia_salida": "edito",
+    "precio_producto": "23",
+    "cantidad_personas": "23",
+    "fecha_inicio": "2023-12-05",
+    "fecha_fin": "2023-12-06",
     "incluye": [
       "Asistencia al Viajero",
-      "Hoteles 5 estrellas",
       "Excursiones según programa",
       "Traslados de ingreso y egreso"
     ],
-    "fecha_creacion": "15/12/2023"
-  },
-  {
-    "id_producto": 6,
-    "nombre_producto": "ejemploconimg2",
-    "provincia_salida": "ejemploconimg2",
-    "precio_producto": "44",
-    "cantidad_personas": "44",
-    "fecha_inicio": "2023-12-15",
-    "fecha_fin": "2023-12-23",
-    "incluye": [
-      "Asistencia al Viajero",
-      "Régimen de comidas todo incluido",
-      "Excursiones según programa"
-    ],
-    "fecha_creacion": "15/12/2023"
-  },
-  {
-    "id_producto": 7,
-    "nombre_producto": "ejemplo01",
-    "provincia_salida": "ejemplo01",
-    "precio_producto": "44",
-    "cantidad_personas": "44",
-    "fecha_inicio": "2023-12-15",
-    "fecha_fin": "2023-12-23",
-    "incluye": [
-      "Asistencia al Viajero",
-      "Hoteles 5 estrellas",
-      "Coordinador y guias locales",
-      "Régimen de comidas todo incluido"
-    ],
-    "fecha_creacion": "15/12/2023"
-  },
-  {
-    "id_producto": 8,
-    "nombre_producto": "ejemploconimg2",
-    "provincia_salida": "ejemploconimg2",
-    "precio_producto": "33",
-    "cantidad_personas": "33",
-    "fecha_inicio": "2023-12-15",
-    "fecha_fin": "2023-12-30",
-    "incluye": [
-      "Asistencia al Viajero",
-      "Hoteles 5 estrellas",
-      "Coordinador y guias locales",
-      "Régimen de comidas todo incluido",
-      "Excursiones según programa"
-    ],
     "fecha_creacion": "15/12/2023",
-    "imagenes_producto": [
-      "D:\\Proyectos Github\\grupo_4_ValleDorado\\public\\img\\1702670944734.jpg",
-      "D:\\Proyectos Github\\grupo_4_ValleDorado\\public\\img\\1702670944743.jpg"
+    "imagen_producto": [
+      "/img/1702851303365.jpg"
     ]
   }
 ]
