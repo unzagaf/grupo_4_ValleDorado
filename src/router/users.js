@@ -4,19 +4,29 @@ const router = express.Router();
 // ************ Controller Require ************
 const userController = require ('../controllers/userController.js')
 
+//********     Middlewares   ********//
+const userUpload = require('../middlewares/multerUsers'); // middleware que carga una imagén
+const validacionRegister = require('../middlewares/validacionRegister.js');
 
 
+
+//********     Sistema de Ruteo   ********//
 
 router.get('/', userController.index);
-router.get('/login',userController.login)
+router.get('/login', userController.login);
+router.post('/login/:userId', userController.loginAcceso);
 
 
-//falta crear la vista con todos los usuarios?
 
-//Enviar los datos del Usuario
+//Ruta que muestra y procesa el formulario de Registracion
 
 router.get('/register', userController.register);
-router.post('/register', userController.storeUser);
+router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, userController.storeUser);
+
+
+
+
+
 
 //mostrar el detalle de un usuario
 // router.get('/:id', userController.detail);
@@ -29,7 +39,7 @@ router.post('/register', userController.storeUser);
 // router.delete('/:id', userController.delete); 
 
 
-module.exports = router;
+ module.exports = router;
 
 
 

@@ -1,4 +1,55 @@
 
+
+# Retrospectiva del Cuarto Sprint
+**Cuarto Sprint: 28/11/23 al 12/12/23**
+
+## 🚀 Comenzar a hacer:
+1. **Priorizar rutas y vistas pendientes:**
+   - Iniciar una priorización de las rutas y vistas pendientes para asegurar su pronta implementación.
+      - Definición de ruta para la página de formulario de creación de productos.
+      - Definición de ruta parametrizada para la página de formulario de edición de productos.
+      - Maquetación para la página de formulario de creación de productos.
+      - Maquetación para la página de formulario de edición de productos.
+
+2. **Reevaluación de la distribución de tareas:**
+   - Identificaremos las habilidades y disponibilidad de cada miembro y redistribuiremos las responsabilidades de manera equitativa.
+
+3. **Evitar la pérdida de otro integrante del equipo:**
+   - Mantener el diálogo con los integrantes del equipo para ayudarnos mutuamente y evitar que alguien más quede fuera del proyecto.
+
+## 🤝 Hacer más:
+1. **Compromiso con las reuniones:**
+   - Ser responsables con las reuniones pactadas para mantener la marcha del proyecto.
+   - En caso de no poder asistir, avisar a través de cualquier canal de comunicación.
+
+2. **Colaboración en equipo:**
+   - Promover la colaboración entre los miembros del equipo para compartir responsabilidades y garantizar que el proyecto no dependa de un solo integrante.
+
+3. **Revisión de la frecuencia de reuniones:**
+   - Evaluar si la frecuencia actual de las reuniones es suficiente o si es necesario aumentarla para mejorar la comunicación y coordinación.
+
+## 🔄 Continuar haciendo:
+1. **Reuniones efectivas y actualización del tablero:**
+   - Mantener reuniones cortas y concisas.
+   - Actualizar regularmente el tablero de trabajo.
+
+2. **Cumplir con los plazos y consignas:**
+   - Continuar esforzándonos por cumplir con los plazos y seguir respetando las consignas establecidas, basándonos en la retroalimentación positiva recibida.
+
+## 🛑 Hacer menos:
+1. **Dependencia de un solo integrante:**
+   - Reducir la dependencia del proyecto en un solo integrante.
+   - Fomentar la colaboración activa de todos los miembros para maximizar la eficiencia del equipo.
+   - Reevaluar la distribución de tareas para garantizar que no haya una carga excesiva en un solo miembro y prevenir posibles abandonos debido a sobrecargas.
+
+## Conclusiones Finales:
+En esta retrospectiva, reconocemos la necesidad de ajustar nuestro enfoque ante los desafíos encontrados. La falta de respuesta de algunos miembros y la ausencia de uno de ellos nos han llevado a replantear nuestra estrategia. La distribución equitativa de tareas, la actualización de conocimientos y una comunicación más proactiva son fundamentales para superar estos obstáculos. Aprendemos de nuestras experiencias anteriores y reafirmamos nuestro compromiso de trabajar juntos de manera efectiva, garantizando que todos los miembros contribuyan al éxito del proyecto.
+
+
+
+
+
+******✅✅✅✅✅✅✅✅✅**********
 # Retrospectiva del Tercer Sprint
 **Tercer Sprint: 08/11/23 al 27/11/23**
 

@@ -69,6 +69,8 @@ Este informe refleja la evaluación del equipo durante el cuarto sprint, destaca
 
 
 
+✂✂✂📐✂✂✂✂✂✂✂✂✂✂✂✂✂✂✂✂
+
 ***
 # Weekly Standup Summary 3* Sprint(08 al 27/23.-)
  🚀

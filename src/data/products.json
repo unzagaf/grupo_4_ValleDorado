@@ -98,5 +98,27 @@
     "imagen_producto": [
       "/img/1702851303365.jpg"
     ]
+  },
+  {
+    "id_producto": 6,
+    "nombre_producto": "fda",
+    "provincia_salida": "fda",
+    "precio_producto": "12",
+    "cantidad_personas": "12",
+    "fecha_inicio": "2022-01-12",
+    "fecha_fin": "2022-01-15",
+    "fecha_creacion": "05/01/2024",
+    "imagen_producto": []
+  },
+  {
+    "id_producto": 7,
+    "nombre_producto": "dfd",
+    "provincia_salida": "dfdf",
+    "precio_producto": "",
+    "cantidad_personas": "12",
+    "fecha_inicio": "",
+    "fecha_fin": "",
+    "fecha_creacion": "09/01/2024",
+    "imagen_producto": []
   }
 ]
