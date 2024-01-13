@@ -12,17 +12,45 @@ const userController = {
 
     },
 
-    // **** Formulario de login, para el usuario del usuario registrado
-    login: (req, res) => {
-        res.render('./users/login.ejs', { stylesheetPath: 'css/login.css' });
-    },
-
     // **** Formulario de registro/creacion del usuario
     register: (req, res) => {
         res.render('./users/register.ejs', { stylesheetPath: 'css/register.css' });
     },
 
-    // ****Recibe los datos del formulario de registro y crea el usuario en el array/JSON
+    // **** Formulario de login, para el usuario que ya se ha registrado
+    login: (req, res) => {
+        res.render('./users/login.ejs', { stylesheetPath: 'css/login.css' });
+    },
+
+
+    processLogin:(req,res)=>{
+
+        const validacion = validationResult(req);
+        console.log(validacion)
+
+        if (validacion.errors.length > 0) {
+            //** mostrar la vista del login  con los errores
+
+            return res.render('./users/login.ejs', {
+                stylesheetPath: 'css/login.css',
+                errors: validacion.mapped(),
+                oldData: req.body,
+            });
+
+         }
+
+       
+
+        console.log(req.body);
+        console.log('Sin errores de validación. Redirigiendo...');
+        res.redirect('/')
+        
+    },
+
+    
+
+   
+//**************************************************************************************** */
 
     storeUser: (req, res) => {
         let newUser = { ...req.body };
@@ -44,16 +72,17 @@ const userController = {
             newUser.image = req.file.filename;
         }
 
-//Validación de errores
+        //Validación de errores
 
         const resultadoValidacion = validationResult(req);
 
         if (resultadoValidacion.errors.length > 0) {
+
             //mostrar la vista de registro con los errores
             return res.render('./users/register.ejs', {
                 stylesheetPath: 'css/register.css',
                 errors: resultadoValidacion.mapped(),
-                oldData:req.body,
+                oldData: req.body,
                 newUser: newUser
             });
         }
@@ -72,19 +101,10 @@ const userController = {
         // Redireccionar a la pagina de login
         res.redirect('/users/login')
     },
+//***************************************************************************************** */
+    
 
-
-    loginAcceso: (req, res) => {
-
-        res.render('./products/home.ejs', {
-            stylesheetPath: 'css/home.css',
-            products: products
-        });
-
-    },
-
-
-    // Update - Form to edit
+// Update - Form to edit
     edit: (req, res) => {
         // Do the magic
     },

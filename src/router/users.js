@@ -7,14 +7,20 @@ const userController = require ('../controllers/userController.js')
 //********     Middlewares   ********//
 const userUpload = require('../middlewares/multerUsers'); // middleware que carga una imagén
 const validacionRegister = require('../middlewares/validacionRegister.js');
+const validacionLogin = require('../middlewares/validacionLogin.js');
+
+
 
 
 
 //********     Sistema de Ruteo   ********//
 
 router.get('/', userController.index);
+
 router.get('/login', userController.login);
-router.post('/login/:userId', userController.loginAcceso);
+router.post('/login',validacionLogin, userController.processLogin);
+
+
 
 
 
@@ -25,7 +31,14 @@ router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, 
 
 
 
-
+// <label for="" class="input__txt__places section__login--label">Email</label>
+// <input type="email" name = "email"placeholder="Ingrese su email"
+// class ="form-control <%= locals.errors && errors.email? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.email: null %>">
+// <% if(locals.errors && errors.email){%>
+//     <div class="text-danger">
+//         <%=locals.errors.email.msg %>
+//     </div>
+//     <% }%>
 
 
 //mostrar el detalle de un usuario

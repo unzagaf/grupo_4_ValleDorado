@@ -161,5 +161,18 @@
                 "id": 13,
                 "categoria": "",
                 "image": "imagenUsers1705055320597.jpg"
+        },
+        {
+                "nombre": "carol",
+                "apellido": "figueroa",
+                "fechaNacimiento": "1985-01-15",
+                "dni": "1234567",
+                "telefono": "1234567",
+                "email": "12@gmail.com",
+                "password": "123456",
+                "confirmarPassword": "1234556",
+                "id": 14,
+                "categoria": "",
+                "image": "imagenUsers1705086205457.jpg"
         }
 ]

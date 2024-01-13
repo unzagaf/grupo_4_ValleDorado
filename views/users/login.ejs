@@ -3,28 +3,48 @@
 
 <!-- HEADE -->
 <%- include("../partials/head") %>
-<body>
-    <!-- HEADER -->
-    <%- include("../partials/header.ejs") %>
-    <main class="main__login">
-        <section class="section__login">
-            <h2 >Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
-            <form action="/users/login" method="post"   class="form__search">
-                <label for="" class="input__txt__places section__login--label">Email</label>
-                <input type="email" placeholder="Ingrese su email">
 
-                <label for="" class="input__txt__places section__login--label">Contraseña</label>
-                <input type="text" placeholder="Ingrese su cotraseña">
-                
-                <button type="submit">Iniciar sesion</button>
-            </form>
-        </section>
-    </main>
-    <!-- FOOTER -->
-    <%- include("../partials/footer.ejs") %>
-    <script>
+    <body>
+        <!-- HEADER -->
+        <%- include("../partials/header.ejs") %>
+            <main class="main__login">
 
-    </script>
-</body>
-<script src="js/general.js"></script>
+                <section class="section__login">
+                    <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
+
+                    <form action="/users/login" method="post" class="form__search">
+
+
+                        <label for="" class="input__txt__places section__login--label">Email</label>
+                        <input type="email" name="email" placeholder="emaillll"
+                            class="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
+                            value="<%= locals.oldData? oldData.email: null %>">
+                        <% if(locals.errors && errors.email){%>
+                            <div class="text-danger">
+                                <%=errors.email.msg %>
+                            </div>
+                            <% }%>
+
+                                <label for="" class="input__txt__places section__login--label">Contraseña</label>
+                                <input type="password" name="password" placeholder="Ingrese su cotraseña"
+                                    class="form-control <%= locals.errors && errors.password? 'is-invalid': null %>"
+                                    value="<%= locals.oldData? oldData.password: null %>">
+                                <% if(locals.errors && errors.password){%>
+                                    <div class="text-danger">
+                                        <%=locals.errors.password.msg %>
+                                    </div>
+                                    <% }%>
+
+                                        <button type="submit">Iniciar sesion</button>
+                    </form>
+                </section>
+            </main>
+            <!-- FOOTER -->
+            <%- include("../partials/footer.ejs") %>
+                <script>
+
+                </script>
+    </body>
+    <script src="js/general.js"></script>
+
 </html>
