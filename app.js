@@ -13,16 +13,14 @@ app.use(session({
     resave: false,
     saveUninitialized: false
   }));
-  
 
-// *** Dependencias *** 
 app.use(methodOverride('_method'));
 
 //*** Carpeta PUBLIC *** 
 const publicFolderPath = path.resolve(__dirname, './public');
 app.use(express.static(publicFolderPath));
 
-//*** RUTAS ***
+//*** RUTAS IMPORTADAS***
 const rutaHome = require('./src/router/home.js');
 const rutaProductDetail = require('./src/router/productDetail.js');
 const rutaProductCart = require('./src/router/productCart.js');

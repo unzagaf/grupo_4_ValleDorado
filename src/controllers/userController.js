@@ -5,6 +5,7 @@ const fs = require('fs');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const arrayUsers = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
+const bcrypt = require('bcrypt');
 
 
 const userController = {
@@ -23,62 +24,66 @@ const userController = {
     },
 
 
-    processLogin:(req,res)=>{
+    processLogin: (req, res) => {
 
         const validacion = validationResult(req);
-        console.log(validacion)
 
         if (validacion.errors.length > 0) {
-            //** mostrar la vista del login  con los errores
-
+            // Si hay errores de validación, manejarlos según tu lógica
             return res.render('./users/login.ejs', {
                 stylesheetPath: 'css/login.css',
-                errors: validacion.mapped(),
+                errors: validacion.mapped(),  // Enviar los errores a la vista
                 oldData: req.body,
             });
+        }
 
-         }
+        const { email, password } = req.body;
+        const userRegistrado = arrayUsers.find((user) => user.email === email);
 
-       
+        if (userRegistrado && bcrypt.compareSync(password, userRegistrado.password)) {
+            // Usuario autenticado correctamente
+            req.session.user = userRegistrado; // Guardar el usuario en la sesión
 
-        console.log(req.body);
-        console.log('Sin errores de validación. Redirigiendo...');
-        res.redirect('/')
+            console.log('Usuario autenticado:', userRegistrado);
+
+            return res.redirect('/');
+        } else {
+            // Credenciales incorrectas
+            return res.render('./users/login.ejs', {
+                stylesheetPath: 'css/login.css',
+                errors: { password: { msg: 'Credenciales incorrectas' } },
+                oldData: req.body,
+            });
+        }
+        
+        
         
     },
 
-    
 
-   
-//**************************************************************************************** */
+    //**************************************************************************************** */
 
     storeUser: (req, res) => {
         let newUser = { ...req.body };
 
-        //Configuracion inicial de las propiedades del nuevo usuario
-
+        // Configuración inicial de las propiedades del nuevo usuario
         newUser.id = arrayUsers.length + 1;
         newUser.nombre = req.body.nombre || "";
         newUser.apellido = req.body.apellido || "";
         newUser.dni = req.body.dni || "";
-        newUser.password = req.body.password || "";
-        newUser.confirmarPassword = req.body.confirmarPassword || "";
         newUser.categoria = "";
         newUser.image = "";
 
-        // Verificar si se ha sibido una imagen
-
+        // Verificar si se ha subido una imagen
         if (req.file && req.file.filename) {
             newUser.image = req.file.filename;
         }
 
-        //Validación de errores
-
+        // Validación de errores
         const resultadoValidacion = validationResult(req);
 
         if (resultadoValidacion.errors.length > 0) {
-
-            //mostrar la vista de registro con los errores
+            // Mostrar la vista de registro con los errores
             return res.render('./users/register.ejs', {
                 stylesheetPath: 'css/register.css',
                 errors: resultadoValidacion.mapped(),
@@ -87,24 +92,25 @@ const userController = {
             });
         }
 
-        console.log(newUser);
+        // Generar hash bcrypt para la contraseña
+        const saltRounds = 10;
+        newUser.password = bcrypt.hashSync(req.body.password, saltRounds);
 
-        //Persistir en nuevo usuario en el array/Json
+        // Persistir el nuevo usuario en el array/JSON
         arrayUsers.push(newUser);
-
-        console.log(req.file);
 
         // Guardar la persistencia de datos (archivo JSON)
         const datosUsers = JSON.stringify(arrayUsers, null, 8);
         fs.writeFileSync(usersFilePath, datosUsers, 'utf-8');
 
-        // Redireccionar a la pagina de login
-        res.redirect('/users/login')
+        // Redireccionar a la página de login
+        res.redirect('/users/login');
     },
-//***************************************************************************************** */
-    
 
-// Update - Form to edit
+ //***************************************************************************************** */
+
+
+    // Update - Form to edit
     edit: (req, res) => {
         // Do the magic
     },

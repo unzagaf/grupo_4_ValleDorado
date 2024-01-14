@@ -73,7 +73,7 @@
                                                         <% }%>
         
                                                         <label for="" class="input__txt__places section__login--label"> Clave </label>
-                                                    <input type="text" name="password" placeholder="password" 
+                                                    <input type="password" name="password" placeholder="password" 
                                                     class ="form-control <%= locals.errors && errors.password? 'is-invalid': null %>">
                                                     <% if(locals.errors && errors.password){%>
                                                         <div class="text-danger">
@@ -83,7 +83,7 @@
 
                                                     
                                                        <label for="" class="input__txt__places section__login--label"> Confirmar Clave</label>
-                                                    <input type="text" name="confirmarPassword" placeholder="confirmarPassword"
+                                                    <input type="password" name="confirmarPassword" placeholder="confirmarPassword"
                                                      class ="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
                                                     <% if(locals.errors && errors.confirmarPassword){%>
                                                         <div class="text-danger">
