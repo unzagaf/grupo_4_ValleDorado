@@ -4,6 +4,10 @@ const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+const authMiddleware = require('./src/middlewares/authMiddleware');
+const guestMiddleware = require('./src/middlewares/guestMiddleware');
+
+
 // *** Middlewares *** 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -20,7 +24,7 @@ app.use(methodOverride('_method'));
 const publicFolderPath = path.resolve(__dirname, './public');
 app.use(express.static(publicFolderPath));
 
-//*** RUTAS IMPORTADAS***
+//*** Rutas Importadas***
 const rutaHome = require('./src/router/home.js');
 const rutaProductDetail = require('./src/router/productDetail.js');
 const rutaProductCart = require('./src/router/productCart.js');
@@ -50,7 +54,7 @@ app.use ('/productCart', rutaProductCart);
 
 app.use('/admin', rutaAdmin);
 
-app.use('/users',rutaUser);
+app.use('/users',guestMiddleware,rutaUser);
 
 
 

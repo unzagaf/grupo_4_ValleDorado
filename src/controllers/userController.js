@@ -41,13 +41,15 @@ const userController = {
         const userRegistrado = arrayUsers.find((user) => user.email === email);
 
         if (userRegistrado && bcrypt.compareSync(password, userRegistrado.password)) {
-            // Usuario autenticado correctamente
+            
             req.session.user = userRegistrado; // Guardar el usuario en la sesión
 
             console.log('Usuario autenticado:', userRegistrado);
 
             return res.redirect('/');
+            
         } else {
+
             // Credenciales incorrectas
             return res.render('./users/login.ejs', {
                 stylesheetPath: 'css/login.css',
@@ -108,6 +110,19 @@ const userController = {
     },
 
  //***************************************************************************************** */
+
+ profile: (req, res) => {
+    
+    const user = req.session.user;
+
+    if (user) {
+        res.render('users/profile', { user });
+    } else {
+        // Usuario no autenticado, redirigir al login
+        res.redirect('/users/login');
+    }
+},
+
 
 
     // Update - Form to edit

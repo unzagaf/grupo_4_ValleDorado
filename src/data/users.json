@@ -96,5 +96,31 @@
                 "id": 8,
                 "categoria": "",
                 "image": "imagenUsers1705209252331.png"
+        },
+        {
+                "nombre": "Marcela ",
+                "apellido": "Juarez",
+                "fechaNacimiento": "1986-12-15",
+                "dni": "33633658",
+                "telefono": "1566332154",
+                "email": "marcelina.25@gmail.com",
+                "password": "$2b$10$A2d7QK/h9.QvK0SXJjreAeSPQgm/TlTX3Cc7ldrpbmAyPy1wugIpO",
+                "confirmarPassword": "987258",
+                "id": 9,
+                "categoria": "",
+                "image": "imagenUsers1705210538185.png"
+        },
+        {
+                "nombre": "Betiana ",
+                "apellido": "Burgos",
+                "fechaNacimiento": "1985-12-12",
+                "dni": "12365523",
+                "telefono": "3834112233",
+                "email": "betianabum@gmail.com",
+                "password": "$2b$10$/0wfTaDlENUz1ox6zkjvs.m/sgnQ8x6jyfYhL.OUceiJulYMMDp5.",
+                "confirmarPassword": "852123",
+                "id": 10,
+                "categoria": "",
+                "image": "imagenUsers1705300580549.jpg"
         }
 ]
