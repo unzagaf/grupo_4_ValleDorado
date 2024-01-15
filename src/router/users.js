@@ -27,7 +27,7 @@ router.post('/login',validacionLogin, userController.processLogin);
 router.get('/register', guestMiddleware,userController.register);
 router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, userController.storeUser);
 
-// Rutas accesibles solo con login (por ejemplo, la página del perfil)
+// ** no FUNCIONA Rutas accesibles solo con login (por ejemplo, la página del perfil)//
 router.get('/profile', authMiddleware, userController.profile);
 
 

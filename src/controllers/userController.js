@@ -13,7 +13,7 @@ const userController = {
 
     },
 
-    // **** Formulario de registro/creacion del usuario
+    // **** Formulario de registro/creación del usuario
 
     register: (req, res) => {
         res.render('./users/register.ejs', { stylesheetPath: 'css/register.css' });
@@ -24,16 +24,16 @@ const userController = {
         res.render('./users/login.ejs', { stylesheetPath: 'css/login.css' });
     },
 
-     // **** Implementacion del formulario de login
+     // **** Implementación del formulario de login
     processLogin: (req, res) => {
 
         const validacion = validationResult(req);
 
         if (validacion.errors.length > 0) {
-            // Si hay errores de validación, manejarlos según tu lógica
+            
             return res.render('./users/login.ejs', {
                 stylesheetPath: 'css/login.css',
-                errors: validacion.mapped(),  // Enviar los errores a la vista
+                errors: validacion.mapped(),  
                 oldData: req.body,
             });
         }
@@ -43,7 +43,7 @@ const userController = {
 
         if (userRegistrado && bcrypt.compareSync(password, userRegistrado.password)) {
             
-            req.session.user = userRegistrado; // Guardar el usuario en la sesión
+            req.session.user = userRegistrado; // Guarda el usuario en la sesión
 
             console.log('Usuario autenticado:', userRegistrado);
             if(req.body.recordar != undefined){
@@ -81,7 +81,7 @@ const userController = {
         newUser.categoria = "";
         newUser.image = "";
 
-        // Verificar si se ha subido una imagen
+        // Verifica si se ha subido una imagen
         if (req.file && req.file.filename) {
             newUser.image = req.file.filename;
         }
@@ -90,7 +90,7 @@ const userController = {
         const resultadoValidacion = validationResult(req);
 
         if (resultadoValidacion.errors.length > 0) {
-            // Mostrar la vista de registro con los errores
+            
             return res.render('./users/register.ejs', {
                 stylesheetPath: 'css/register.css',
                 errors: resultadoValidacion.mapped(),

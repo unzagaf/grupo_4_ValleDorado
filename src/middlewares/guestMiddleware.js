@@ -5,7 +5,7 @@ const guestMiddleware = (req, res, next) => {
         next();
     } else {
         
-        res.redirect('/');///profile
+        res.redirect('/');/// DEBE ENVIAR A LA VISTA PROFILE
     }
 };
 
