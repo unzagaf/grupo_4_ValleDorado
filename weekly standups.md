@@ -1,3 +1,54 @@
+# Weekly Standup Summary Quinto Sprint (13/12/23 al 16/01/23)
+
+## Duración
+13/12/23 al 16/01/23
+
+## Introducción
+Este informe destaca las actividades y progresos del equipo durante el nuevo sprint, abordando los logros, desafíos y próximos pasos. Dado que el equipo está compuesto por dos participantes y se ha acordado que un integrante realizará el sprint de manera individual para permitir un descanso al otro miembro.
+
+### Reuniones Programadas por Semana: 2 🗓️
+
+#### Reunión 1 - Semana del 13/12/23 al 19/12/23
+- Participantes: Grupo N* 1
+- Temas Destacados:
+  - Definir los temas a resolver.
+  - Establecer una metodología para organizar horarios para realizar el sprint y a la vez no atrasarme con los nuevos temas.
+
+#### Reunión 2 - Semana del 20/12/23 al 26/12/23
+- Participantes: Grupo N* 1
+- Temas Claves:
+  - Revisión del progreso individual.
+  - Identificación de posibles desafíos y obstáculos.
+  - Ajuste de la estrategia según sea necesario.
+
+## Logros y Desafíos Previstos 🚀
+
+### Logros:
+1. **Planificación Individual del Sprint:**
+   - Se ha llevado a cabo la planificación detallada de las tareas para el nuevo sprint.
+2. **Iniciativa de Trabajo Individual:**
+   - El equipo ha acordado que un integrante realizará el sprint de manera individual para permitir un descanso al otro miembro.
+
+### Desafíos:
+- **Adaptación a la Nueva Dinámica:**
+  - Ajustar la dinámica de trabajo para garantizar la eficiencia con un solo integrante llevando a cabo el sprint.
+
+## Progreso de Tareas
+1. **Desarrollo Individual:**
+   - Implementación de nuevas funcionalidades y mejoras según lo planificado por el integrante a cargo del sprint.
+
+## Próximos Pasos 🚧
+1. **Revisión Intermedia:**
+   - Realizar una revisión intermedia para evaluar el progreso y abordar cualquier problema emergente.
+2. **Colaboración Continua:**
+   - Mantener una comunicación constante para asegurar la colaboración efectiva, a pesar de la distribución individual de tareas.
+
+## Conclusiones
+Este nuevo enfoque individual para el sprint se ha establecido para proporcionar un descanso merecido a uno de los integrantes. La adaptación a esta nueva dinámica requerirá una comunicación clara y eficiente. El equipo está comprometido con el éxito del proyecto y está listo para abordar cualquier desafío que surja durante este sprint particular.
+
+
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
+
 
 # Weekly Standup Summary 4* Sprint(27/11 al 12/12/23.-)
 
@@ -68,8 +119,7 @@ Este informe refleja la evaluación del equipo durante el cuarto sprint, destaca
 
 
 
-
-✂✂✂📐✂✂✂✂✂✂✂✂✂✂✂✂✂✂✂✂
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
 
 ***
 # Weekly Standup Summary 3* Sprint(08 al 27/23.-)
