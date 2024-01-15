@@ -14,16 +14,17 @@ const userController = {
     },
 
     // **** Formulario de registro/creacion del usuario
+
     register: (req, res) => {
         res.render('./users/register.ejs', { stylesheetPath: 'css/register.css' });
     },
 
-    // **** Formulario de login, para el usuario que ya se ha registrado
+    // **** Formulario de login, para el usuario
     login: (req, res) => {
         res.render('./users/login.ejs', { stylesheetPath: 'css/login.css' });
     },
 
-
+     // **** Implementacion del formulario de login
     processLogin: (req, res) => {
 
         const validacion = validationResult(req);
@@ -45,6 +46,11 @@ const userController = {
             req.session.user = userRegistrado; // Guardar el usuario en la sesión
 
             console.log('Usuario autenticado:', userRegistrado);
+            if(req.body.recordar != undefined){
+
+                res.cookie('recordar', userRegistrado.email,{maxAge:80000})
+
+            }
 
             return res.redirect('/');
             
@@ -68,7 +74,6 @@ const userController = {
     storeUser: (req, res) => {
         let newUser = { ...req.body };
 
-        // Configuración inicial de las propiedades del nuevo usuario
         newUser.id = arrayUsers.length + 1;
         newUser.nombre = req.body.nombre || "";
         newUser.apellido = req.body.apellido || "";
@@ -105,7 +110,6 @@ const userController = {
         const datosUsers = JSON.stringify(arrayUsers, null, 8);
         fs.writeFileSync(usersFilePath, datosUsers, 'utf-8');
 
-        // Redireccionar a la página de login
         res.redirect('/users/login');
     },
 
@@ -121,8 +125,9 @@ const userController = {
         // Usuario no autenticado, redirigir al login
         res.redirect('/users/login');
     }
-},
 
+  
+},
 
 
     // Update - Form to edit

@@ -3,9 +3,11 @@ const path = require ('path');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 const authMiddleware = require('./src/middlewares/authMiddleware');
 const guestMiddleware = require('./src/middlewares/guestMiddleware');
+const recordarMiddleware=require('./src/middlewares/recordar.Middleware.js')
 
 
 // *** Middlewares *** 
@@ -19,6 +21,9 @@ app.use(session({
   }));
 
 app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(recordarMiddleware);
+
 
 //*** Carpeta PUBLIC *** 
 const publicFolderPath = path.resolve(__dirname, './public');
