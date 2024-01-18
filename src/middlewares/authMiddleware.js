@@ -1,13 +1,12 @@
 
 const authMiddleware = (req, res, next) => {
-    if (req.session.user) {
-      
+    console.log('usuario: '+ req.session.usuarioLogueado);
+    if (req.session.usuarioLogueado != undefined) {
         next();
     } else {
-
         console.log('Redirecting to login');
-        
-        res.redirect('/users/login');
+        res.send('Esta pagina es solo para logueados');
+        // res.redirect('/users/login');
     }
 };
 

@@ -21,6 +21,15 @@ router.get('/', userController.index);
 router.get('/login',userController.login);
 router.post('/login',validacionLogin, userController.processLogin);
 
+router.get('/viendo', function(req, res) {
+    if (req.session.usuarioLogueado == undefined || req.session.usuarioLogueado === null) {
+        res.send("No estás logueado");
+    } else {
+        console.log('Usuario logueado:', req.session.usuarioLogueado);
+        res.send("El usuario logueado es correcto " + req.session.usuarioLogueado.nombre);
+    }
+});
+
 
 //Ruta que muestra y procesa el formulario de Registracion
 
@@ -28,12 +37,12 @@ router.get('/register', guestMiddleware,userController.register);
 router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, userController.storeUser);
 
 // ** no FUNCIONA Rutas accesibles solo con login (por ejemplo, la página del perfil)//
-router.get('/profile', authMiddleware, userController.profile);
+router.get('/profile',authMiddleware, userController.profile);
 
 
 
 
- module.exports = router;
+module.exports = router;
 
 
 

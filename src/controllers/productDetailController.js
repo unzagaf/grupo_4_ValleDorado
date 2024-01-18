@@ -15,7 +15,8 @@ const productDetailController = {
          { stylesheetPath: '/css/productDetail.css',
         //  producto especifico
           product: product,
-        products: products });  //todos los productos
+        products: products,
+        usuarioLogueado: req.session.usuarioLogueado });  //todos los productos
     }
 }
 

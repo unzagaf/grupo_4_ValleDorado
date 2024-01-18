@@ -4,7 +4,7 @@
   "description": "trabajo integrador",
   "main": "app.js",
   "scripts": {
-    "start": "node --watch app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "express-validator": "^7.0.1",
     "fs": "^0.0.1-security",
     "method-override": "^3.0.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.3"
   }
 }
