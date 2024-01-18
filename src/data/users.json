@@ -122,5 +122,18 @@
                 "id": 10,
                 "categoria": "",
                 "image": "imagenUsers1705300580549.jpg"
+        },
+        {
+                "nombre": "marcos",
+                "apellido": "quinteros",
+                "fechaNacimiento": "1999-01-22",
+                "dni": "41624421",
+                "telefono": "55544848",
+                "email": "ejemplomarcos@gmail.com",
+                "password": "$2b$10$ekiCSNUpCvnMa7Xe2f2Kl.2l1jf/d64UBocuH9WV6stSWiNQlgV6S",
+                "confirmarPassword": "haemaccel",
+                "id": 11,
+                "categoria": "",
+                "image": "imagenUsers1705441581073.jpg"
         }
 ]

@@ -3,10 +3,11 @@ const router = express.Router();
 const path = require('path');
 const adminController = require('../controllers/adminController')
 const fileUpload = require('../middlewares/multerConfig');
+const authMiddleware=  require('../middlewares/authMiddleware.js');
 
 
 // trae la vista
-router.get('/', adminController.index);
+router.get('/',authMiddleware, adminController.index);
 // manda la informacion del formulario
 router.post('/', fileUpload.array('imagen_producto', 5), adminController.paqueteCreate); 
 

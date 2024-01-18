@@ -10,7 +10,8 @@ const adminController = {
     index: (req, res) => {
         res.render('./admin/admin.ejs', {
              stylesheetPath: '/css/admin.css',
-             products: products });
+             products: products,
+             usuarioLogueado: req.session.usuarioLogueado });
     },
     paqueteCreate: (req, res) => {
         try {
