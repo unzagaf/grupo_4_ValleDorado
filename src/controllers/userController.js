@@ -36,41 +36,7 @@ login: (req, res) => {
 processLogin: (req, res) => {
 
     const validacion = validationResult(req);
-
-    // if (validacion.errors.length > 0) {
-        
-    //     return res.render('./users/login.ejs', {
-    //         stylesheetPath: 'css/login.css',
-    //         errors: validacion.mapped(),  
-    //         oldData: req.body,
-    //     });
-    // }
-
-    // const { email, password } = req.body;
-    // const userRegistrado = arrayUsers.find((user) => user.email === email);
-
-    // if (userRegistrado && bcrypt.compareSync(password, userRegistrado.password)) {
-        
-    //     req.session.user = userRegistrado; // Guarda el usuario en la sesión
-
-    //     console.log('Usuario autenticado:', userRegistrado);
-    //     if(req.body.recordar != undefined){
-
-    //         res.cookie('recordar', userRegistrado.email,{maxAge:80000})
-
-    //     }
-
-    //     return res.send('entro');
-        
-    // } else {
-
-    //     // Credenciales incorrectas
-    //     return res.render('./users/login.ejs', {
-    //         stylesheetPath: 'css/login.css',
-    //         errors: { password: { msg: 'Credenciales incorrectas' } },
-    //         oldData: req.body,
-    //     });
-    // }
+    let usuarioALoguearse;
 
     if (validacion.errors.length > 0) {
         console.log('hubo un error');
