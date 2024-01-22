@@ -122,5 +122,18 @@
                 "id": 10,
                 "categoria": "",
                 "image": "imagenUsers1705300580549.jpg"
+        },
+        {
+                "nombre": "carlos",
+                "apellido": "valdez",
+                "fechaNacimiento": "1986-12-15",
+                "dni": "32769567",
+                "telefono": "3834256565",
+                "email": "carlos@12gmail.com",
+                "password": "$2b$10$iuuWvws764wNsoUs.7uYzuk7BmzdeYwQdnIj4wybpxqRQ4mLbkvE2",
+                "confirmarPassword": "123698",
+                "id": 11,
+                "categoria": "",
+                "image": "imagenUsers1705943034567.jpg"
         }
 ]
