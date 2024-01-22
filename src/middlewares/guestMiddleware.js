@@ -1,12 +1,11 @@
 
 const guestMiddleware = (req, res, next) => {
-    if (!req.session.user) {
-        
+    if (req.session.usuarioLogueado == undefined) {
         next();
     } else {
-        
-        res.redirect('/');/// DEBE ENVIAR A LA VISTA PROFILE
+        // REDIRIGE AL HOME
+        console.log('Vas para home');
+        res.redirect('/');
     }
-};
-
+}
 module.exports = guestMiddleware;

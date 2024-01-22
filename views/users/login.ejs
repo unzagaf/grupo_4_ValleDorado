@@ -12,9 +12,7 @@
                 <section class="section__login">
                     <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
 
-                    <form action="/users/login" method="post" class="form__search">
-
-
+                    <form action="/users/login" method="POST" class="form__search">
                         <label for="" class="input__txt__places section__login--label">Email</label>
                         <input type="email" name="email" placeholder="emaillll"
                             class="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
@@ -25,20 +23,20 @@
                             </div>
                             <% }%>
 
-                                <label for="" class="input__txt__places section__login--label">Contraseña</label>
-                                <input type="password" name="password" placeholder="Ingrese su cotraseña"
-                                    class="form-control <%= locals.errors && errors.password? 'is-invalid': null %>"
-                                    value="<%= locals.oldData? oldData.password: null %>">
-                                <% if(locals.errors && errors.password){%>
-                                    <div class="text-danger">
-                                        <%=locals.errors.password.msg %>
-                                    </div>
-                                    <% }%>
+                            <label for="" class="input__txt__places section__login--label">Contraseña</label>
+                            <input type="password" name="password" placeholder="Ingrese su cotraseña"
+                                class="form-control <%= locals.errors && errors.password? 'is-invalid': null %>"
+                                value="<%= locals.oldData? oldData.password: null %>">
+                            <% if(locals.errors && errors.password){%>
+                                <div class="text-danger">
+                                    <%=locals.errors.password.msg %>
+                                </div>
+                                <% }%>
 
-                                    <label for="" class="input__txt__places section__login--label">Recordar</label>
-                                    <input type="checkbox" name="recordar" placeholder="">
+                                <label for="" class="input__txt__places section__login--label">Recordar</label>
+                                <input type="checkbox" name="recordar" placeholder="">
 
-                                        <button type="submit">Iniciar sesion</button>
+                            <button type="submit">Iniciar sesion</button>
                     </form>
                 </section>
             </main>
