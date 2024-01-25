@@ -101,24 +101,22 @@
   },
   {
     "id_producto": 6,
-    "nombre_producto": "fda",
-    "provincia_salida": "fda",
-    "precio_producto": "12",
-    "cantidad_personas": "12",
-    "fecha_inicio": "2022-01-12",
-    "fecha_fin": "2022-01-15",
-    "fecha_creacion": "05/01/2024",
-    "imagen_producto": []
-  },
-  {
-    "id_producto": 7,
-    "nombre_producto": "dfd",
-    "provincia_salida": "dfdf",
-    "precio_producto": "",
-    "cantidad_personas": "12",
-    "fecha_inicio": "",
-    "fecha_fin": "",
-    "fecha_creacion": "09/01/2024",
-    "imagen_producto": []
+    "nombre_producto": "carrusel",
+    "provincia_salida": "catamarca",
+    "precio_producto": "800000",
+    "cantidad_personas": "7",
+    "fecha_inicio": "2024-01-24",
+    "fecha_fin": "2024-01-31",
+    "incluye": [
+      "Hoteles 5 estrellas",
+      "Coordinador y guias locales",
+      "Régimen de comidas todo incluido",
+      "Excursiones según programa"
+    ],
+    "fecha_creacion": "24/01/2024",
+    "imagen_producto": [
+      "/img/1706096243809.jpg",
+      "/img/1706096243813.jpg"
+    ]
   }
 ]

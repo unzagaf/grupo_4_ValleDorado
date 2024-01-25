@@ -37,7 +37,10 @@ const adminController = {
         const idProduct = req.params.idProduct;
         const product = products.find(product => product.id_producto === Number(idProduct));
 
-        res.render('./admin/productEdit.ejs',{stylesheetPath: '/css/admin.css', product: product});
+        res.render('./admin/productEdit.ejs',{
+            stylesheetPath: '/css/admin.css',
+             product: product,
+             usuarioLogueado: req.session.usuarioLogueado });
     },
     paqueteEdit:(req, res)=>{
         const idProduct = req.params.idProduct;
