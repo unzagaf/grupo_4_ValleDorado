@@ -10,14 +10,13 @@
     <h1 class="titulo-h1"><%= product.nombre_producto %> <br> <span>TU MEJOR EXPERIENCIA</span></h1>
 
     <section class="contenedor-galeria">
-
-      <!-- IMAGEN GRANDE DE LA IZQUIERDA -->
-      <div class=imagen-principal-izquierda>
-        <img class="imagen-grande" src="/img/<%= product.imagen_producto %>" alt="imagen de Punta Cana">
+      <div class="imagen-carrusel">
+        <% product.imagen_producto.forEach(function(imagen) { %>
+          <div>
+            <img src="<%= imagen %>" alt="imagen de <%= product.nombre_producto %>">
+          </div>
+        <% }); %>
       </div>
-
-      <!-- IMAGENES CHICAS DE LA DERECHA -->
-      
     </section>
 
     <!-- ------------------------ -->
@@ -56,17 +55,13 @@
         <h2>Incluye</h2>
         <hr>
         <ul>
-          <% product.incluye.forEach(function(item) { %>
-            <li><i class="fa-solid "></i><%= item %></li>
+          <% incluyeConIconos.forEach(function(item) { %>
+            <li><i class="fa-solid <%= item.icono %>"></i><%= item.opcion %></li>
           <% }); %>
-          <!-- <li><i class="fa-solid fa-hotel"></i>Hoteles 5 estrellas</li>
-          <li><i class="fa-solid fa-user"></i>Coordinador y guias locales</li>
-          <li><i class="fa-solid fa-utensils"></i>Régimen de comidas todo incluido</li>
-          <li><i class="fa-solid fa-map-location-dot"></i>Excursiones según programa</li>
-          <li><i class="fa-solid fa-bus"></i>Traslados de ingreso y egreso</li> -->
         </ul>
       </article>
-      <article class="no-incluye">
+      
+      <!-- <article class="no-incluye">
         <h2>No Incluye</h2>
         <hr>
         <ul>
@@ -77,12 +72,12 @@
           <li><i class="fa-solid fa-map-location-dot"></i>Excursiones según programa</li>
           <li><i class="fa-solid fa-bus"></i>Traslados de ingreso y egreso</li>
         </ul>
-      </article>
+      </article> -->
 
       <button class="boton-confirmacion" type="submit">Solicitar</button>
     </section>
     <!-- ITINERARIOS -->
-    <article class="itinerario">
+    <!-- <article class="itinerario">
       <h2>Itinerario</h2>
       <hr>
       <p>
@@ -137,7 +132,7 @@
         <em>Check-out del hotel y traslado al aeropuerto para tomar el vuelo de regreso a Córdoba, Argentina.</em>
 
       </p>
-    </article>
+    </article> -->
 
     <!-- Buscar Destino -->
     <section class="buscarDestino">
@@ -184,6 +179,16 @@
   <%- include("../partials/footer.ejs") %>
   <script src="https://kit.fontawesome.com/c2d7c9299d.js" crossorigin="anonymous"></script>
   <script src="/js/general.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.imagen-carrusel').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
+  });
+</script>
 
 
 </body>
