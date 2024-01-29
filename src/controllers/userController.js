@@ -125,7 +125,7 @@ storeUser: (req, res) => {
 
 profile: (req, res) => {
     // const user = req.session.user;
-    res.render('./users/profile',{
+    res.render('./users/profile.ejs',{
         stylesheetPath: 'css/home.css',
         usuarioLogueado: req.session.usuarioLogueado
     });
