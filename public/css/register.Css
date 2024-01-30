@@ -1,18 +1,73 @@
-/*
-Estilos Generales 
- */
-
-
-
-/*
-Header 
- */
- h1{
-    color:red;
+.section__login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7em 1.5rem;
+    position: relative;
 }
 
+.section__login h2{
+    color: #F18701;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
 
+.section__login form{
+    margin: 1rem 0;
+    background-color: white;
+    flex-direction: column;
+}
 
+.section__login--label{
+    color: black !important;
+}
+
+.main__login{
+    background-color: #3D348B;
+}
+
+.register_form{
+    width: 60vw;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: #3D348B;
+    border-radius: .5rem;
+    gap: 1rem;
+}
+/* 
+width: 60vw;
+display: grid;
+grid-template-columns: 2fr repeat(3,1fr);
+grid-template-rows: 1fr, 1fr;
+justify-content: start;
+border-radius: .5rem;
+gap: 1rem;
+margin-top: 3rem;
+margin-bottom: 2rem; */
+
+.register_form label{
+    margin-top: -.3rem;
+    margin-bottom: -.9rem;
+    margin-left: .2rem;
+    color: white;
+}
+
+.register_form input{
+    font-size: 1rem;
+    height: 2rem;
+    border-radius: .5rem;
+    padding: 0 .5rem;
+    outline: none;
+    border: 0;
+    box-shadow: inset -1px 1px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px -1px 9px rgba(255, 255, 255, 0.3), inset -1px 1px 9px rgba(0, 0, 0, 0.3);
+ }
 /*
 Main 
  */

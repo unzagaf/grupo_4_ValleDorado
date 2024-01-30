@@ -5,8 +5,6 @@
     "precio_producto": 26.623,
     "imagen_producto": [
       "/img/descanso_producto.jpg",
-      "/img/descanso_producto.jpg",
-      "/img/estadia.jfif",
       "/img/excursiones_producto.jpg",
       "/img/bienvenida_producto.jfif"
     ],
@@ -25,98 +23,68 @@
     "fecha_creacion": "10/03/2023"
   },
   {
-    "id_producto": 2,
-    "nombre_producto": "Costa Rica",
-    "precio_producto": 69.953,
-    "imagen_producto": "http://dummyimage.com/101x100.png/ff4444/ffffff",
-    "provincia_salida": "Tejar",
-    "incluye": [
-      "Asistencia al Viajero",
-      "Hoteles 5 estrellas",
-      "Coordinador y guías locales",
-      "Régimen de comidas todo incluido",
-      "Excursiones según programa",
-      "Traslados de ingreso y egreso"
-    ],
-    "cantidad_personas": 2,
-    "fecha_inicio": "06/22/2023",
-    "fecha_fin": "05/04/2023",
-    "fecha_creacion": "01/04/2023"
-  },
-  {
-    "id_producto": 3,
-    "nombre_producto": "Panama",
-    "precio_producto": 54.869,
-    "imagen_producto": "http://dummyimage.com/196x100.png/ff4444/ffffff",
-    "provincia_salida": "Plaza de Caisán",
-    "incluye": [
-      "Asistencia al Viajero",
-      "Hoteles 5 estrellas",
-      "Coordinador y guías locales",
-      "Régimen de comidas todo incluido",
-      "Excursiones según programa",
-      "Traslados de ingreso y egreso"
-    ],
-    "cantidad_personas": 1,
-    "fecha_inicio": "06/03/2023",
-    "fecha_fin": "08/17/2023",
-    "fecha_creacion": "03/03/2023"
-  },
-  {
     "id_producto": 4,
-    "nombre_producto": "Indonesia",
-    "precio_producto": 44.857,
-    "imagen_producto": "http://dummyimage.com/142x100.png/cc0000/ffffff",
-    "provincia_salida": "Napel",
+    "nombre_producto": "Nueva Zelanda",
+    "provincia_salida": "Cordoba -Capital",
+    "precio_producto": "360000",
+    "cantidad_personas": "3",
+    "fecha_inicio": "2024-01-30",
+    "fecha_fin": "2024-02-10",
     "incluye": [
       "Asistencia al Viajero",
-      "Hoteles 5 estrellas",
-      "Coordinador y guías locales",
-      "Régimen de comidas todo incluido",
-      "Excursiones según programa",
-      "Traslados de ingreso y egreso"
-    ],
-    "cantidad_personas": 4,
-    "fecha_inicio": "09/17/2023",
-    "fecha_fin": "10/14/2023",
-    "fecha_creacion": "04/18/2023"
-  },
-  {
-    "id_producto": 5,
-    "nombre_producto": "edito",
-    "provincia_salida": "edito",
-    "precio_producto": "23",
-    "cantidad_personas": "23",
-    "fecha_inicio": "2023-12-05",
-    "fecha_fin": "2023-12-06",
-    "incluye": [
-      "Asistencia al Viajero",
-      "Excursiones según programa",
-      "Traslados de ingreso y egreso"
-    ],
-    "fecha_creacion": "15/12/2023",
-    "imagen_producto": [
-      "/img/1702851303365.jpg"
-    ]
-  },
-  {
-    "id_producto": 6,
-    "nombre_producto": "carrusel",
-    "provincia_salida": "catamarca",
-    "precio_producto": "800000",
-    "cantidad_personas": "7",
-    "fecha_inicio": "2024-01-24",
-    "fecha_fin": "2024-01-31",
-    "incluye": [
       "Hoteles 5 estrellas",
       "Coordinador y guias locales",
       "Régimen de comidas todo incluido",
       "Excursiones según programa"
     ],
-    "fecha_creacion": "24/01/2024",
+    "fecha_creacion": "30/01/2024",
     "imagen_producto": [
-      "/img/1706096243809.jpg",
-      "/img/1706096243813.jpg"
+      "/img/1706647558735.webp",
+      "/img/1706647558739.jpg",
+      "/img/1706647558746.jpg"
+    ]
+  },
+  {
+    "id_producto": 5,
+    "nombre_producto": "Vancouver",
+    "provincia_salida": "Buenos Aires",
+    "precio_producto": "400000",
+    "cantidad_personas": "5",
+    "fecha_inicio": "2024-01-15",
+    "fecha_fin": "2024-02-01",
+    "incluye": [
+      "Asistencia al Viajero",
+      "Hoteles 5 estrellas",
+      "Régimen de comidas todo incluido",
+      "Traslados de ingreso y egreso"
+    ],
+    "fecha_creacion": "30/01/2024",
+    "imagen_producto": [
+      "/img/1706647755495.jpg",
+      "/img/1706647755496.jpg",
+      "/img/1706647755501.jpg"
+    ]
+  },
+  {
+    "id_producto": 3,
+    "nombre_producto": "New York",
+    "provincia_salida": "Buenos Aires",
+    "precio_producto": "360000",
+    "cantidad_personas": "2",
+    "fecha_inicio": "2024-01-22",
+    "fecha_fin": "2024-02-02",
+    "incluye": [
+      "Asistencia al Viajero",
+      "Hoteles 5 estrellas",
+      "Régimen de comidas todo incluido",
+      "Excursiones según programa",
+      "Traslados de ingreso y egreso"
+    ],
+    "fecha_creacion": "30/01/2024",
+    "imagen_producto": [
+      "/img/1706648156544.jpg",
+      "/img/1706648156560.jpg",
+      "/img/1706648156570.jpg"
     ]
   }
 ]
