@@ -14,7 +14,7 @@
 
                     <form action="/users/login" method="POST" class="form__search">
                         <label for="" class="input__txt__places section__login--label">Email</label>
-                        <input type="email" name="email" placeholder="emaillll"
+                        <input type="email" name="email" placeholder="Ingrese su email"
                             class="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
                             value="<%= locals.oldData? oldData.email: null %>">
                         <% if(locals.errors && errors.email){%>

@@ -21,14 +21,14 @@ index: (req, res) => {
 
 register: (req, res) => {
     res.render('./users/register.ejs',
-        { stylesheetPath: 'css/register.css',
+        { stylesheetPath: '/css/register.css',
         usuarioLogueado: req.session.usuarioLogueado });
 },
 
 // **** Formulario de login, para el usuario
 login: (req, res) => {
     res.render('./users/login.ejs',
-        { stylesheetPath: 'css/login.css',
+        { stylesheetPath: '/css/login.css',
         usuarioLogueado: req.session.usuarioLogueado});
 },
 
