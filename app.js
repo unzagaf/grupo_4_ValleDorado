@@ -59,7 +59,7 @@ app.use ('/productCart', rutaProductCart);
 
 app.use('/admin', rutaAdmin);
 
-app.use('/users',guestMiddleware,rutaUser);
+app.use('/users',rutaUser);
 
 
 

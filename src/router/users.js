@@ -18,7 +18,7 @@ const authMiddleware=  require('../middlewares/authMiddleware.js');
 
 router.get('/', userController.index);
 
-router.get('/login',userController.login); //aqui debe haber un middleware
+router.get('/login',guestMiddleware,userController.login);
 router.post('/login',validacionLogin, userController.processLogin);
 
 router.get('/viendo', function(req, res) {
@@ -33,11 +33,9 @@ router.get('/viendo', function(req, res) {
 
 //Ruta que muestra y procesa el formulario de Registracion
 
-router.get('/register', guestMiddleware,userController.register);
+router.get('/register',guestMiddleware,userController.register);
 router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, userController.storeUser);
-
-// ** no FUNCIONA Rutas accesibles solo con login (por ejemplo, la página del perfil)//
-router.get('/profile',authMiddleware, userController.profile);
+router.get('/profile',authMiddleware,userController.profile);
 
 
 
