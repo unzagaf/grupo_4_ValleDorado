@@ -18,7 +18,7 @@ const authMiddleware=  require('../middlewares/authMiddleware.js');
 
 router.get('/', userController.index);
 
-router.get('/login',userController.login);
+router.get('/login',userController.login); //aqui debe haber un middleware
 router.post('/login',validacionLogin, userController.processLogin);
 
 router.get('/viendo', function(req, res) {
