@@ -1,37 +1,36 @@
-# Weekly Standup Summary Quinto Sprint (13/12/23 al 16/01/23)
 
-## Duración
-13/12/23 al 16/01/23
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
+# Weekly Standup Summary - Nuevo Sprint (13/12/23 al 16/01/23) 📊
+
+**Duración:** 13/12/23 al 16/01/23
 
 ## Introducción
 Este informe destaca las actividades y progresos del equipo durante el nuevo sprint, abordando los logros, desafíos y próximos pasos. Dado que el equipo está compuesto por dos participantes y se ha acordado que un integrante realizará el sprint de manera individual para permitir un descanso al otro miembro.
 
-### Reuniones Programadas por Semana: 2 🗓️
-
-#### Reunión 1 - Semana del 13/12/23 al 19/12/23
-- Participantes: Grupo N* 1
-- Temas Destacados:
+## Reuniones Programadas por Semana: 2 🗓️
+### Reunión 1 - Semana del 13/12/23 al 19/12/23
+- **Participantes:**
+- **Temas Destacados:**
   - Definir los temas a resolver.
   - Establecer una metodología para organizar horarios para realizar el sprint y a la vez no atrasarme con los nuevos temas.
 
-#### Reunión 2 - Semana del 20/12/23 al 26/12/23
-- Participantes: Grupo N* 1
-- Temas Claves:
+### Reunión 2 - Semana del 20/12/23 al 26/12/23
+- **Participantes: Grupo N* 1
+- **Temas Claves:**
   - Revisión del progreso individual.
   - Identificación de posibles desafíos y obstáculos.
   - Ajuste de la estrategia según sea necesario.
 
 ## Logros y Desafíos Previstos 🚀
-
-### Logros:
+**Logros:**
 1. **Planificación Individual del Sprint:**
    - Se ha llevado a cabo la planificación detallada de las tareas para el nuevo sprint.
 2. **Iniciativa de Trabajo Individual:**
    - El equipo ha acordado que un integrante realizará el sprint de manera individual para permitir un descanso al otro miembro.
 
-### Desafíos:
+**Desafíos:**
 - **Adaptación a la Nueva Dinámica:**
-  - Ajustar la dinámica de trabajo para garantizar la eficiencia con un solo integrante llevando a cabo el sprint.
+   - Ajustar la dinámica de trabajo para garantizar la eficiencia con un solo integrante llevando a cabo el sprint.
 
 ## Progreso de Tareas
 1. **Desarrollo Individual:**
@@ -42,9 +41,14 @@ Este informe destaca las actividades y progresos del equipo durante el nuevo spr
    - Realizar una revisión intermedia para evaluar el progreso y abordar cualquier problema emergente.
 2. **Colaboración Continua:**
    - Mantener una comunicación constante para asegurar la colaboración efectiva, a pesar de la distribución individual de tareas.
+   - Se solicitó ayuda al compañero de equipo, ya que no estaba logrando que las consignas realizadas en el formulario de login/register se ajustaran al pedido del sprint, logrando el mismo poder afrontar el desafío de resolver la situación y lograr con su colaboración que todos los requisitos quedaran realizados al 100 %.
 
 ## Conclusiones
-Este nuevo enfoque individual para el sprint se ha establecido para proporcionar un descanso merecido a uno de los integrantes. La adaptación a esta nueva dinámica requerirá una comunicación clara y eficiente. El equipo está comprometido con el éxito del proyecto y está listo para abordar cualquier desafío que surja durante este sprint particular.
+Este nuevo enfoque individual para el sprint se ha implementado con éxito. Sin embargo, es crucial destacar la colaboración excepcional del compañero de grupo Marcos Quinteros, la cual fue de suma importancia para alcanzar el éxito total del proyecto.
+A pesar de las habilidades y esfuerzos individuales, la colaboración constante y el intercambio de conocimientos entre ambos miembros han sido elementos clave en la consecución de los objetivos al 100%.
+Estamos orgullosos del trabajo en equipo demostrado hasta ahora y confiamos en que, con esta base sólida de colaboración, superaremos cualquier desafío futuro con eficacia y lograremos resultados excepcionales.
+
+
 
 
 🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
