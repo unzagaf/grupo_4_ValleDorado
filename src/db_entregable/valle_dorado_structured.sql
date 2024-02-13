@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2024 a las 19:18:24
+-- Tiempo de generación: 13-02-2024 a las 07:06:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `account` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `imagen` varchar(50) NOT NULL,
@@ -45,8 +45,8 @@ CREATE TABLE `account` (
 
 CREATE TABLE `bookings` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `reservation_date` date NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL
@@ -60,8 +60,8 @@ CREATE TABLE `bookings` (
 
 CREATE TABLE `booking_details` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `type_of_room` varchar(50) NOT NULL,
   `travel_insurance` int(11) NOT NULL,
   `airport_transportation` int(11) NOT NULL,
@@ -77,8 +77,8 @@ CREATE TABLE `booking_details` (
 
 CREATE TABLE `category` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `name` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -90,8 +90,8 @@ CREATE TABLE `category` (
 
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `destination` varchar(60) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `start_date` date NOT NULL,
@@ -108,8 +108,8 @@ CREATE TABLE `products` (
 
 CREATE TABLE `product_images` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `route` varchar(50) NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -122,8 +122,8 @@ CREATE TABLE `product_images` (
 
 CREATE TABLE `product_service` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `product_id` int(10) UNSIGNED NOT NULL,
   `service_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -136,8 +136,8 @@ CREATE TABLE `product_service` (
 
 CREATE TABLE `services` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `service` varchar(100) NOT NULL,
   `details` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -150,8 +150,8 @@ CREATE TABLE `services` (
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `name` varchar(45) NOT NULL,
   `surname` varchar(45) NOT NULL,
   `dni` int(10) NOT NULL,
@@ -166,8 +166,8 @@ CREATE TABLE `users` (
 
 CREATE TABLE `user_product` (
   `id` int(10) UNSIGNED NOT NULL,
-  `createAT` timestamp NULL DEFAULT current_timestamp(),
-  `updateAT` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `createAt` timestamp NULL DEFAULT current_timestamp(),
+  `updateAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `user_id` int(10) UNSIGNED NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
