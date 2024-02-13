@@ -31,11 +31,11 @@ Estos cinco sitios web son plataformas de viajes y turismo que ofrecen una ampli
 ## Enlace a la base de datos
 DER de la base de datos, se deja link al pdf y a los archivos de estructura y volcado de datos de la BD a continuacion
 
-![DER](./src/db_entregable/DiagramaER.jpg)
+![DER](./src/dataBase/seeders/DiagramaER.jpg)
 
-<a href="./src/db_entregable/diagrama_relacional.pdf" download>descargar DER.pdf</a>
+<a href="./src/dataBase/seeders/diagrama_relacional.pdf" download>descargar DER.pdf</a>
 
 
-<a href='./src/db_entregable/valle_dorado_structured.sql'>Link al archivo structured</a>
+<a href='./src/dataBase/seeders/valle_dorado_structured.sql'>Link al archivo structured</a>
 
-<a href='./src/db_entregable/valle_dorado_data.sql'>Link al archivo data.sql</a>
+<a href='./src/dataBase/seeders/valle_dorado_data.sql'>Link al archivo data.sql</a>

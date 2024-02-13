@@ -5,7 +5,7 @@ module.exports ={
     "database": "valle_dorado",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorAliases":false
+    
   },
   "test": {
     "username": "root",
@@ -13,7 +13,7 @@ module.exports ={
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorAliases":false
+    
   },
   "production": {
     "username": "root",
@@ -21,6 +21,6 @@ module.exports ={
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorAliases":false
+  
   }
 }

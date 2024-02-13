@@ -33,7 +33,9 @@ No se especifican reuniones programadas debido a la autonomía de los miembros p
    - Programar una revisión al final del sprint para evaluar los resultados obtenidos y prepararse para el siguiente.
 
 ## Conclusiones
-El equipo ha demostrado su capacidad para trabajar de manera autónoma y eficiente, seleccionando y completando la mayor parte de tareas del sprint según sus propias preferencias y habilidades. El equipo ha enfrentado desafíos en la gestión del tiempo debido al repaso de material por parte de uno de los integrantes, lo que ha causado un ligero retraso en la finalización de algunas tareas. Sin embargo, se ha mantenido una comunicación sólida y se están tomando medidas para ajustar prioridades y finalizar el sprint de manera satisfactoria.
+El equipo ha demostrado su capacidad para trabajar de manera autónoma y eficiente, seleccionando y completando la mayor parte de tareas del sprint según sus propias preferencias y habilidades. El equipo ha enfrentado desafíos en la gestión del tiempo debido al repaso de material por parte de uno de los integrantes, lo que ha causado un ligero retraso en la finalización de algunas tareas. 
+Tambien debemos aclarar que por el momento las consignas opcionales, no quedaran desarrolladas, ya que el carrito de compars no esta implementado de manera funcional.
+ Sin embargo, se ha mantenido una comunicación sólida y se están tomando medidas para ajustar prioridades y finalizar el sprint de manera satisfactoria.
 
 
 
