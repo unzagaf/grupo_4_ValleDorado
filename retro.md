@@ -1,4 +1,78 @@
+# Retrospectiva del Quinto Sprint 🚀
 
+**Quinto Sprint:** 13/12/23 al 16/01/23
+
+## 📌 Comenzar a hacer:
+1. **Autoaprendizaje y Puesta al Día:**
+   - Realicé esfuerzos significativos para ponerme al día con las clases pendientes.
+   - Repasé el material varias veces para asegurar una comprensión sólida.
+
+2. **Sprint Individual:**
+   - Asumí la responsabilidad total del sprint, reconociendo la necesidad de que el otro integrante tenga un descanso necesario, igual así mi compañero de equipo se mantuvo presente, ofreciendo su ayuda en todo momento.
+
+## 📌 Hacer más:
+1. **Planificación y Organización Personal:**
+   - Mejorar la planificación personal para evitar atrasos en la asimilación de nuevos temas.
+   - Implementar estrategias de organización para optimizar el tiempo de estudio y desarrollo.
+
+2. **Comunicación Constante:**
+   - Mantener una comunicación constante con el otro integrante para compartir progresos.
+
+3. **Revisión Intermedia:**
+   - Implementar revisiones intermedias para evaluar el progreso y abordar cualquier problema emergente.
+
+## 📌 Continuar haciendo:
+1. **Finalización de Tareas Pendientes:**
+   - Continuar trabajando en la implementación de middlewares y validaciones.
+   - Seguir el plan establecido para Usuarios y middlewares.
+
+## 📌 Hacer menos:
+1. **Sobre dependencia del Material del Sprint Anterior:**
+   - Evitar la sobre dependencia del material utilizado en sprints anteriores para garantizar una comprensión más profunda de los nuevos conceptos.
+
+## Logros y Desafíos Recientes 🚀
+**Logros:**
+1. **Planificación Individual del Sprint:**
+   - Logré establecer una estructura para la implementación de Usuarios y middlewares.
+   - Avanzado en la implementación del registro de usuarios y el login.
+
+**Desafíos:**
+- **Aprendizaje Intensivo:**
+   - Atraso en los nuevos temas debido a la intensidad del aprendizaje requerido.
+   - Desafío al realizar el sprint de manera individual.
+
+## Progreso de Tareas
+1. **Implementación de Usuarios:**
+   - Estructura de archivos y directorios establecida.
+   - Formulario funcional de creación de usuarios en desarrollo.
+
+2. **Implementación del Login:**
+   - Formulario funcional de login en progreso.
+   - Exploración de la implementación de la función de recordar al usuario.
+
+## Próximos Pasos 🚧
+Se solicitó ayuda al compañero para poder resolver los temas restantes
+
+1. **Finalización de Formularios:**
+   - Completar el formulario de creación de usuarios.
+   - Concluir la implementación del formulario de login.
+
+2. **Implementación de Funcionalidades Adicionales:**
+   - Evaluar la posibilidad de agregar la función de recordar al usuario.
+   - Continuar con la implementación de rutas de huéspedes y de usuarios.
+
+3. **Colaboración Efectiva:**
+   - Mantener una comunicación abierta y constante con el otro integrante para garantizar la colaboración efectiva.
+
+## Conclusiones
+Este sprint individual ha sido un desafío notable, pero gracias a la colaboración del compañero de equipo, hemos logrado avances significativos en la implementación de Usuarios y middlewares. La dedicación y apoyo adicional han sido elementos esenciales para superar los desafíos y garantizar un progreso significativo en el proyecto.
+
+Reafirmamos la importancia de la comunicación constante. En particular, durante la última semana, la colaboración demostró ser esencial para superar desafíos específicos. Este enfoque de trabajo en equipo, combinado con una comunicación abierta, fortalece nuestra capacidad para abordar problemas de manera efectiva y alcanzar nuestros objetivos colectivos.
+
+
+
+
+******✅✅✅✅✅✅✅✅✅**********
 
 # Retrospectiva del Cuarto Sprint
 **Cuarto Sprint: 28/11/23 al 12/12/23**

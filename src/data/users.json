@@ -14,7 +14,7 @@
                 "idUsuario": 2,
                 "nombre": "María",
                 "apellido": "Gómez",
-                "dni": 25366478,
+                "dni": 25366479,
                 "email": "maria.gomez@gmial.com",
                 "password": "contrasena456",
                 "confirmarPassword": "contrasena456",
@@ -25,7 +25,7 @@
                 "idUsuario": 3,
                 "nombre": "Carlos",
                 "apellido": "López",
-                "dni": 25366478,
+                "dni": 25366480,
                 "email": "carlos.lopez@gmail.com",
                 "password": "contrasena789",
                 "confirmarPassword": "contrasena789",
@@ -36,11 +36,11 @@
                 "nombre": "greta",
                 "apellido": "flores",
                 "fechaNacimiento": "1985-10-20",
-                "dni": "",
+                "dni": "32688963",
                 "telefono": "1234567",
-                "email": "12@1234",
-                "password": "",
-                "confirmarPassword": "",
+                "email": "greta.1234@gmail.com",
+                "password": "456258",
+                "confirmarPassword": "456258",
                 "id": 4,
                 "categoria": "",
                 "image": "imagenUsers1705041119376.jpg"
@@ -122,5 +122,18 @@
                 "id": 10,
                 "categoria": "",
                 "image": "imagenUsers1705300580549.jpg"
+        },
+        {
+                "nombre": "Lucas",
+                "apellido": "Falcon",
+                "fechaNacimiento": "1986-05-03",
+                "dni": "25266322",
+                "telefono": "3834252511",
+                "email": "lucasfalcon@gmail.com",
+                "password": "$2b$10$Q4SiBUvYFE0EAWgk0wQ3cOJSPm5B4ZcMWPyNIpVWr9u2Z5ULQFxAy",
+                "confirmarPassword": "741852",
+                "id": 11,
+                "categoria": "",
+                "image": "imagenUsers1707457853571.jpg"
         }
 ]

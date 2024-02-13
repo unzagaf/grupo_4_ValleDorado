@@ -1,37 +1,75 @@
-# Weekly Standup Summary Quinto Sprint (13/12/23 al 16/01/23)
 
-## Duración
-13/12/23 al 16/01/23
+# Weekly Standup Summary 6* Sprint (16/01/24 al 14/02/2024) 📊
+
+**Duración:** 16/01/24 al 14/02/2024 
+
+## Introducción
+Este informe destaca las actividades y el progreso del equipo durante el sprint actual, abordando los logros, desafíos y próximos pasos. El equipo, compuesto por dos integrantes, ha trabajado con autonomía en la selección de tareas, reflejadas en el tablero de trabajo. Aunque se ha tenido una baja cantidad de reuniones programadas, se mantiene un enfoque eficiente en la asignación de tareas, adaptándose a las capacidades y necesidades de los miembros.
+
+**Reuniones Programadas por Semana:** Variable 🗓️  
+No se especifican reuniones programadas debido a la autonomía de los miembros para seleccionar y completar las tareas asignadas.
+
+## Logros y Desafíos Previstos 🚀
+**Logros:**
+1. **Autonomía en la Elección de Tareas:**
+   - Los miembros del equipo han sido capaces de seleccionar y completar las tareas según sus propias preferencias y capacidades.
+2. **Eficiencia en el Trabajo:**
+   - A pesar de la baja cantidad de reuniones programadas, el equipo continúa trabajando de manera eficiente y productiva.
+
+**Desafíos:**
+- **Gestión del Tiempo y Prioridades:**
+  - Mantener un equilibrio entre las tareas seleccionadas y la gestión del tiempo, especialmente considerando el repaso de material por parte de uno de los integrantes.
+
+## Progreso de Tareas
+1. **Desarrollo Individual:**
+   - Cada miembro del equipo ha avanzado en la implementación de las tareas seleccionadas, reflejadas en el tablero de trabajo.
+
+## Próximos Pasos 🚧
+1. **Seguimiento Continuo:**
+   - Realizar un seguimiento constante del progreso de las tareas y ajustar según sea necesario, para cumplir con los objetivos del sprint antes de la entrega.
+2. **Comunicación Abierta:**
+   - Mantener canales abiertos de comunicación para compartir avances, resolver problemas y colaborar en caso de necesidad.
+3. **Revisión Final:**
+   - Programar una revisión al final del sprint para evaluar los resultados obtenidos y prepararse para el siguiente.
+
+## Conclusiones
+El equipo ha demostrado su capacidad para trabajar de manera autónoma y eficiente, seleccionando y completando la mayor parte de tareas del sprint según sus propias preferencias y habilidades. El equipo ha enfrentado desafíos en la gestión del tiempo debido al repaso de material por parte de uno de los integrantes, lo que ha causado un ligero retraso en la finalización de algunas tareas. Sin embargo, se ha mantenido una comunicación sólida y se están tomando medidas para ajustar prioridades y finalizar el sprint de manera satisfactoria.
+
+
+
+
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
+# Weekly Standup Summary 5* Sprint (13/12/23 al 16/01/23) 📊
+
+**Duración:** 13/12/23 al 16/01/23
 
 ## Introducción
 Este informe destaca las actividades y progresos del equipo durante el nuevo sprint, abordando los logros, desafíos y próximos pasos. Dado que el equipo está compuesto por dos participantes y se ha acordado que un integrante realizará el sprint de manera individual para permitir un descanso al otro miembro.
 
-### Reuniones Programadas por Semana: 2 🗓️
-
-#### Reunión 1 - Semana del 13/12/23 al 19/12/23
-- Participantes: Grupo N* 1
-- Temas Destacados:
+## Reuniones Programadas por Semana: 2 🗓️
+### Reunión 1 - Semana del 13/12/23 al 19/12/23
+- **Participantes:**
+- **Temas Destacados:**
   - Definir los temas a resolver.
   - Establecer una metodología para organizar horarios para realizar el sprint y a la vez no atrasarme con los nuevos temas.
 
-#### Reunión 2 - Semana del 20/12/23 al 26/12/23
-- Participantes: Grupo N* 1
-- Temas Claves:
+### Reunión 2 - Semana del 20/12/23 al 26/12/23
+- **Participantes: Grupo N* 1
+- **Temas Claves:**
   - Revisión del progreso individual.
   - Identificación de posibles desafíos y obstáculos.
   - Ajuste de la estrategia según sea necesario.
 
 ## Logros y Desafíos Previstos 🚀
-
-### Logros:
+**Logros:**
 1. **Planificación Individual del Sprint:**
    - Se ha llevado a cabo la planificación detallada de las tareas para el nuevo sprint.
 2. **Iniciativa de Trabajo Individual:**
    - El equipo ha acordado que un integrante realizará el sprint de manera individual para permitir un descanso al otro miembro.
 
-### Desafíos:
+**Desafíos:**
 - **Adaptación a la Nueva Dinámica:**
-  - Ajustar la dinámica de trabajo para garantizar la eficiencia con un solo integrante llevando a cabo el sprint.
+   - Ajustar la dinámica de trabajo para garantizar la eficiencia con un solo integrante llevando a cabo el sprint.
 
 ## Progreso de Tareas
 1. **Desarrollo Individual:**
@@ -42,9 +80,14 @@ Este informe destaca las actividades y progresos del equipo durante el nuevo spr
    - Realizar una revisión intermedia para evaluar el progreso y abordar cualquier problema emergente.
 2. **Colaboración Continua:**
    - Mantener una comunicación constante para asegurar la colaboración efectiva, a pesar de la distribución individual de tareas.
+   - Se solicitó ayuda al compañero de equipo, ya que no estaba logrando que las consignas realizadas en el formulario de login/register se ajustaran al pedido del sprint, logrando el mismo poder afrontar el desafío de resolver la situación y lograr con su colaboración que todos los requisitos quedaran realizados al 100 %.
 
 ## Conclusiones
-Este nuevo enfoque individual para el sprint se ha establecido para proporcionar un descanso merecido a uno de los integrantes. La adaptación a esta nueva dinámica requerirá una comunicación clara y eficiente. El equipo está comprometido con el éxito del proyecto y está listo para abordar cualquier desafío que surja durante este sprint particular.
+Este nuevo enfoque individual para el sprint se ha implementado con éxito. Sin embargo, es crucial destacar la colaboración excepcional del compañero de grupo Marcos Quinteros, la cual fue de suma importancia para alcanzar el éxito total del proyecto.
+A pesar de las habilidades y esfuerzos individuales, la colaboración constante y el intercambio de conocimientos entre ambos miembros han sido elementos clave en la consecución de los objetivos al 100%.
+Estamos orgullosos del trabajo en equipo demostrado hasta ahora y confiamos en que, con esta base sólida de colaboración, superaremos cualquier desafío futuro con eficacia y lograremos resultados excepcionales.
+
+
 
 
 🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
