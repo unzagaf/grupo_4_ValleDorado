@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const config = {
-        tableName: 'service',
+        tableName: 'services',
         timestamps: true
     };
 

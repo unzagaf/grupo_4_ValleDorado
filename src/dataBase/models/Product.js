@@ -1,6 +1,3 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
-
 module.exports = (sequelize, DataTypes) => {
     const alias = 'Product';
 
@@ -44,15 +41,16 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = models => {
-        Product.hasMany(models.ProductService, {
+        const { ProductService, ProductImage } = models;
+        Product.hasMany(ProductService, {
             as: 'product_services',
             foreignKey: 'product_id'
         });
-        Product.hasMany(models.ProductImage, {
+        Product.hasMany(ProductImage, {
             as: 'product_images',
             foreignKey: 'product_id'
         });
     };
-
+    
     return Product;
 }

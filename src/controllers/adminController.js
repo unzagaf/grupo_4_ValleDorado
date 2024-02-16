@@ -9,20 +9,21 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const adminController = {
     index: (req, res) => {
         res.render('./admin/admin.ejs', {
-             stylesheetPath: '/css/admin.css',
-             products: products,
-             usuarioLogueado: req.session.usuarioLogueado });
+            stylesheetPath: '/css/admin.css',
+            products: products,
+            usuarioLogueado: req.session.usuarioLogueado
+        });
     },
     paqueteCreate: (req, res) => {
         try {
-            const newProduct = {id_producto: products.length + 1, ...req.body, fecha_creacion: obtenerFechaActual()};
+            const newProduct = { id_producto: products.length + 1, ...req.body, fecha_creacion: obtenerFechaActual() };
 
             // Accede a la información de los archivos cargados por Multer
             const imagenesProductos = req.files;
             // revisa si hay imagenes
             if (imagenesProductos) {
-            // Asigna las rutas de las imágenes al producto
-            newProduct.imagen_producto = imagenesProductos.map(img => `/img/${img.filename}`);
+                // Asigna las rutas de las imágenes al producto
+                newProduct.imagen_producto = imagenesProductos.map(img => `/img/${img.filename}`);
             }
             products.push(newProduct);
             const datosString = JSON.stringify(products, null, 2);
@@ -33,16 +34,17 @@ const adminController = {
             res.status(500).send('Error interno del servidor');
         }
     },
-    paqueteSelect:(req, res)=>{
+    paqueteSelect: (req, res) => {
         const idProduct = req.params.idProduct;
         const product = products.find(product => product.id_producto === Number(idProduct));
 
-        res.render('./admin/productEdit.ejs',{
+        res.render('./admin/productEdit.ejs', {
             stylesheetPath: '/css/admin.css',
-             product: product,
-             usuarioLogueado: req.session.usuarioLogueado });
+            product: product,
+            usuarioLogueado: req.session.usuarioLogueado
+        });
     },
-    paqueteEdit:(req, res)=>{
+    paqueteEdit: (req, res) => {
         const idProduct = req.params.idProduct;
         const productIndex = products.findIndex(product => product.id_producto === Number(idProduct));
 
@@ -60,7 +62,7 @@ const adminController = {
             existingProduct.imagen_producto = nuevasImagenes.map(img => `/img/${img.filename}`);
         }
 
-         // Verifica si hay valores en req.body.incluye y actualiza el producto
+        // Verifica si hay valores en req.body.incluye y actualiza el producto
         if (req.body.incluye) {
             existingProduct.incluye = Array.isArray(req.body.incluye) ? req.body.incluye : [req.body.incluye];
         } else {
@@ -73,7 +75,7 @@ const adminController = {
 
         res.redirect('/admin');
     },
-    paqueteDelete:(req,res)=>{
+    paqueteDelete: (req, res) => {
         try {
             const productId = req.params.idProduct;
             const productIndex = products.findIndex(product => product.id_producto === Number(productId));

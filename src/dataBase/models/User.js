@@ -1,5 +1,4 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+
 
 module.exports = (sequelize, DataTypes) => {
     const alias = 'User';
@@ -36,12 +35,12 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = models => {
-        User.hasMany(models.Account, {
-            as: 'accounts',
+        User.hasOne(models.Account, {
+            as: 'account',
             foreignKey: 'user_id'
         });
         User.hasMany(models.Bookings, {
-            as: 'bookings',
+            as: 'booking',
             foreignKey: 'user_id'
         });
         User.belongsTo(models.Category, {

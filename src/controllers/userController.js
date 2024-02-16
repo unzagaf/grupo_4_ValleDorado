@@ -6,6 +6,7 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 const arrayUsers = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
+const userServices = require ('../dataBase/services/userServices.js')
 
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -27,9 +28,13 @@ register: (req, res) => {
 
 // **** Formulario de login, para el usuario
 login: (req, res) => {
+
+    userServices.getAll();
+
     res.render('./users/login.ejs',
         { stylesheetPath: '/css/login.css',
         usuarioLogueado: req.session.usuarioLogueado});
+
 },
 
     // **** Implementación del formulario de login
@@ -117,6 +122,8 @@ storeUser: (req, res) => {
     // Guardar la persistencia de datos (archivo JSON)
     const datosUsers = JSON.stringify(arrayUsers, null, 8);
     fs.writeFileSync(usersFilePath, datosUsers, 'utf-8');
+
+
 
     res.redirect('/users/login');
 },

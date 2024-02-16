@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
 module.exports = (sequelize, DataTypes) => {
-    const alias = 'Bookings';
+    const alias = 'Booking';
 
     const cols = {
         id: {
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const config = {
-        tableName: 'booking',
+        tableName: 'bookings',
         timestamps: true
     };
 

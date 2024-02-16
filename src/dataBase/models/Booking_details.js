@@ -33,14 +33,14 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const config = {
-        tableName: 'bookings_details',
+        tableName: 'booking_details',
         timestamps: true
     };
 
     const BookingDetails = sequelize.define(alias, cols, config);
 
     BookingDetails.associate = models => {
-        BookingDetails.belongsTo(models.Bookings, {
+        BookingDetails.belongsTo(models.Booking, {
             as: 'booking',
             foreignKey: 'booking_id'
         });
