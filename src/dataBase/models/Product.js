@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-module.exports = (sequelize, DataTypes) => {
-    const alias = 'Product';
+module.exports = (sequelize, dataTypes) => {
 
+    const alias = 'Product';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -11,27 +11,27 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         destination: {
-            type: DataTypes.STRING(60),
-            allowNull: false
-        },
-        price: {
-            type: DataTypes.DECIMAL(10, 0),
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         start_date: {
-            type: DataTypes.DATEONLY,
+            type: DataTypes.DATE,
             allowNull: false
         },
-        ending_date: {
-            type: DataTypes.DATEONLY,
+        finish_date: {
+            type: DataTypes.DATE,
             allowNull: false
         },
-        province_of_departure: {
-            type: DataTypes.STRING(60),
+        price: {
+            type: DataTypes.DECIMAL(11, 0),
             allowNull: false
         },
-        peoples: {
-            type: DataTypes.INTEGER,
+        city_depart: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        group_size: {
+            type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         }
     };
@@ -42,17 +42,6 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const Product = sequelize.define(alias, cols, config);
-
-    Product.associate = models => {
-        Product.hasMany(models.ProductService, {
-            as: 'product_services',
-            foreignKey: 'product_id'
-        });
-        Product.hasMany(models.ProductImage, {
-            as: 'product_images',
-            foreignKey: 'product_id'
-        });
-    };
 
     return Product;
 }

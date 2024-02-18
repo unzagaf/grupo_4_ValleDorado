@@ -3,11 +3,11 @@ const path = require('path');
 
 const validacionRegister = [
 
-    body('nombre').notEmpty().withMessage('Cpmpletar con tu nombre').bail().isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 letras'),
+    body('name').notEmpty().withMessage('Completar con tu nombre').bail().isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 letras'),
 
-    body('apellido').notEmpty().withMessage('Completar con tu apellido').bail().isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 letras'),
+    body('surname').notEmpty().withMessage('Completar con tu apellido').bail().isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 letras'),
 
-    body('fechaNacimiento').notEmpty().withMessage('Completar con tu fecha de nacimiento').bail(),
+    body('birthdate').notEmpty().withMessage('Completar con tu fecha de nacimiento').bail(),
 
     body('dni').notEmpty().withMessage('Completar tu dni').bail().isLength({ min: 6 }).withMessage('El dni debe tener como mínimo 8 números'),
 

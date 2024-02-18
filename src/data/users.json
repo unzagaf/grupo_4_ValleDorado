@@ -15,7 +15,7 @@
                 "nombre": "María",
                 "apellido": "Gómez",
                 "dni": 25366479,
-                "email": "maria.gomez@gmial.com",
+                "email": "maria.gomez@gmail.com",
                 "password": "contrasena456",
                 "confirmarPassword": "contrasena456",
                 "categoria": "Cliente",
@@ -67,7 +67,7 @@
                 "email": "carolina.25@gmail.com",
                 "password": "963852",
                 "confirmarPassword": "963852",
-                "id": 17,
+                "id": 6,
                 "categoria": "",
                 "image": "imagenUsers1705187577212.png"
         },
@@ -80,7 +80,7 @@
                 "email": "vanesa.46@gmail.com",
                 "password": "$2b$10$OyZvMXEPHKUD6THGRbtG6.FrjubsRw..Z6G3jcuV3H9iansorMZ6W",
                 "confirmarPassword": "456987",
-                "id": 18,
+                "id": 7,
                 "categoria": "",
                 "image": "imagenUsers1705207572024.png"
         },
@@ -135,5 +135,18 @@
                 "id": 11,
                 "categoria": "",
                 "image": "imagenUsers1707457853571.jpg"
+        },
+        {
+                "nombre": "Rosana",
+                "apellido": "Barros",
+                "fechaNacimiento": "1987-02-15",
+                "dni": "25366663",
+                "telefono": "351 425585",
+                "email": "rosana25@gmail.com",
+                "password": "$2b$10$is4KUVELyOmys8OAMsqVvubehRot.wSBjBJBlxQpbJbxyjA.bKCtq",
+                "confirmarPassword": "123654",
+                "id": 12,
+                "categoria": "",
+                "image": "imagenUsers1707975073748.jpg"
         }
 ]

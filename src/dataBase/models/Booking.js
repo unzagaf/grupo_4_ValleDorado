@@ -1,46 +1,47 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-module.exports = (sequelize, DataTypes) => {
-    const alias = 'Bookings';
+module.exports = (sequelize, dataTypes) => {
 
+    const alias = 'Booking';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        reservation_date: {
-            type: DataTypes.DATEONLY,
+        pagada: {
+            type: DataTypes.TINYINT,
             allowNull: false
         },
-        product_id: {
+        account_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        user_id: {
+        product_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         }
     };
 
     const config = {
-        tableName: 'booking',
+        tableName: 'bookings',
         timestamps: true
     };
 
-    const Bookings = sequelize.define(alias, cols, config);
+    const Booking = sequelize.define(alias, cols, config);
 
-    Bookings.associate = models => {
-        Bookings.belongsTo(models.User, {
-            as: 'user',
-            foreignKey: 'user_id'
+    Booking.associate = models => {
+        Booking.belongsTo(models.Account, {
+            as: 'account',
+            foreignKey: 'account_id'
         });
-        Bookings.belongsTo(models.Product, {
+        Booking.belongsTo(models.Product, {
             as: 'product',
             foreignKey: 'product_id'
         });
     };
 
-    return Bookings;
+    return Booking;
 }
+

@@ -3,25 +3,29 @@ const sequelize = require('../config/config');
 
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Category';
+    const alias = 'Include';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
-            type: DataTypes.STRING(60),
+        include: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        details: {
+            type: DataTypes.STRING(350),
             allowNull: false
         }
     };
 
     const config = {
-        tableName: 'categories',
-        timestamps: true
+        tableName: 'includes',
+        timestamps:true
     };
 
-    const Category = sequelize.define(alias, cols, config);
+    const Include = sequelize.define(alias, cols, config);
 
-    return Category;
+    return Include;
 }
