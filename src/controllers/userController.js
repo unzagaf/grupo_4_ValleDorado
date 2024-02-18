@@ -120,8 +120,10 @@ const userController = {
         }
 
         // Generar hash bcrypt para la contraseña
-        const saltRounds = 10;
-        newUser.password = bcrypt.hashSync(req.body.password, saltRounds);
+       // const saltRounds = 10;
+        //newUser.password = bcrypt.hashSync(req.body.password, saltRounds);
+
+
 
         // Persistir el nuevo usuario en el array/JSON
         // arrayUsers.push(newUser);
@@ -131,7 +133,20 @@ const userController = {
         res.redirect('/users/login');
 
         // Persistir el nuevo usuario en la base de datos
-        userServices.createUser(newUser);
+        //userServices.createUser(newUser);
+
+        userService.generatePasswordHash(req.body.password)
+        .then(hashedPassword => {
+            newUser.password = hashedPassword;
+            return userService.createUser(newUser);
+        })
+        .then(() => {
+            res.redirect('/users/login');
+        })
+        .catch(error => {
+            console.error('Error al crear usuario:', error);
+            res.send('Error al crear usuario');
+        });
 
 
     },
