@@ -1,38 +1,43 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-module.exports = (sequelize, DataTypes) => {
-    const alias = 'ProductImages';
+module.exports = (sequelize, dataTypes) => {
 
+    const alias = 'ProductInclude';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        route: {
-            type: DataTypes.STRING(50),
+        product_id: {
+            type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        product_id: {
+        include_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         }
     };
 
     const config = {
-        tableName: 'product_images',
+        tableName: 'product_includes',
         timestamps: true
     };
 
-    const ProductImage = sequelize.define(alias, cols, config);
+    const ProductInclude = sequelize.define(alias, cols, config);
 
-    ProductImage.associate = models => {
-        ProductImage.belongsTo(models.Product, {
+    ProductInclude.associate = models => {
+        ProductInclude.belongsTo(models.Product, {
             as: 'product',
             foreignKey: 'product_id'
         });
+        ProductInclude.belongsTo(models.Include, {
+            as: 'include',
+            foreignKey: 'include_id'
+        });
     };
 
-    return ProductImage;
+    return ProductInclude;
 }
+

@@ -1,17 +1,17 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-module.exports = (sequelize, DataTypes) => {
-    const alias = 'UserProduct';
+module.exports = (sequelize, dataTypes) => {
 
+    const alias = 'Image';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+        route: {
+            type: DataTypes.STRING(60),
             allowNull: false
         },
         product_id: {
@@ -21,22 +21,18 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const config = {
-        tableName: 'user_product',
+        tableName: 'images',
         timestamps: true
     };
 
-    const UserProduct = sequelize.define(alias, cols, config);
+    const Image = sequelize.define(alias, cols, config);
 
-    UserProduct.associate = models => {
-        UserProduct.belongsTo(models.User, {
-            as: 'user',
-            foreignKey: 'user_id'
-        });
-        UserProduct.belongsTo(models.Product, {
+    Image.associate = models => {
+        Image.belongsTo(models.Product, {
             as: 'product',
             foreignKey: 'product_id'
         });
     };
 
-    return UserProduct;
+    return Image;
 }

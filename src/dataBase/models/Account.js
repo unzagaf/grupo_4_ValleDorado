@@ -1,35 +1,35 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-module.exports = (sequelize, DataTypes) => {
-    const alias = 'Account';
+module.exports = (sequelize, dataTypes) => {
 
+    const alias = 'Account';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
+        userName: {
+            type: DataTypes.STRING(25),
+            allowNull: false
+        },
         email: {
             type: DataTypes.STRING(50),
             allowNull: false
         },
         password: {
-            type: DataTypes.STRING(50),
+            type: DataTypes.STRING(255),
             allowNull: false
         },
-        image: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        user_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+        avatar: {
+            type: DataTypes.STRING(255),
             allowNull: false
         }
     };
 
     const config = {
-        tableName: 'account',
+        tableName: 'accounts',
         timestamps: true
     };
 

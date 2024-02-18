@@ -16,7 +16,8 @@ const adminController = {
     },
     paqueteCreate: (req, res) => {
         try {
-            const newProduct = { id_producto: products.length + 1, ...req.body, fecha_creacion: obtenerFechaActual() };
+            const newProduct = { id_producto: products.length + 1,
+                ...req.body, fecha_creacion: obtenerFechaActual() };
 
             // Accede a la información de los archivos cargados por Multer
             const imagenesProductos = req.files;
@@ -26,8 +27,13 @@ const adminController = {
                 newProduct.imagen_producto = imagenesProductos.map(img => `/img/${img.filename}`);
             }
             products.push(newProduct);
+
+            // Aca tocamos la base de datos desde el Controller
+            //productService.create(newProduct)
             const datosString = JSON.stringify(products, null, 2);
             fs.writeFileSync(productsFilePath, datosString, 'utf-8');
+
+            
             res.redirect('/admin');
         } catch (error) {
             console.error('Error al procesar los datos:', error);

@@ -1,8 +1,9 @@
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/config');
 
+module.exports = (sequelize, dataTypes) => {
 
-module.exports = (sequelize, DataTypes) => {
     const alias = 'User';
-
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -10,20 +11,17 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: DataTypes.STRING(45),
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         surname: {
-            type: DataTypes.STRING(45),
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         dni: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        category_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
+            type: DataTypes.INTEGER(10).UNSIGNED,
+            allowNull: false,
+            unique: true
         }
     };
 
@@ -34,20 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = models => {
-        User.hasOne(models.Account, {
-            as: 'account',
-            foreignKey: 'user_id'
-        });
-        User.hasMany(models.Bookings, {
-            as: 'booking',
-            foreignKey: 'user_id'
-        });
-        User.belongsTo(models.Category, {
-            as: 'category',
-            foreignKey: 'category_id'
-        });
-    };
-
     return User;
 }
+
+

@@ -11,30 +11,30 @@
                 <form action="/users/register" method="post" enctype="multipart/form-data" class="register_form ">
 
                     <label for="" class="input__txt__places section__login--label">Nombre</label>
-                    <input type="text" name="nombre" placeholder="nombre" 
-                    class ="form-control <%= locals.errors && errors.nombre? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.nombre: null %>" >
-                    <% if(locals.errors && errors.nombre){%>
+                    <input type="text" name="name" placeholder="nombre" 
+                    class ="form-control <%= locals.errors && errors.name? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.name: null %>" >
+                    <% if(locals.errors && errors.name){%>
                         <div class="text-danger">
-                            <%=errors.nombre.msg %>
+                            <%=errors.name.msg %>
                         </div>
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Apellido</label>
-                    <input type="text" name="apellido" placeholder="apellido"
-                        class ="form-control <%= locals.errors && errors.apellido? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.apellido: null %>">
-                    <% if(locals.errors && errors.apellido){%>
+                    <input type="text" name="surname" placeholder="apellido"
+                        class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" value = "<%= locals.oldData? surname: null %>">
+                    <% if(locals.errors && errors.surname){%>
                         <div class="text-danger">
-                            <%=errors.apellido.msg %>
+                            <%=errors.surname.msg %>
                         </div>
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Fecha de
                         Nacimiento</label>
-                    <input type="date" name="fechaNacimiento" placeholder="fecha nacimiento" 
-                    class ="form-control <%= locals.errors && errors.fechaNacimiento? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.fechaNacimiento: null %>">
-                    <% if(locals.errors && errors.fechaNacimiento){%>
+                    <input type="date" name="birthdate" placeholder="fecha nacimiento" 
+                    class ="form-control <%= locals.errors && errors.birthdate? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.birthdate: null %>">
+                    <% if(locals.errors && errors.birthdate){%>
                         <div class="text-danger">
-                            <%=errors.fechaNacimiento.msg %>
+                            <%=errors.birthdate.msg %>
                         </div>
                     <% }%>
 
@@ -49,12 +49,12 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Teléfono</label>
-                    <input type="text" name="telefono" placeholder="telefono"
-                        class ="form-control <%= locals.errors && errors.telefono? 'is-invalid': null %>"
-                        value = "<%= locals.oldData? oldData.telefono :null %>">
-                    <% if(locals.errors && errors.telefono){%>
+                    <input type="text" name="telephone" placeholder="telephone"
+                        class ="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
+                        value = "<%= locals.oldData? oldData.telephone :null %>">
+                    <% if(locals.errors && errors.telephone){%>
                         <div class="text-danger">
-                            <%=errors.telefono.msg %>
+                            <%=errors.telephone.msg %>
                         </div>
                     <% }%>
 

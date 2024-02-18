@@ -1,21 +1,29 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-module.exports = (sequelize, DataTypes) => {
-    const alias = 'Service';
+module.exports = (sequelize, dataTypes) => {
 
+    const alias = 'Service';
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        service: {
-            type: DataTypes.STRING(100),
+        type_of_room: {
+            type: DataTypes.STRING(50),
             allowNull: false
         },
-        details: {
-            type: DataTypes.STRING(255),
+        travel_insurance: {
+            type: DataTypes.TINYINT,
+            allowNull: false
+        },
+        airport_transportation: {
+            type: DataTypes.TINYINT,
+            allowNull: false
+        },
+        rent_a_car: {
+            type: DataTypes.TINYINT,
             allowNull: false
         }
     };
@@ -26,13 +34,6 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const Service = sequelize.define(alias, cols, config);
-
-    Service.associate = models => {
-        Service.hasMany(models.ProductService, {
-            as: 'product_services',
-            foreignKey: 'service_id'
-        });
-    };
 
     return Service;
 }
