@@ -71,8 +71,11 @@ const userController = {
             req.session.usuarioLogueado = usuarioALoguearse;
             req.session.save(err => {
                 if (err) {
-                    console.log(err);
+                    console.log("error al guardar la session",err);
                 } else {
+                    console.log("session guardada correctamente")
+                    console.log("usuarioLogueado:", req.session.usuarioLogueado);
+
                     res.redirect('/');
                 }
             })
@@ -91,7 +94,7 @@ const userController = {
     storeUser: (req, res) => {
         let newUser = { ...req.body };
 
-        //newUser.id = arrayUsers.length + 1;
+        //newUser.id = arrayUsers.length + 1; ya no es necesario dado que los datos se cargan en la BD
         newUser.name = req.body.name || "";
         newUser.surname = req.body.surname || "";
         newUser.dni = req.body.dni || "";
