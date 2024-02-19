@@ -9,24 +9,26 @@ const bcrypt = require('bcrypt');
 
 
 const userServices = {
+    createUser: (userData, accountData) => {
+        let createdUser;
+        let createdAccount;
 
-    // getAll: () => {
-    //     db.User.findAll()
-    //         .then((user) => {
-    //             console.log(user)
-    //         })
-    // },
+        return sequelize.transaction(async (t) => {
+            // Crear el usuario en la tabla User
+            createdUser = await db.User.create(userData, { transaction: t });
 
-    // Método para crear un nuevo usuario
-    createUser: (newUser) => {
-        return db.User.create(newUser)
-            .then((createdUser) => {
-                return createdUser
-            })
-            .catch((error) => {
-                console.error('Error creando usuario:', error);
-                throw error;
-            });
+            // Asociar el usuario a la cuenta
+            accountData.user_id = createdUser.id;
+
+            // Crear la cuenta en la tabla Account asociada al usuario creado
+            createdAccount = await db.Account.create(accountData, { transaction: t });
+
+            // Devolver el usuario y la cuenta creados
+            return { user: createdUser, account: createdAccount };
+        }).catch((error) => {
+            console.error('Error creando usuario completo:', error);
+            throw error;
+        });
     },
 
     getOne: (email) => {
@@ -47,7 +49,35 @@ const userServices = {
     generatePasswordHash: (password) => {
         const saltRounds = 10;
         return bcrypt.hash(password, saltRounds);
+    },
+    login: async (username, password) => {
+        try {
+        // Buscar el usuario por su correo electrónico
+        const user = await db.Account.findOne({ where: { username } });
+        
+        // Verificar si se encontró el usuario
+        if (!user) {
+            throw new Error('Usuario no encontrado');
+        }
+
+        // Verificar si la contraseña proporcionada coincide con la contraseña almacenada
+        const account = await db.Account.findOne({ where: { userId: user.id } });
+        if (!account) {
+            throw new Error('Cuenta no encontrada');
+        }
+        const passwordMatch = await bcrypt.compare(password, account.password);
+        if (!passwordMatch) {
+            throw new Error('Contraseña incorrecta');
+        }
+
+        // Si el usuario y la contraseña son válidos, devolver el usuario
+        return user;
+        } catch (error) {
+        throw error;
+        }
     }
+
+    
 
 
 }

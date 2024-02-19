@@ -6,7 +6,8 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 const arrayUsers = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
-const userServices = require('../dataBase/services/userServices.js')
+const userServices = require('../dataBase/services/userServices.js');
+const { log } = require('console');
 
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -88,67 +89,97 @@ const userController = {
         }
 
     },
+    processLogin: (req, res) => {
+
+        const validacion = validationResult(req);
+        let usuarioALoguearse;
+
+        if (validacion.errors.length > 0) {
+            console.log('hubo un error');
+            return res.render('./users/login.ejs', {
+                stylesheetPath: 'css/login.css',
+                errors: validacion.mapped(),
+                oldData: req.body,
+            });
+        } else {
+            for (let i = 0; i < arrayUsers.length; i++) {
+                if (arrayUsers[i].email == req.body.email) {
+                    if (bcrypt.compareSync(req.body.password, arrayUsers[i].password)) {
+                        usuarioALoguearse = arrayUsers[i];
+                        break;
+                    }
+                }
+            }
+
+            if (usuarioALoguearse == undefined) {
+                return res.send('no se pudo');
+            }
+
+            req.session.usuarioLogueado = usuarioALoguearse;
+            req.session.save(err => {
+                if (err) {
+                    console.log("error al guardar la session",err);
+                } else {
+                    console.log("session guardada correctamente")
+                    console.log("usuarioLogueado:", req.session.usuarioLogueado);
+
+                    res.redirect('/');
+                }
+            })
+            // console.log('Usuario logueado:', usuarioALoguearse);
+            //     res.render('./products/home.ejs', {
+            //     stylesheetPath: 'css/home.css',
+            //     products: products,
+            //     usuarioLogueado: req.session.usuarioLogueado
+            // });
+        }
+
+    },
 
     //**************************************************************************************** */
 
-    storeUser: (req, res) => {
+    storeUser: async (req, res) => {
         let newUser = { ...req.body };
-
-        //newUser.id = arrayUsers.length + 1; ya no es necesario dado que los datos se cargan en la BD
+        let newAccount = { ...req.body };
+    
         newUser.name = req.body.name || "";
         newUser.surname = req.body.surname || "";
         newUser.dni = req.body.dni || "";
-        newUser.categoria = "";
-        newUser.image = "";
 
-        // Verifica si se ha subido una imagen
+        newAccount.email = req.body.email
+        newAccount.username = req.body.username || ""; 
+        newAccount.avatar = req.body.avatar || "";
+
+        // / Verifica si se ha subido una imagen
         if (req.file && req.file.filename) {
-            newUser.image = req.file.filename;
+            newAccount.avatar = req.file.filename;
         }
-
-        // Validación de errores
         const resultadoValidacion = validationResult(req);
-
         if (resultadoValidacion.errors.length > 0) {
-
+            const errores = resultadoValidacion.mapped();
+            console.log('Errores de validación:', errores);
             return res.render('./users/register.ejs', {
                 stylesheetPath: 'css/register.css',
-                errors: resultadoValidacion.mapped(),
+                errors: errores,
                 oldData: req.body,
-                newUser: newUser
+                newUser: newUser,
+                usuarioLogueado: req.session.usuarioLogueado
             });
         }
-
-        // Generar hash bcrypt para la contraseña
-       // const saltRounds = 10;
-        //newUser.password = bcrypt.hashSync(req.body.password, saltRounds);
-
-
-
-        // Persistir el nuevo usuario en el array/JSON
-        // arrayUsers.push(newUser);
-        // Guardar la persistencia de datos (archivo JSON)
-        // const datosUsers = JSON.stringify(arrayUsers, null, 8);
-        // fs.writeFileSync(usersFilePath, datosUsers, 'utf-8');
-        res.redirect('/users/login');
-
-        // Persistir el nuevo usuario en la base de datos
-        //userServices.createUser(newUser);
-
-        userService.generatePasswordHash(req.body.password)
-        .then(hashedPassword => {
-            newUser.password = hashedPassword;
-            return userService.createUser(newUser);
-        })
-        .then(() => {
-            res.redirect('/users/login');
-        })
-        .catch(error => {
+    
+        try {
+            const hashedPassword = await userServices.generatePasswordHash(req.body.password);
+            newAccount.password = hashedPassword;
+            const { user, account } = await userServices.createUser(newUser, newAccount);
+            console.log('Usuario creado con éxito:', user);
+            res.render('./users/login.ejs', {
+                stylesheetPath: '/css/login.css',
+                usuarioLogueado: req.session.usuarioLogueado
+            });
+        } catch (error) {
             console.error('Error al crear usuario:', error);
-            res.send('Error al crear usuario');
-        });
-
-
+            res.status(500).send('Error al crear usuario');
+        }
     },
 
     //***************************************************************************************** */
