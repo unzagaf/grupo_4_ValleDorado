@@ -20,7 +20,6 @@ const userController = {
     },
 
     // **** Formulario de registro/creación del usuario
-
     register: (req, res) => {
         res.render('./users/register.ejs',
             {
@@ -31,109 +30,44 @@ const userController = {
 
     // **** Formulario de login, para el usuario
     login: (req, res) => {
-
-        //userServices.getAll();
-
         res.render('./users/login.ejs',
-            {
-                stylesheetPath: '/css/login.css',
-                usuarioLogueado: req.session.usuarioLogueado
-            });
+        {
+            stylesheetPath: '/css/login.css',
+            usuarioLogueado: req.session.usuarioLogueado
+        });
 
     },
 
     // **** Implementación del formulario de login
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
+        try{
+            const validacion = validationResult(req);
+            let usuarioALoguearse;
 
-        const validacion = validationResult(req);
-        let usuarioALoguearse;
-
-        if (validacion.errors.length > 0) {
-            console.log('hubo un error');
-            return res.render('./users/login.ejs', {
-                stylesheetPath: 'css/login.css',
-                errors: validacion.mapped(),
-                oldData: req.body,
-            });
-        } else {
-            for (let i = 0; i < arrayUsers.length; i++) {
-                if (arrayUsers[i].email == req.body.email) {
-                    if (bcrypt.compareSync(req.body.password, arrayUsers[i].password)) {
-                        usuarioALoguearse = arrayUsers[i];
-                        break;
-                    }
-                }
+            if (validacion.errors.length > 0) {
+                console.log('hubo un error');
+                return res.render('./users/login.ejs', {
+                    stylesheetPath: 'css/login.css',
+                    errors: validacion.mapped(),
+                    oldData: req.body,
+                });
             }
-
-            if (usuarioALoguearse == undefined) {
-                return res.send('no se pudo');
-            }
-
-            req.session.usuarioLogueado = usuarioALoguearse;
+            const { username, password } = req.body;
+            const user = await userServices.login(username, password);
+            req.session.usuarioLogueado = user;
             req.session.save(err => {
                 if (err) {
-                    console.log("error al guardar la session",err);
+                    console.log("Error al guardar la sesión", err);
                 } else {
-                    console.log("session guardada correctamente")
-                    console.log("usuarioLogueado:", req.session.usuarioLogueado);
-
+                    console.log("Sesión guardada correctamente");
+                    console.log("Usuario logueado:", req.session.usuarioLogueado);
                     res.redirect('/');
                 }
-            })
-            // console.log('Usuario logueado:', usuarioALoguearse);
-            //     res.render('./products/home.ejs', {
-            //     stylesheetPath: 'css/home.css',
-            //     products: products,
-            //     usuarioLogueado: req.session.usuarioLogueado
-            // });
-        }
-
-    },
-    processLogin: (req, res) => {
-
-        const validacion = validationResult(req);
-        let usuarioALoguearse;
-
-        if (validacion.errors.length > 0) {
-            console.log('hubo un error');
-            return res.render('./users/login.ejs', {
-                stylesheetPath: 'css/login.css',
-                errors: validacion.mapped(),
-                oldData: req.body,
             });
-        } else {
-            for (let i = 0; i < arrayUsers.length; i++) {
-                if (arrayUsers[i].email == req.body.email) {
-                    if (bcrypt.compareSync(req.body.password, arrayUsers[i].password)) {
-                        usuarioALoguearse = arrayUsers[i];
-                        break;
-                    }
-                }
-            }
-
-            if (usuarioALoguearse == undefined) {
-                return res.send('no se pudo');
-            }
-
-            req.session.usuarioLogueado = usuarioALoguearse;
-            req.session.save(err => {
-                if (err) {
-                    console.log("error al guardar la session",err);
-                } else {
-                    console.log("session guardada correctamente")
-                    console.log("usuarioLogueado:", req.session.usuarioLogueado);
-
-                    res.redirect('/');
-                }
-            })
-            // console.log('Usuario logueado:', usuarioALoguearse);
-            //     res.render('./products/home.ejs', {
-            //     stylesheetPath: 'css/home.css',
-            //     products: products,
-            //     usuarioLogueado: req.session.usuarioLogueado
-            // });
+        } catch (error) {
+            console.log("Error al iniciar sesión:", error.message);
+            return res.status(500).send("Error al iniciar sesión");
         }
-
     },
 
     //**************************************************************************************** */

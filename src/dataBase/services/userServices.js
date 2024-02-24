@@ -4,10 +4,6 @@ const { Op } = require("sequelize");
 const path = require('path');
 const bcrypt = require('bcrypt');
 
-
-
-
-
 const userServices = {
     createUser: (userData, accountData) => {
         let createdUser;
@@ -30,7 +26,6 @@ const userServices = {
             throw error;
         });
     },
-
     getOne: (email) => {
         return new Promise((resolve, reject) => {
             db.User.findOne({ where: { email: email } })
@@ -53,36 +48,25 @@ const userServices = {
     login: async (username, password) => {
         try {
         // Buscar el usuario por su correo electrónico
-        const user = await db.Account.findOne({ where: { username } });
-        
+        const account = await db.Account.findOne({ where: { username } });
         // Verificar si se encontró el usuario
-        if (!user) {
-            throw new Error('Usuario no encontrado');
-        }
-
-        // Verificar si la contraseña proporcionada coincide con la contraseña almacenada
-        const account = await db.Account.findOne({ where: { userId: user.id } });
         if (!account) {
-            throw new Error('Cuenta no encontrada');
+            throw new Error('Usuario no encontrado');
         }
         const passwordMatch = await bcrypt.compare(password, account.password);
         if (!passwordMatch) {
             throw new Error('Contraseña incorrecta');
         }
-
-        // Si el usuario y la contraseña son válidos, devolver el usuario
-        return user;
+        // Si el usuario y la contraseña son válidos, buscar los datos del usuario
+        const user = await db.User.findOne({ where: { id: account.user_id } });
+        if (!user) {
+            throw new Error('Datos de usuario no encontrados');
+        }
+        // Si el usuario y la contraseña son válidos, devolver el usuariosss
+        return { account, user };
         } catch (error) {
         throw error;
         }
     }
-
-    
-
-
 }
-
-
-
-
 module.exports = userServices;

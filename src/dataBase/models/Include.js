@@ -14,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        details: {
-            type: DataTypes.STRING(350),
-            allowNull: false
-        }
+        // details: {
+        //     type: DataTypes.STRING(350),
+        //     allowNull: false
+        // }
     };
 
     const config = {

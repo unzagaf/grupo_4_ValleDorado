@@ -12,52 +12,52 @@
             <section id="crear__paquetes__admin">
                 <form method="POST" action="/admin" class="form__search-admin" enctype="multipart/form-data">
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete">
+                    <input type="text" name="destination" placeholder="Ingrese el nombre del paquete">
 
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida">
+                    <input type="text" name="city_depart" placeholder="Ingrese provincia de salida">
 
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete">
+                    <input type="number" name="price" placeholder="Ingrese precio del paquete">
 
                     <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas">
+                    <input type="number" name="group_size" placeholder="Ingrese la cantidad base de personas">
 
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete">
+                    <input type="date" name="start_date" placeholder="Ingrese fecha de inicio del paquete">
 
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <input type="date" name="finish_date" placeholder="Ingrese fecha de finalizacion del paquete">
 
-                    <label for="" class="input__txt__places section__login--label">Imagen 1</label>
+                    <label for="" class="input__txt__places section__login--label">Imagenes</label>
                     <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1">
 
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
 
                     <div id="incluye-options">
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Asistencia al Viajero">
+                            <input type="checkbox" name="incluye[]" value="Asistencia al Viajero">
                             <label>Asistencia al Viajero</label>
                             
                         </div>
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Hoteles 5 estrellas">
+                            <input type="checkbox" name="incluye[]" value="Hoteles 5 estrellas">
                             <label>Hoteles 5 estrellas</label>
                         </div>
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Coordinador y guias locales">
+                            <input type="checkbox" name="incluye[]" value="Coordinador y guias locales">
                             <label>Coordinador y guias locales</label>
                         </div>
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido">
+                            <input type="checkbox" name="incluye[]" value="Régimen de comidas todo incluido">
                             <label>Régimen de comidas todo incluido</label>
                         </div>
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Excursiones según programa">
+                            <input type="checkbox" name="incluye[]" value="Excursiones según programa">
                             <label>Excursiones según programa</label>
                         </div>
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso">
+                            <input type="checkbox" name="incluye[]" value="Traslados de ingreso y egreso">
                             <label>Traslados de ingreso y egreso</label>
                         </div>
                     </div>
@@ -69,6 +69,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>id</th>
                             <th>Nombre</th>
                             <th class="table__hidden">Cantidad de Personas</th>
                             <th>Precio</th>
@@ -80,21 +81,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% products.forEach(products => { %>
+                        <% products.forEach(product => { %>
                         <tr>
-                            <td><%= products.nombre_producto %></td>
-                            <td class="table__hidden"><%= products.cantidad_personas %></td>
-                            <td>$<%= products.precio_producto %></td>
-                            <td class="table__hidden"><%= products.fecha_inicio %></td>
-                            <td class="table__hidden"><%= products.fecha_fin %></td>
+                            <td><%= product.id %></td>
+                            <td><%= product.destination %></td>
+                            <td class="table__hidden"><%= product.group_size %></td>
+                            <td>$<%= product.price %></td>
+                            <td class="table__hidden"><%= product.start_date %></td>
+                            <td class="table__hidden"><%= product.finish_date %></td>
                             <!-- <td class="table__hidden"><img src="imagen1.jpg" alt="Imagen del paquete 1" width="50"></td> -->
                             <td>
-                                <a href="/admin/edit/<%= products.id_producto %>">
+                                <a href="/admin/edit/<%= product.id %>">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>
                             <td>
-                                <form method="POST" action="/admin/delete/<%= products.id_producto %>?_method=DELETE">
+                                <form method="POST" action="/admin/delete/<%= product.id %>?_method=DELETE">
                                     <button type="submit">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>

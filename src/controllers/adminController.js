@@ -2,47 +2,61 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const fs = require('fs');
-
+const productServices = require('../dataBase/services/productServices.js');
 const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const adminController = {
+    
     index: (req, res) => {
-        res.render('./admin/admin.ejs', {
-            stylesheetPath: '/css/admin.css',
-            products: products,
-            usuarioLogueado: req.session.usuarioLogueado
+        const products = productServices.getAll()
+        .then(products=>{
+            res.render('./admin/admin.ejs', {
+                stylesheetPath: '/css/admin.css',
+                products: products,
+                usuarioLogueado: req.session.usuarioLogueado
+            });
+        }).catch(error => {
+            console.error('Error al obtener productos:', error);
+            res.status(500).send('Error interno del servidor');
         });
     },
-    paqueteCreate: (req, res) => {
+    paqueteCreate: async(req, res) => {
+        const newProduct = { ...req.body};
+        newProduct.destination = req.body.destination || "";
+        newProduct.start_date = req.body.start_date || "";
+        newProduct.finish_date = req.body.finish_date || "";
+        newProduct.price = req.body.price || "";
+        newProduct.city_depart = req.body.city_depart || "";
+        newProduct.group_size = req.body.group_size || "";
+        newProduct.incluye = req.body.incluye || "";
+        
         try {
-            const newProduct = { id_producto: products.length + 1,
-                ...req.body, fecha_creacion: obtenerFechaActual() };
-
-            // Accede a la información de los archivos cargados por Multer
-            const imagenesProductos = req.files;
-            // revisa si hay imagenes
-            if (imagenesProductos) {
-                // Asigna las rutas de las imágenes al producto
-                newProduct.imagen_producto = imagenesProductos.map(img => `/img/${img.filename}`);
-            }
-            products.push(newProduct);
-
-            // Aca tocamos la base de datos desde el Controller
-            //productService.create(newProduct)
-            const datosString = JSON.stringify(products, null, 2);
-            fs.writeFileSync(productsFilePath, datosString, 'utf-8');
-
-            
-            res.redirect('/admin');
+            const createdProduct = await productServices.createProduct(newProduct);
+            console.log('todo:',createdProduct);
+            const products = productServices.getAll()
+            .then(products=>{
+                res.render('./admin/admin.ejs', {
+                    stylesheetPath: '/css/admin.css',
+                    products: products,
+                    usuarioLogueado: req.session.usuarioLogueado
+                });
+            }).catch(error => {
+                console.error('Error al obtener productos:', error);
+                res.status(500).send('Error interno del servidor');
+            });
         } catch (error) {
             console.error('Error al procesar los datos:', error);
             res.status(500).send('Error interno del servidor');
         }
     },
-    paqueteSelect: (req, res) => {
+    
+    paqueteSelect: async(req, res) => {
         const idProduct = req.params.idProduct;
-        const product = products.find(product => product.id_producto === Number(idProduct));
+        const product = await productServices.getOne(idProduct);
+        console.log(product);
+        // const product = products.find(product => product.id === Number(idProduct));
 
         res.render('./admin/productEdit.ejs', {
             stylesheetPath: '/css/admin.css',
