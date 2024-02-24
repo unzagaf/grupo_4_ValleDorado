@@ -7,7 +7,7 @@ const authMiddleware=  require('../middlewares/authMiddleware.js');
 
 
 // trae la vista
-router.get('/',authMiddleware, adminController.index);
+router.get('/', adminController.index);
 // manda la informacion del formulario
 router.post('/', fileUpload.array('imagen_producto', 5), adminController.paqueteCreate); 
 

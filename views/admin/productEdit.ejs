@@ -7,20 +7,21 @@
             <h1>Formulario para editar paquete <%= product.nombre_producto %></h1>
             <!-- FORMULARIO PARA CREAR -->
             <section id="crear__paquetes__admin">
-                <form method="POST" action="/admin/edit/<%= product.id_producto %>?_method=PUT" class="form__search-admin" enctype="multipart/form-data">
+                <form method="POST" action="/admin/edit/<%= product.id %>?_method=PUT" class="form__search-admin" enctype="multipart/form-data">
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete" value="<%= product.nombre_producto %>">
+                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete" value="<%= product.destination %>">
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida" value="<%= product.provincia_salida %>">
+                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida" value="<%= product.city_depart %>">
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete" value="<%= product.precio_producto %>">
+                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete" value="<%= product.price %>">
                     <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas" value="<%= product.cantidad_personas %>">
+                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas" value="<%= product.group_size %>">
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete" value="<%= product.fecha_inicio %>">
+                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete" value="<%= product.start_date %>">
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete" value="<%= product.fecha_fin %>">
-
+                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete" value="<%= product.finish_date %>">
+                            
+                    <!-- FALTA ENLAZAR INCLUYE E IMAGENES -->
 
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
                     <div id="incluye-options">
@@ -49,7 +50,6 @@
                         <label>Traslados de ingreso y egreso</label>
                         </div>
                     </div>
-
                     <label for="" class="input__txt__places section__login--label">Imagenes</label>
                     <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1">
                     <label>Imágenes Actuales:</label>
@@ -57,6 +57,8 @@
                     <% product.imagen_producto.forEach(function(imagen) { %>
                         <li><img class="fotos-varias" src="<%= imagen %>" alt=""></li>
                     <% }); %>
+
+                    
                     </ul>
                     <button type="submit">Editar paquete</button>
                 </form>

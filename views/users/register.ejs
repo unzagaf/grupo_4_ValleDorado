@@ -8,6 +8,7 @@
         <main class="main__login">
             <section class="section__login">
                 <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
+                
                 <form action="/users/register" method="post" enctype="multipart/form-data" class="register_form ">
 
                     <label for="" class="input__txt__places section__login--label">Nombre</label>
@@ -21,7 +22,7 @@
 
                     <label for="" class="input__txt__places section__login--label">Apellido</label>
                     <input type="text" name="surname" placeholder="apellido"
-                        class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" value = "<%= locals.oldData? surname: null %>">
+                        class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.surname: null %>">
                     <% if(locals.errors && errors.surname){%>
                         <div class="text-danger">
                             <%=errors.surname.msg %>
@@ -49,7 +50,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Teléfono</label>
-                    <input type="text" name="telephone" placeholder="telephone"
+                    <input type="text" name="telephone" placeholder="telefono"
                         class ="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
                         value = "<%= locals.oldData? oldData.telephone :null %>">
                     <% if(locals.errors && errors.telephone){%>
@@ -68,8 +69,17 @@
                         </div>
                     <% }%>
 
+                    <label for="" class="input__txt__places section__login--label">Nombre de usuario</label>
+                    <input type="text" name="username" placeholder="usuario" 
+                    class ="form-control <%= locals.errors && errors.username? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.username: null %>" >
+                    <% if(locals.errors && errors.username){%>
+                        <div class="text-danger">
+                            <%=errors.username.msg %>
+                        </div>
+                    <% }%>
+
                     <label for="" class="input__txt__places section__login--label"> Clave </label>
-                    <input type="password" name="password" placeholder="password" 
+                    <input type="password" name="password" placeholder="contraseña" 
                     class ="form-control <%= locals.errors && errors.password? 'is-invalid': null %>">
                     <% if(locals.errors && errors.password){%>
                         <div class="text-danger">
@@ -79,7 +89,7 @@
 
                     
                     <label for="" class="input__txt__places section__login--label"> Confirmar Clave</label>
-                    <input type="password" name="confirmarPassword" placeholder="confirmarPassword"
+                    <input type="password" name="confirmarPassword" placeholder="confirmar contraseña"
                         class ="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
                     <% if(locals.errors && errors.confirmarPassword){%>
                         <div class="text-danger">

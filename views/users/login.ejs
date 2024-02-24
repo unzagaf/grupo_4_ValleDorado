@@ -14,12 +14,12 @@
 
                     <form action="/users/login" method="POST" class="form__search">
                         <label for="" class="input__txt__places section__login--label">Email</label>
-                        <input type="email" name="email" placeholder="Ingrese su email"
-                            class="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
-                            value="<%= locals.oldData? oldData.email: null %>">
-                        <% if(locals.errors && errors.email){%>
+                        <input type="text" name="username" placeholder="Ingrese su usuario"
+                            class="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
+                            value="<%= locals.oldData? oldData.username: null %>">
+                        <% if(locals.errors && errors.username){%>
                             <div class="text-danger">
-                                <%=errors.email.msg %>
+                                <%=errors.username.msg %>
                             </div>
                             <% }%>
 

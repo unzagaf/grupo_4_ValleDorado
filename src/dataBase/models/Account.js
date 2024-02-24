@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        userName: {
+        username: {
             type: DataTypes.STRING(25),
             allowNull: false
         },
@@ -40,6 +40,11 @@ module.exports = (sequelize, dataTypes) => {
             as: 'user',
             foreignKey: 'user_id'
         });
+
+        Account.belongsTo(models.Category,{
+            as:'categoria',
+            foreignKey:'category_id'
+        })
     };
 
     return Account;
