@@ -46,7 +46,7 @@ const userController = {
 
             if (validacion.errors.length > 0) {
                 console.log('hubo un error');
-                return res.render('./users/login.ejs', {
+                res.render('./users/login.ejs', {
                     stylesheetPath: 'css/login.css',
                     errors: validacion.mapped(),
                     oldData: req.body,

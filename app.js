@@ -20,6 +20,13 @@ app.use(session({
     saveUninitialized: false
   }));
 
+  //Con esto se pasa el objeto session a TODAS las vistas
+//Es un Middleware
+app.use(function(req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
+
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(recordarMiddleware);
