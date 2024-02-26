@@ -36,7 +36,7 @@ router.get('/viendo', function(req, res) {
 router.get('/register',guestMiddleware,userController.register);
 router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, userController.storeUser);
 router.get('/profile',authMiddleware,userController.profile);
-
+router.get('/logout',userController.logout)
 
 
 

@@ -2,41 +2,23 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const fs = require('fs');
-const productServices = require('../dataBase/services/productServices.js');
 const productsFilePath = path.join(__dirname, '../data/products.json');
+const { validationResult } = require('express-validator');
+const productServices = require('../dataBase/services/productServices.js');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const adminController = {
-    
+
+    //-----------------------------
+    //      CREATE PRODUCT
+    //-----------------------------
+
+    //Formulario de creacion
+    //GET
     index: (req, res) => {
         const products = productServices.getAll()
-        .then(products=>{
-            res.render('./admin/admin.ejs', {
-                stylesheetPath: '/css/admin.css',
-                products: products,
-                usuarioLogueado: req.session.usuarioLogueado
-            });
-        }).catch(error => {
-            console.error('Error al obtener productos:', error);
-            res.status(500).send('Error interno del servidor');
-        });
-    },
-    paqueteCreate: async(req, res) => {
-        const newProduct = { ...req.body};
-        newProduct.destination = req.body.destination || "";
-        newProduct.start_date = req.body.start_date || "";
-        newProduct.finish_date = req.body.finish_date || "";
-        newProduct.price = req.body.price || "";
-        newProduct.city_depart = req.body.city_depart || "";
-        newProduct.group_size = req.body.group_size || "";
-        newProduct.incluye = req.body.incluye || "";
-        
-        try {
-            const createdProduct = await productServices.createProduct(newProduct);
-            console.log('todo:',createdProduct);
-            const products = productServices.getAll()
-            .then(products=>{
+            .then(products => {
                 res.render('./admin/admin.ejs', {
                     stylesheetPath: '/css/admin.css',
                     products: products,
@@ -46,13 +28,61 @@ const adminController = {
                 console.error('Error al obtener productos:', error);
                 res.status(500).send('Error interno del servidor');
             });
-        } catch (error) {
-            console.error('Error al procesar los datos:', error);
-            res.status(500).send('Error interno del servidor');
-        }
     },
-    
-    paqueteSelect: async(req, res) => {
+
+    //Enviando los datos desde el formulario
+    //POST
+    paqueteCreate: async (req, res) => {
+
+        const resultadoValidacion = validationResult(req);
+
+        if (resultadoValidacion.errors.length > 0) {
+
+            const errores = resultadoValidacion.mapped();
+            console.log('Errores de validación:', errores);
+            res.render('./admin/admin.ejs', {
+                stylesheetPath: 'css/admin.css',
+                errors: errores,
+                oldData: req.body,
+            });
+        } else {
+
+            const newProduct = { ...req.body };
+            newProduct.destination = req.body.destination || "";
+            newProduct.start_date = req.body.start_date || "";
+            newProduct.finish_date = req.body.finish_date || "";
+            newProduct.price = req.body.price || "";
+            newProduct.city_depart = req.body.city_depart || "";
+            newProduct.group_size = req.body.group_size || "";
+            newProduct.incluye = req.body.incluye || "";
+
+            // / Verifica si se ha subido una imagen
+            if (req.file && req.file.filename) {
+                newProduct.imagen_producto = req.file.filename;
+            }
+
+            try {
+                const createdProduct = await productServices.createProduct(newProduct);
+
+                const products = await productServices.getAll()
+
+                res.render('./admin/admin.ejs', {
+                    stylesheetPath: '/css/admin.css',
+                    products: products,
+                    usuarioLogueado: req.session.usuarioLogueado
+                })
+
+
+            } catch (error) {
+                console.error('Error al procesar los datos:', error);
+                res.status(500).send('Error interno del servidor');
+            }
+
+        }
+
+    },
+
+    paqueteSelect: async (req, res) => {
         const idProduct = req.params.idProduct;
         const product = await productServices.getOne(idProduct);
         console.log(product);

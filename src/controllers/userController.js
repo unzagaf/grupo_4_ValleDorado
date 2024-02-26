@@ -3,11 +3,11 @@ const path = require('path');
 const app = express();
 const fs = require('fs');
 const usersFilePath = path.join(__dirname, '../data/users.json');
-const arrayUsers = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const userServices = require('../dataBase/services/userServices.js');
 const { log } = require('console');
+const arrayUsers = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -28,7 +28,12 @@ const userController = {
             });
     },
 
+    //---------------------------
+    //          LOGIN
+    //---------------------------
+
     // **** Formulario de login, para el usuario
+    //GET
     login: (req, res) => {
         res.render('./users/login.ejs',
         {
@@ -39,6 +44,7 @@ const userController = {
     },
 
     // **** Implementación del formulario de login
+    //POST
     processLogin: async (req, res) => {
         try{
             const validacion = validationResult(req);
@@ -46,13 +52,14 @@ const userController = {
 
             if (validacion.errors.length > 0) {
                 console.log('hubo un error');
-                return res.render('./users/login.ejs', {
+                res.render('./users/login.ejs', {
                     stylesheetPath: 'css/login.css',
                     errors: validacion.mapped(),
                     oldData: req.body,
                 });
             }
             const { username, password } = req.body;
+            
             const user = await userServices.login(username, password);
             req.session.usuarioLogueado = user;
             req.session.save(err => {
@@ -89,6 +96,7 @@ const userController = {
             newAccount.avatar = req.file.filename;
         }
         const resultadoValidacion = validationResult(req);
+
         if (resultadoValidacion.errors.length > 0) {
             const errores = resultadoValidacion.mapped();
             console.log('Errores de validación:', errores);
@@ -139,6 +147,12 @@ const userController = {
     // Delete - Delete one product from DB
     delete: (req, res) => {
         // Do the magic
+    },
+
+    logout:(req, res)=>{
+        req.session.usuarioLogueado = null;
+
+        res.redirect('/');
     }
 };
 
