@@ -42,6 +42,21 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Product = sequelize.define(alias, cols, config);
+    Product.associate = (models) => {
+        // Asociación con el modelo Include
+        Product.belongsToMany(models.Include,{
+            as:"includes",
+            through: "product_includes",
+            foreignKey: "product_id",
+            otherKey: "include_id",
+            timestamps: true
+        })
 
+        // Asociación con el modelo Image
+        Product.hasMany(models.Image,{
+            as: 'images',
+            foreignKey: 'product_id'
+        });
+    };
     return Product;
 }

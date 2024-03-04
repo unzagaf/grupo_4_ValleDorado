@@ -73,13 +73,7 @@
 
                     <label for="" class="input__txt__places section__login--label">Imagenes</label>
                     <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1"
-                            class ="form-control <%= locals.errors && errors.imagen_producto? 'is-invalid': null %>" 
-                            value = "<%= locals.oldData? oldData.imagen_producto: null %>" >
-                    <% if(locals.errors && errors.imagen_producto){%>
-                        <div class="text-danger">
-                            <%=errors.imagen_producto.msg %>
-                        </div>
-                    <% }%>
+                            class ="form-control ">
 
 
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
@@ -126,7 +120,6 @@
                             <th>Precio</th>
                             <th class="table__hidden">Fecha de Inicio</th>
                             <th class="table__hidden">Fecha de Finalización</th>
-                            <!-- <th class="table__hidden">Imagen</th> -->
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
@@ -147,7 +140,7 @@
                                 </a>
                             </td>
                             <td>
-                                <form method="POST" action="/admin/delete/<%= product.id %>?_method=DELETE">
+                                <form method="POST" action="/admin/delete/<%= product.id %>">
                                     <button type="submit">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>

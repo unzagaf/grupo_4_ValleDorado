@@ -45,24 +45,19 @@ const userServices = {
         const saltRounds = 10;
         return bcrypt.hash(password, saltRounds);
     },
-    login: async (username, password) => {
+    login: async (username) => {
         try {
-        // Buscar el usuario por su correo electrónico
+        // Buscar el usuario por el username
         const account = await db.Account.findOne({ where: { username } });
         // Verificar si se encontró el usuario
         if (!account) {
             throw new Error('Usuario no encontrado');
         }
-        const passwordMatch = await bcrypt.compare(password, account.password);
-        if (!passwordMatch) {
-            throw new Error('Contraseña incorrecta');
-        }
-        // Si el usuario y la contraseña son válidos, buscar los datos del usuario
-        const user = await db.User.findOne({ where: { id: account.user_id } });
+        // Si se encontro el usuario,buscamos datos de usuario
+        const user = await db.User.findByPk(account.user_id);
         if (!user) {
             throw new Error('Datos de usuario no encontrados');
         }
-        // Si el usuario y la contraseña son válidos, devolver el usuariosss
         return { account, user };
         } catch (error) {
         throw error;

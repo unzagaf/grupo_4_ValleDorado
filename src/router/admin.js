@@ -24,6 +24,6 @@ router.get('/edit/:idProduct',adminController.paqueteSelect)
 
 router.put('/edit/:idProduct',fileUpload.array('imagen_producto', 5), adminController.paqueteEdit)
 
-router.delete('/delete/:idProduct',adminController.paqueteDelete);
+router.post('/delete/:idProduct',adminController.paqueteDelete);
 
 module.exports = router;

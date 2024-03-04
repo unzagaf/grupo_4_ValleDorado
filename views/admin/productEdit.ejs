@@ -10,22 +10,22 @@
                 <form method="POST" action="/admin/edit/<%= product.id %>?_method=PUT" class="form__search-admin" enctype="multipart/form-data">
                     
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete" value="<%= product.destination %>">
+                    <input type="text" name="destination" placeholder="Ingrese el nombre del paquete" value="<%= product.destination %>">
 
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida" value="<%= product.city_depart %>">
+                    <input type="text" name="city_depart" placeholder="Ingrese provincia de salida" value="<%= product.city_depart %>">
 
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete" value="<%= product.price %>">
+                    <input type="number" name="price" placeholder="Ingrese precio del paquete" value="<%= product.price %>">
 
                     <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas" value="<%= product.group_size %>">
+                    <input type="number" name="group_size" placeholder="Ingrese la cantidad base de personas" value="<%= product.group_size %>">
 
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete" value="<%= product.start_date %>">
+                    <input type="date" name="start_date" placeholder="Ingrese fecha de inicio del paquete" value="<%= product.start_date %>">
 
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete" value="<%= product.finish_date %>">
+                    <input type="date" name="finish_date" placeholder="Ingrese fecha de finalizacion del paquete" value="<%= product.finish_date %>">
                             
                     <!-- FALTA ENLAZAR INCLUYE E IMAGENES -->
 
@@ -33,32 +33,32 @@
                     <div id="incluye-options">
 
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Asistencia al Viajero" <%= product.incluye.includes("Asistencia al Viajero") ? 'checked' : '' %>>
+                            <input type="checkbox" name="incluye" value="Asistencia al Viajero" <%= product.includes.some(item => item.include === "Asistencia al Viajero") ? 'checked' : '' %>>
                             <label>Asistencia al Viajero</label>
                         </div>
 
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Hoteles 5 estrellas" <%= product.incluye.includes("Hoteles 5 estrellas") ? 'checked' : '' %>>
+                            <input type="checkbox" name="incluye" value="Hoteles 5 estrellas" <%= product.includes.some(item => item.include === "Hoteles 5 estrellas") ? 'checked' : '' %>>
                             <label>Hoteles 5 estrellas</label>
                         </div>
 
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Coordinador y guias locales" <%= product.incluye.includes("Coordinador y guias locales") ? 'checked' : '' %>>
+                            <input type="checkbox" name="incluye" value="Coordinador y guias locales" <%= product.includes.some(item => item.include === "Coordinador y Guias locales") ? 'checked' : '' %>>
                             <label>Coordinador y guias locales</label>
                         </div>
 
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido" <%= product.incluye.includes("Régimen de comidas todo incluido") ? 'checked' : '' %>>
+                            <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido" <%= product.includes.some(item => item.include === "Régimen de comidas todo incluido") ? 'checked' : '' %>>
                         <label>Régimen de comidas todo incluido</label>
                         </div>
 
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Excursiones según programa" <%= product.incluye.includes("Excursiones según programa") ? 'checked' : '' %>>
+                            <input type="checkbox" name="incluye" value="Excursiones según programa" <%= product.includes.some(item => item.include === "Excursiones Segun Programa") ? 'checked' : '' %>>
                             <label>Excursiones según programa</label>
                         </div>
 
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso" <%= product.incluye.includes("Traslados de ingreso y egreso") ? 'checked' : '' %>>
+                            <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso" <%= product.includes.some(item => item.include === "Traslados de ingreso y egreso") ? 'checked' : '' %>>
                         <label>Traslados de ingreso y egreso</label>
                         </div>
                     </div>
@@ -68,8 +68,8 @@
 
                     <label>Imágenes Actuales:</label>
                     <ul>
-                    <% product.imagen_producto.forEach(function(imagen) { %>
-                        <li><img class="fotos-varias" src="<%= imagen %>" alt=""></li>
+                    <% product.images.forEach(function(image) { %>
+                        <li><img class="fotos-varias" src="<%= image.route %>" alt=""></li>
                     <% }); %>
 
                     
