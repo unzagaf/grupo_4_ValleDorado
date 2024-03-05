@@ -12,99 +12,104 @@
                 <form action="/users/register" method="post" enctype="multipart/form-data" class="register_form ">
 
                     <label for="" class="input__txt__places section__login--label">Nombre</label>
-                    <input type="text" name="name" placeholder="nombre" 
-                    class ="form-control <%= locals.errors && errors.name? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.name: null %>" >
-                    <% if(locals.errors && errors.name){%>
-                        <div class="text-danger">
-                            <%=errors.name.msg %>
-                        </div>
-                    <% }%>
+                    <input type="text" name="name" id="name" placeholder="nombre" 
+                    class ="form-control <%= locals.errors && errors.name? 'is-invalid': null %>" 
+                    value = "<%= locals.oldData? oldData.name: null %>"  autofocus >
+                    <p class="text-danger">
+                            <% if(locals.errors && errors.name) {%>
+                            <%= errors.name.msg %>
+                            <% } %>
+                    </p>
 
                     <label for="" class="input__txt__places section__login--label">Apellido</label>
-                    <input type="text" name="surname" placeholder="apellido"
-                        class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.surname: null %>">
-                    <% if(locals.errors && errors.surname){%>
-                        <div class="text-danger">
-                            <%=errors.surname.msg %>
-                        </div>
-                    <% }%>
+                    <input type="text" name="surname" id="surname" placeholder="apellido"
+                        class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" 
+                        value = "<%= locals.oldData? oldData.surname: null %>">
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.surname){%>
+                        <%=errors.surname.msg %>
+                        <% }%>
+                    </p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de
-                        Nacimiento</label>
-                    <input type="date" name="birthdate" placeholder="fecha nacimiento" 
-                    class ="form-control <%= locals.errors && errors.birthdate? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.birthdate: null %>">
-                    <% if(locals.errors && errors.birthdate){%>
-                        <div class="text-danger">
-                            <%=errors.birthdate.msg %>
-                        </div>
-                    <% }%>
+                    <label for="" class="input__txt__places section__login--label">Fecha de Nacimiento</label>
+                    <input type="date" name="birthdate" id="birthdate" placeholder="fecha nacimiento" 
+                    class ="form-control <%= locals.errors && errors.birthdate? 'is-invalid': null %>"
+                    value = "<%= locals.oldData? oldData.birthdate: null %>">
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.birthdate){%>
+                        <%=errors.birthdate.msg %>
+                        <% }%>
+                    </p>
 
                     <label for="" class="input__txt__places section__login--label">DNI</label>
-                    <input type="text" name="dni" placeholder="dni" 
+                    <input type="text" name="dni"  id="dni" placeholder="dni" 
                     class ="form-control <%= locals.errors && errors.dni? 'is-invalid': null %>"
                     value = "<%= locals.oldData? oldData.dni: null %>">
-                    <% if(locals.errors && errors.dni){%>
-                        <div class="text-danger">
-                            <%=errors.dni.msg %>
-                        </div>
-                    <% }%>
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.dni){%>
+                        <%=errors.dni.msg %>
+                        <% }%>
+                     </p>
 
                     <label for="" class="input__txt__places section__login--label">Teléfono</label>
-                    <input type="text" name="telephone" placeholder="telefono"
-                        class ="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
-                        value = "<%= locals.oldData? oldData.telephone :null %>">
-                    <% if(locals.errors && errors.telephone){%>
-                        <div class="text-danger">
-                            <%=errors.telephone.msg %>
-                        </div>
-                    <% }%>
+                    <input type="text" name="telephone" id="telephone" placeholder="telefono"
+                    class ="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
+                    value = "<%= locals.oldData? oldData.telephone :null %>">
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.telephone){%>
+                        <%=errors.telephone.msg %>
+                        <% }%>
+                    </p>
 
                     <label for="" class="input__txt__places section__login--label">Email</label>
-                    <input type="email" name="email" placeholder="email"
-                        class ="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
-                        value = "<%= locals.oldData? oldData.email: null %>">
-                    <% if(locals.errors && errors.email){%>
-                        <div class="text-danger">
-                            <%=errors.email.msg %>
-                        </div>
-                    <% }%>
+                    <input type="email" name="email" id="email" placeholder="email"
+                    class ="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
+                    value = "<%= locals.oldData? oldData.email: null %>">
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.email){%>
+                        <%=errors.email.msg %>
+                        <% }%>
+                    </p>
 
                     <label for="" class="input__txt__places section__login--label">Nombre de usuario</label>
-                    <input type="text" name="username" placeholder="usuario" 
-                    class ="form-control <%= locals.errors && errors.username? 'is-invalid': null %>" value = "<%= locals.oldData? oldData.username: null %>" >
-                    <% if(locals.errors && errors.username){%>
-                        <div class="text-danger">
-                            <%=errors.username.msg %>
-                        </div>
-                    <% }%>
+                    <input type="text" name="username" id="username" placeholder="usuario" 
+                    class ="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
+                    value = "<%= locals.oldData? oldData.username: null %>" >
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.username){%>
+                        <%=errors.username.msg %>
+                        <% }%>
+                    </p>
 
                     <label for="" class="input__txt__places section__login--label"> Clave </label>
-                    <input type="password" name="password" placeholder="contraseña" 
+                    <input type="password" name="password" id="password" placeholder="contraseña" 
                     class ="form-control <%= locals.errors && errors.password? 'is-invalid': null %>">
-                    <% if(locals.errors && errors.password){%>
-                        <div class="text-danger">
-                            <%=errors.password.msg %>
-                        </div>
-                    <% }%>
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.password){%>
+                        <%=errors.password.msg %>
+                        <% }%>
+                    </p>
 
                     
                     <label for="" class="input__txt__places section__login--label"> Confirmar Clave</label>
-                    <input type="password" name="confirmarPassword" placeholder="confirmar contraseña"
-                        class ="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
-                    <% if(locals.errors && errors.confirmarPassword){%>
-                        <div class="text-danger">
-                            <%=errors.confirmarPassword.msg %>
-                        </div>
-                    <% }%>
+                    <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder="confirmar contraseña"
+                    class ="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.confirmarPassword){%>
+                        <%=errors.confirmarPassword.msg %>
+                        <% }%>
+                    </p>
 
                     <label for=""class="input__txt__places section__login--label">imagen</label>
 
-                    <input type="file" name="imagenUsuario" placeholder="img">
-                    <% if(locals.errors && errors.imagenUsuario){%>
-                        <div class="text-danger">
-                            <%=errors.imagenUsuario.msg %>
-                        </div>
-                    <% }%>
+                    <input type="file" name="imagenUsuario" id="imagenUsuario" placeholder="img">
+                    <p class="text-danger">
+                        <% if(locals.errors && errors.imagenUsuario){%>
+                        <%=errors.imagenUsuario.msg %>
+                        <% }%>
+                    </p>
+
+                    <!-- AGREGAR EL INPUT AL BOTON -->
                     <button type="submit">Registrarse</button>
                 </form>
             </section>
@@ -112,7 +117,8 @@
         <!-- FOOTER -->
         <%- include("../partials/footer.ejs") %>
     </body>
-    <script src="js/general.js"></script> 
+    <script src="/js/general.js"></script> 
+    <script src="js/validation_front_register.js" defer></script> 
 </html>
     
     
