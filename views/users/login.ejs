@@ -16,7 +16,7 @@
                         <label for="" class="input__txt__places section__login--label">Email</label>
                         <input type="text" name="username" id="username" placeholder="Ingrese su usuario"
                             class="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
-                            value="<%= locals.oldData? oldData.username: null %>">
+                            value="<%= locals.oldData? oldData.username: null %>" autofocus>
                             <p class="text-danger">
                                 <% if(locals.errors && errors.username){%>
                                 <%=errors.username.msg %>

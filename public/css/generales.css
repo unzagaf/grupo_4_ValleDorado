@@ -5,6 +5,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.error{ 
+    color: rgb(220, 20, 153);
+    font-size: 0.8rem;
+
+}
+
+
 /* Encabezado*/
 body{
     /* width: 100vw; */
