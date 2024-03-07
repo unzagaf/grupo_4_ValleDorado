@@ -94,6 +94,18 @@ const productService = {
                 // Si no se han enviado inclusiones, eliminar todas las asociaciones de inclusiones del producto
                 await existingProduct.setIncludes([]);
             }
+            // Verificar si se han enviado nuevas imágenes
+            if (data.imagenes_producto) {
+                // Guardar las nuevas imágenes en el sistema de archivos o en el servidor de almacenamiento en la nube
+                const newImagePaths = [];
+                for (const image of data.imagenes_producto) {
+                    const newPath = await saveImage(image); // Implementa esta función según tus necesidades
+                    newImagePaths.push(newPath);
+                }
+                // Actualizar las referencias de las imágenes en la base de datos
+                existingProduct.imagenes_producto = newImagePaths;
+                await existingProduct.save();
+            }
             return { producto: existingProduct };
         } catch (error) {
             console.error('Error al editar el producto:', error);

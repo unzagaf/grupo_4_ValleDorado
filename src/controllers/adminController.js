@@ -5,11 +5,7 @@ const fs = require('fs');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const { validationResult } = require('express-validator');
 const productServices = require('../dataBase/services/productServices.js');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
 const adminController = {
-
     //-----------------------------
     //      CREATE PRODUCT
     //-----------------------------
@@ -95,11 +91,7 @@ const adminController = {
             }
             const editedProduct = await productServices.editProduct(req.params.idProduct,productEdit);
 
-            return res.render('./admin/admin.ejs', {
-                stylesheetPath: '/css/admin.css',
-                products: products,
-                usuarioLogueado: req.session.usuarioLogueado
-            });
+            return res.redirect('/admin');
             
         }catch(error){
             console.error('No se pudo editar el producto:', error);
