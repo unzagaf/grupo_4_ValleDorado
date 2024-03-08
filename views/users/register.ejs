@@ -15,7 +15,7 @@
                     <input type="text" name="name" id="name" placeholder="nombre" 
                     class ="form-control <%= locals.errors && errors.name? 'is-invalid': null %>" 
                     value = "<%= locals.oldData? oldData.name: null %>"  autofocus >
-                    <p class="error"> aqui va el ERRORRRR
+                    <p class="msjerror"> 
                             <% if(locals.errors && errors.name) {%>
                             <%= errors.name.msg %>
                             <% } %>
@@ -25,7 +25,7 @@
                     <input type="text" name="surname" id="surname" placeholder="apellido"
                         class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" 
                         value = "<%= locals.oldData? oldData.surname: null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.surname){%>
                         <%=errors.surname.msg %>
                         <% }%>
@@ -35,7 +35,7 @@
                     <input type="date" name="birthdate" id="birthdate" placeholder="fecha nacimiento" 
                     class ="form-control <%= locals.errors && errors.birthdate? 'is-invalid': null %>"
                     value = "<%= locals.oldData? oldData.birthdate: null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.birthdate){%>
                         <%=errors.birthdate.msg %>
                         <% }%>
@@ -45,7 +45,7 @@
                     <input type="text" name="dni"  id="dni" placeholder="dni" 
                     class ="form-control <%= locals.errors && errors.dni? 'is-invalid': null %>"
                     value = "<%= locals.oldData? oldData.dni: null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.dni){%>
                         <%=errors.dni.msg %>
                         <% }%>
@@ -55,7 +55,7 @@
                     <input type="text" name="telephone" id="telephone" placeholder="telefono"
                     class ="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
                     value = "<%= locals.oldData? oldData.telephone :null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.telephone){%>
                         <%=errors.telephone.msg %>
                         <% }%>
@@ -65,7 +65,7 @@
                     <input type="email" name="email" id="email" placeholder="email"
                     class ="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
                     value = "<%= locals.oldData? oldData.email: null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.email){%>
                         <%=errors.email.msg %>
                         <% }%>
@@ -75,7 +75,7 @@
                     <input type="text" name="username" id="username" placeholder="usuario" 
                     class ="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
                     value = "<%= locals.oldData? oldData.username: null %>" >
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.username){%>
                         <%=errors.username.msg %>
                         <% }%>
@@ -84,7 +84,7 @@
                     <label for="" class="input__txt__places section__login--label"> Clave </label>
                     <input type="password" name="password" id="password" placeholder="contraseña" 
                     class ="form-control <%= locals.errors && errors.password? 'is-invalid': null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.password){%>
                         <%=errors.password.msg %>
                         <% }%>
@@ -94,7 +94,7 @@
                     <label for="" class="input__txt__places section__login--label"> Confirmar Clave</label>
                     <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder="confirmar contraseña"
                     class ="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.confirmarPassword){%>
                         <%=errors.confirmarPassword.msg %>
                         <% }%>
@@ -103,7 +103,7 @@
                     <label for=""class="input__txt__places section__login--label">imagen</label>
 
                     <input type="file" name="imagenUsuario" id="imagenUsuario" placeholder="img">
-                    <p class="error">
+                    <p class="msjerror">
                         <% if(locals.errors && errors.imagenUsuario){%>
                         <%=errors.imagenUsuario.msg %>
                         <% }%>
@@ -118,5 +118,5 @@
         <%- include("../partials/footer.ejs") %>
     </body>
     <script src="/js/general.js"></script> 
-    <script src="/js/validation_front_register.js" type="text/javascript" defer></script> 
+    <script src="/js/validation_register_front.js" type="text/javascript" defer></script> 
 </html>
