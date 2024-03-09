@@ -9,7 +9,7 @@ const validacionRegister = [
 
     body('birthdate').notEmpty().withMessage('Completar con tu fecha de nacimiento').bail(),
 
-    body('dni').notEmpty().withMessage('Completar tu dni').bail().isLength({ min: 6 }).withMessage('El dni debe tener como mínimo 8 números'),
+    body('dni').notEmpty().withMessage('Completar tu dni').bail().isLength({ min: 6 }).withMessage('El dni debe tener como mínimo 6 números'),
 
     body('email').notEmpty().withMessage('Completar con tu email').bail().isEmail().withMessage ('Debes escribir un formato válido'),
 
