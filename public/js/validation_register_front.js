@@ -9,7 +9,7 @@ const elInputEmail = document.getElementById('email');
 const elInputUsername = document.getElementById('username');
 const elInputpassword = document.getElementById('password');
 const elInputconfirmarPassword = document.getElementById('confirmarPassword')
-//const elInputimagenUsuario = document.getElementById('imagenUsuario');
+const elInputimagenUsuario = document.getElementById('imagenUsuario');
 const elBtnSubmit = document.getElementById('submit');
 
 
@@ -87,6 +87,12 @@ elInputSurname.addEventListener('blur', function () {
 
 });
 
+/*****************************************
+ * Validaciones para el campo birthdate   *
+ *****************************************/
+elInputBirthdate.isOk = true;
+
+
 // elInputBirthdate.addEventListener('blur', function () {
 //     // Obtener la fecha actual
 //     const currentDate = new Date();
@@ -121,10 +127,8 @@ elInputSurname.addEventListener('blur', function () {
 //     }
 // });
 
+// Otra opcion de validacion
 
-/*****************************************
- * Validaciones para el campo birthdate   *
- *****************************************/
 
 // elInputBirthdate.addEventListener('blur', function () {
 //     // Expresión regular valida el siguiente formato:
@@ -308,6 +312,12 @@ elInputconfirmarPassword.addEventListener('blur', function () {
     }
 
 });
+/**********************
+ *       Imagen       *
+ **********************/
+
+
+elInputimagenUsuario.isOk = true;
 
 /**********************
  *       Submit       *
@@ -337,8 +347,6 @@ elBtnSubmit.addEventListener('click', function (event) {
         this.nextElementSibling.innerText = erroresInput;
         this.nextElementSibling.style.color = 'red';
 
-       
-        
     }
 
 })

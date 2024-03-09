@@ -23,7 +23,6 @@ const userController = {
     register: (req, res) => {
         res.render('./users/register.ejs',
             {
-                stylesheetPath: '/css/register.css',
                 usuarioLogueado: req.session.usuarioLogueado
             });
     },
@@ -37,7 +36,6 @@ const userController = {
     login: (req, res) => {
         res.render('./users/login.ejs',
         {
-            stylesheetPath: '/css/login.css',
             usuarioLogueado: req.session.usuarioLogueado
         });
 

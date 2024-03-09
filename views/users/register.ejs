@@ -1,123 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEADE -->
-<%- include("../partials/head") %>
-    <body>
-        <!-- HEADER -->
-        <%- include("../partials/header.ejs") %>
-        <main class="main__login">
-            <section class="section__login">
-                <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
-                
-                <form action="/users/register" method="post" enctype="multipart/form-data" id="registerForm"class="register_form ">
+<head>
+  <%- include("../partials/head") %>
+  <meta name="author" content="Alda Celeste Paez">
+  <link rel="stylesheet" href="/css/register.Css">
+  <title>Valle Dorado - Registro de Usuario</title>
 
-                    <label for="" class="input__txt__places section__login--label">Nombre</label>
-                    <input type="text" name="name" id="name" placeholder="nombre" 
-                    class ="form-control <%= locals.errors && errors.name? 'is-invalid': null %>" 
-                    value = "<%= locals.oldData? oldData.name: null %>"  autofocus >
-                    <p class="msjerror"> 
-                            <% if(locals.errors && errors.name) {%>
-                            <%= errors.name.msg %>
-                            <% } %>
-                    </p>
+</head>
 
-                    <label for="" class="input__txt__places section__login--label">Apellido</label>
-                    <input type="text" name="surname" id="surname" placeholder="apellido"
-                        class ="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>" 
-                        value = "<%= locals.oldData? oldData.surname: null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.surname){%>
-                        <%=errors.surname.msg %>
-                        <% }%>
-                    </p>
+  <body>
+    <!-- HEADER -->
+    <%- include("../partials/header.ejs") %>
+      <main class="main__login">
+        <section class="section__login">
+          <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de Nacimiento</label>
-                    <input type="date" name="birthdate" id="birthdate" placeholder="fecha nacimiento" 
-                    class ="form-control <%= locals.errors && errors.birthdate? 'is-invalid': null %>"
-                    value = "<%= locals.oldData? oldData.birthdate: null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.birthdate){%>
-                        <%=errors.birthdate.msg %>
-                        <% }%>
-                    </p>
+          <form action="/users/register" method="post" enctype="multipart/form-data" id="registerForm"
+            class="register_form ">
 
-                    <label for="" class="input__txt__places section__login--label">DNI</label>
-                    <input type="text" name="dni"  id="dni" placeholder="dni" 
-                    class ="form-control <%= locals.errors && errors.dni? 'is-invalid': null %>"
-                    value = "<%= locals.oldData? oldData.dni: null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.dni){%>
-                        <%=errors.dni.msg %>
-                        <% }%>
-                     </p>
+            <label for="" class="input__txt__places section__login--label">Nombre</label>
+            <input type="text" name="name" id="name" placeholder="nombre"
+              class="form-control <%= locals.errors && errors.name? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.name: null %>" autofocus>
+            <p class="msjerror">
+              <% if(locals.errors && errors.name) {%>
+                <%= errors.name.msg %>
+                  <% } %>
+            </p>
 
-                    <label for="" class="input__txt__places section__login--label">Teléfono</label>
-                    <input type="text" name="telephone" id="telephone" placeholder="telefono"
-                    class ="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
-                    value = "<%= locals.oldData? oldData.telephone :null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.telephone){%>
-                        <%=errors.telephone.msg %>
-                        <% }%>
-                    </p>
+            <label for="" class="input__txt__places section__login--label">Apellido</label>
+            <input type="text" name="surname" id="surname" placeholder="apellido"
+              class="form-control <%= locals.errors && errors.surname? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.surname: null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.surname){%>
+                <%=errors.surname.msg %>
+                  <% }%>
+            </p>
 
-                    <label for="" class="input__txt__places section__login--label">Email</label>
-                    <input type="email" name="email" id="email" placeholder="email"
-                    class ="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
-                    value = "<%= locals.oldData? oldData.email: null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.email){%>
-                        <%=errors.email.msg %>
-                        <% }%>
-                    </p>
+            <label for="" class="input__txt__places section__login--label">Fecha de Nacimiento</label>
+            <input type="date" name="birthdate" id="birthdate" placeholder="fecha nacimiento"
+              class="form-control <%= locals.errors && errors.birthdate? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.birthdate: null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.birthdate){%>
+                <%=errors.birthdate.msg %>
+                  <% }%>
+            </p>
 
-                    <label for="" class="input__txt__places section__login--label">Nombre de usuario</label>
-                    <input type="text" name="username" id="username" placeholder="usuario" 
-                    class ="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
-                    value = "<%= locals.oldData? oldData.username: null %>" >
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.username){%>
-                        <%=errors.username.msg %>
-                        <% }%>
-                    </p>
+            <label for="" class="input__txt__places section__login--label">DNI</label>
+            <input type="text" name="dni" id="dni" placeholder="dni"
+              class="form-control <%= locals.errors && errors.dni? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.dni: null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.dni){%>
+                <%=errors.dni.msg %>
+                  <% }%>
+            </p>
 
-                    <label for="" class="input__txt__places section__login--label"> Clave </label>
-                    <input type="password" name="password" id="password" placeholder="contraseña" 
-                    class ="form-control <%= locals.errors && errors.password? 'is-invalid': null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.password){%>
-                        <%=errors.password.msg %>
-                        <% }%>
-                    </p>
+            <label for="" class="input__txt__places section__login--label">Teléfono</label>
+            <input type="text" name="telephone" id="telephone" placeholder="telefono"
+              class="form-control <%= locals.errors && errors.telephone? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.telephone :null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.telephone){%>
+                <%=errors.telephone.msg %>
+                  <% }%>
+            </p>
 
-                    
-                    <label for="" class="input__txt__places section__login--label"> Confirmar Clave</label>
-                    <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder="confirmar contraseña"
-                    class ="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.confirmarPassword){%>
-                        <%=errors.confirmarPassword.msg %>
-                        <% }%>
-                    </p>
+            <label for="" class="input__txt__places section__login--label">Email</label>
+            <input type="email" name="email" id="email" placeholder="email"
+              class="form-control <%= locals.errors && errors.email? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.email: null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.email){%>
+                <%=errors.email.msg %>
+                  <% }%>
+            </p>
 
-                    <label for=""class="input__txt__places section__login--label">imagen</label>
+            <label for="" class="input__txt__places section__login--label">Nombre de usuario</label>
+            <input type="text" name="username" id="username" placeholder="usuario"
+              class="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
+              value="<%= locals.oldData? oldData.username: null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.username){%>
+                <%=errors.username.msg %>
+                  <% }%>
+            </p>
 
-                    <input type="file" name="imagenUsuario" id="imagenUsuario" placeholder="img">
-                    <p class="msjerror">
-                        <% if(locals.errors && errors.imagenUsuario){%>
-                        <%=errors.imagenUsuario.msg %>
-                        <% }%>
-                    </p>
+            <label for="" class="input__txt__places section__login--label"> Clave </label>
+            <input type="password" name="password" id="password" placeholder="contraseña"
+              class="form-control <%= locals.errors && errors.password? 'is-invalid': null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.password){%>
+                <%=errors.password.msg %>
+                  <% }%>
+            </p>
 
-                    <!-- AGREGAR EL INPUT AL BOTON -->
-                    <button class="botonAgregar" type="submit" id="submit">Agregar</button>
-                    <p id="msjerror"></p>
-                </form>
-            </section>
-        </main>
-        <!-- FOOTER -->
-        <%- include("../partials/footer.ejs") %>
-    </body>
-    <script src="/js/general.js"></script> 
-    <script src="/js/validation_register_front.js" type="text/javascript" defer></script> 
+
+            <label for="" class="input__txt__places section__login--label"> Confirmar Clave</label>
+            <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder="confirmar contraseña"
+              class="form-control <%= locals.errors && errors.confirmarPassword? 'is-invalid': null %>">
+            <p class="msjerror">
+              <% if(locals.errors && errors.confirmarPassword){%>
+                <%=errors.confirmarPassword.msg %>
+                  <% }%>
+            </p>
+
+            <label for="" class="input__txt__places section__login--label">imagen</label>
+
+            <input type="file" name="imagenUsuario" id="imagenUsuario" placeholder="img">
+            <p class="msjerror">
+              <% if(locals.errors && errors.imagenUsuario){%>
+                <%=errors.imagenUsuario.msg %>
+                  <% }%>
+            </p>
+
+            <!-- AGREGAR EL INPUT AL BOTON -->
+            <button class="botonAgregar" type="submit" id="submit">Agregar</button>
+            <p id="msjerror"></p>
+          </form>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <%- include("../partials/footer.ejs") %>
+  </body>
+  <script src="/js/general.js"></script>
+  <script src="/js/validation_register_front.js" type="text/javascript" defer></script>
+
 </html>
