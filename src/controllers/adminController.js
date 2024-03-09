@@ -5,11 +5,7 @@ const fs = require('fs');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const { validationResult } = require('express-validator');
 const productServices = require('../dataBase/services/productServices.js');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
 const adminController = {
-
     //-----------------------------
     //      CREATE PRODUCT
     //-----------------------------
@@ -22,16 +18,13 @@ const adminController = {
                 res.render('./admin/admin.ejs', {
                     stylesheetPath: '/css/admin.css',
                     products: products,
-                    usuarioLogueado: req.session.usuarioLogueado
+                    usuarioLogueado: req.session.logined
                 });
             }).catch(error => {
                 console.error('Error al obtener productos:', error);
                 res.status(500).send('Error interno del servidor');
             });
     },
-
-    //Enviando los datos desde el formulario
-    //POST
     paqueteCreate: async (req, res) => {
 
         const resultadoValidacion = validationResult(req);
@@ -45,47 +38,70 @@ const adminController = {
                 errors: errores,
                 oldData: req.body,
             });
-        } else {
-
-            const newProduct = { ...req.body };
-            newProduct.destination = req.body.destination || "";
-            newProduct.start_date = req.body.start_date || "";
-            newProduct.finish_date = req.body.finish_date || "";
-            newProduct.price = req.body.price || "";
-            newProduct.city_depart = req.body.city_depart || "";
-            newProduct.group_size = req.body.group_size || "";
-            newProduct.incluye = req.body.incluye || "";
-
-            // / Verifica si se ha subido una imagen
-            if (req.file && req.file.filename) {
-                newProduct.imagen_producto = req.file.filename;
-            }
-
+        }else {
             try {
+                const newProduct = {
+                    destination: req.body.destination || "",
+                    start_date: req.body.start_date || "",
+                    finish_date: req.body.finish_date || "",
+                    price: req.body.price || "",
+                    city_depart: req.body.city_depart || "",
+                    group_size: req.body.group_size || "",
+                    incluye: req.body.incluye || "",
+                };
+                const imagenesProductos = req.files;
+                // Revisa si hay imágenes
+                if (imagenesProductos) {
+                    // Asigna las rutas de las imágenes al producto
+                    newProduct.imagenes_producto = imagenesProductos.map(img => `/img/${img.filename}`);
+                }
+        
+                // Guardar el producto en la base de datos
                 const createdProduct = await productServices.createProduct(newProduct);
-
-                const products = await productServices.getAll()
-
-                res.render('./admin/admin.ejs', {
+        
+                // Obtener todos los productos actualizados
+                const products = await productServices.getAll();
+                console.dir(createdProduct);
+                // Renderizar la vista del administrador con los productos actualizados
+                return res.render('./admin/admin.ejs', {
                     stylesheetPath: '/css/admin.css',
-                    products: products,
-                    usuarioLogueado: req.session.usuarioLogueado
-                })
-
-
+                    products: products
+                });
             } catch (error) {
                 console.error('Error al procesar los datos:', error);
-                res.status(500).send('Error interno del servidor');
+                return res.status(500).send('Error interno del servidor');
             }
 
         }
 
     },
+    paqueteEdit: async(req, res) => {
+        try{
+            const productEdit = {
+                destination: req.body.destination || "",
+                start_date: req.body.start_date || "",
+                finish_date: req.body.finish_date || "",
+                price: req.body.price || "",
+                city_depart: req.body.city_depart || "",
+                group_size: req.body.group_size || "",
+                incluye: req.body.incluye || "",
+            };
+            if (req.files) {
+                productEdit.imagenes_producto = req.files.filename;
+            }
+            const editedProduct = await productServices.editProduct(req.params.idProduct,productEdit);
 
+            return res.redirect('/admin');
+            
+        }catch(error){
+            console.error('No se pudo editar el producto:', error);
+            res.status(500).json({ mensaje: 'Error interno del servidor' });
+        }
+    },
     paqueteSelect: async (req, res) => {
         const idProduct = req.params.idProduct;
         const product = await productServices.getOne(idProduct);
-        console.log(product);
+        // console.log(product);
         // const product = products.find(product => product.id === Number(idProduct));
 
         res.render('./admin/productEdit.ejs', {
@@ -94,52 +110,12 @@ const adminController = {
             usuarioLogueado: req.session.usuarioLogueado
         });
     },
-    paqueteEdit: (req, res) => {
-        const idProduct = req.params.idProduct;
-        const productIndex = products.findIndex(product => product.id_producto === Number(idProduct));
-
-        if (productIndex === -1) {
-            return res.status(404).json({ mensaje: 'Paquete no encontrado' });
-        }
-        const existingProduct = products[productIndex];
-
-        Object.assign(existingProduct, req.body);
-
-        const nuevasImagenes = req.files;
-
-        if (nuevasImagenes) {
-            // se asignan las rutas de las nuevas imágenes al paquete
-            existingProduct.imagen_producto = nuevasImagenes.map(img => `/img/${img.filename}`);
-        }
-
-        // Verifica si hay valores en req.body.incluye y actualiza el producto
-        if (req.body.incluye) {
-            existingProduct.incluye = Array.isArray(req.body.incluye) ? req.body.incluye : [req.body.incluye];
-        } else {
-            existingProduct.incluye = [];
-        }
-
-        // Actualiza el archivo JSON con los nuevos datos
-        const newData = JSON.stringify(products, null, 2);
-        fs.writeFileSync(productsFilePath, newData, 'utf-8');
-
-        res.redirect('/admin');
-    },
-    paqueteDelete: (req, res) => {
+    paqueteDelete: async(req, res) => {
         try {
             const productId = req.params.idProduct;
-            const productIndex = products.findIndex(product => product.id_producto === Number(productId));
+            await productServices.deteleProduct(productId);
 
-            if (productIndex === -1) {
-                return res.status(404).json({ mensaje: 'Paquete no encontrado' });
-            }
-            // Elimina el paquete del array de productos
-            const deletedProduct = products.splice(productIndex, 1)[0];
-
-            const newData = JSON.stringify(products, null, 2);
-            fs.writeFileSync(productsFilePath, newData, 'utf-8');
-
-            res.json({ mensaje: 'Paquete eliminado correctamente', paqueteEliminado: deletedProduct });
+            return res.redirect('/admin');
         } catch (error) {
             console.error('Error al procesar la solicitud:', error);
             res.status(500).json({ mensaje: 'Error interno del servidor' });

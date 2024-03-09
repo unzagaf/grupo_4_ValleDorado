@@ -3,8 +3,8 @@ const path = require('path');
 const app = express();
 const fs = require('fs');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productServices = require('../dataBase/services/productServices.js');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const obtenerIcono = (opcion) => {
   // Lógica para asociar opciones con iconos
@@ -24,19 +24,28 @@ const obtenerIcono = (opcion) => {
 const productDetailController = {
     index:(req, res) => {
         const productId = req.params.id;
-        const product = products.find(product => product.id_producto === Number(productId));
-        // Asocia opciones con iconos
-        const incluyeConIconos = product.incluye.map(opcion => ({
-          opcion: opcion,
-          icono: obtenerIcono(opcion),
-        }));
-        res.render('./products/productDetail.ejs',
-         { stylesheetPath: '/css/productDetail.css',
-        //  producto especifico
-          product: product,
-        products: products,
-        usuarioLogueado: req.session.usuarioLogueado,
-        incluyeConIconos: incluyeConIconos, });  //todos los productos
+        productServices.getOne(productId)
+        .then(product => {
+          return productServices.getAll()
+            .then(products => {
+              // Asocia opciones con iconos
+              const incluyeConIconos = product.includes.map(opcion => ({
+                opcion: opcion.include, // Asumiendo que el include de lo que incluye está en la propiedad 'include'
+                icono: obtenerIcono(opcion.include),
+              }));
+              res.render('./products/productDetail.ejs', {
+                  stylesheetPath: '/css/productDetail.css',
+                  product: product,
+                  products: products,
+                  usuarioLogueado: req.session.logined,
+                  incluyeConIconos: incluyeConIconos
+              });
+            });
+        })
+        .catch(error => {
+          console.error('Error al obtener el producto:', error);
+          // Manejar el error adecuadamente
+        });
     }
 }
 

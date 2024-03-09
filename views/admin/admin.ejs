@@ -126,7 +126,6 @@
                             <th>Precio</th>
                             <th class="table__hidden">Fecha de Inicio</th>
                             <th class="table__hidden">Fecha de Finalización</th>
-                            <!-- <th class="table__hidden">Imagen</th> -->
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
@@ -147,7 +146,7 @@
                                 </a>
                             </td>
                             <td>
-                                <form method="POST" action="/admin/delete/<%= product.id %>?_method=DELETE">
+                                <form method="POST" action="/admin/delete/<%= product.id %>">
                                     <button type="submit">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
