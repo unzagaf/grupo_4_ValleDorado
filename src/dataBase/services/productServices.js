@@ -18,7 +18,7 @@ const productService = {
             const product = await db.Product.findByPk(product_id, {
                 include: [{association: "images"}, {association: "includes"}]
             });
-            console.log("ESTE ES EL GET ONE: ", product);
+            // console.log("ESTE ES EL GET ONE: ", product);
             return product; // Devolver el producto correctamente
         } catch (error) {
             console.error('Error al obtener el producto:', error);
@@ -103,7 +103,7 @@ const productService = {
                     newImagePaths.push(newPath);
                 }
                 // Actualizar las referencias de las imágenes en la base de datos
-                existingProduct.imagenes_producto = newImagePaths;
+                existingProduct.images = newImagePaths;
                 await existingProduct.save();
             }
             return { producto: existingProduct };

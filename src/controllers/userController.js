@@ -160,7 +160,7 @@ const userController = {
     },
 
     logout:(req, res)=>{
-        req.session.usuarioLogueado = null;
+        req.session.logined = false;
 
         res.redirect('/');
     }
