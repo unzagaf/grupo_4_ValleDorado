@@ -12,22 +12,22 @@
                 <section class="section__login">
                     <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
 
-                    <form action="/users/login" method="POST" class="form__search">
-                        <label for="" class="input__txt__places section__login--label">Email</label>
+                    <form action="/users/login" method="POST" id="formLogin" class="form__search">
+                        <label for="" class="input__txt__places section__login--label">Nombre de Usuario</label>
                         <input type="text" name="username" id="username" placeholder="Ingrese su usuario"
                             class="form-control <%= locals.errors && errors.username? 'is-invalid': null %>"
                             value="<%= locals.oldData? oldData.username: null %>" autofocus>
-                            <p class="text-danger">
+                            <p class= "msjerrorLogin">
                                 <% if(locals.errors && errors.username){%>
                                 <%=errors.username.msg %>
                                 <% }%>
                             </p>
 
                             <label for="" class="input__txt__places section__login--label">Contraseña</label>
-                            <input type="password" name="password" id="password" placeholder="Ingrese su cotraseña"
+                            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña"
                                 class="form-control <%= locals.errors && errors.password? 'is-invalid': null %>"
                                 value="<%= locals.oldData? oldData.password: null %>">
-                                <p class="text-danger">
+                                <p class="msjerrorLogin">
                                     <% if(locals.errors && errors.password){%>
                                     <%=locals.errors.password.msg %>
                                     <% }%>
@@ -36,7 +36,7 @@
                                 <label for="" class="input__txt__places section__login--label">Recordar</label>
                                 <input type="checkbox" name="recordar" placeholder="">
 
-                            <button type="submit">Iniciar sesion</button>
+                            <button type="submit" id="submit">Iniciar sesion</button>
                     </form>
 
                     
@@ -54,6 +54,6 @@
                 </script>
     </body>
     <script src="/js/general.js" defer></script>
-    <script src="/js/validation_front_login" defer></script>
+    <script src="/js/validation_login.js" defer></script>
 
 </html>

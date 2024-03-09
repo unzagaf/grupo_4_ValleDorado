@@ -90,25 +90,34 @@ elInputSurname.addEventListener('blur', function () {
 // elInputBirthdate.addEventListener('blur', function () {
 //     // Obtener la fecha actual
 //     const currentDate = new Date();
+//     console.log("Fecha actual:", currentDate);
 
 //     // Calcular la fecha mínima para ser mayor de edad (18 años atrás)
 //     const minDate = new Date(currentDate.getFullYear() - 18, currentDate.getMonth(), currentDate.getDate());
+//     console.log("Fecha mínima para ser mayor de edad:", minDate);
 
 //     // Calcular la fecha máxima (100 años atrás)
-//     const maxDate = new Date(currentDate.getFullYear() - 100, currentDate.getMonth(), currentDate.getDate());
+//    // Calcular la fecha máxima (100 años atrás)
+// const maxDate = new Date(currentDate.getFullYear() - 100, currentDate.getMonth(), currentDate.getDate());
+
+//     console.log("Fecha máxima:", maxDate);
 
 //     // Obtener la fecha de nacimiento ingresada por el usuario
-//     const birthdate = new Date(this.value);
+//     const birthdate = new Date(this.value.replace(/-/g, '/')); // Reformatear la cadena de fecha
+//     console.log("Fecha de nacimiento ingresada:", birthdate);
+    
 
 //     // Verificar si la fecha de nacimiento está dentro del rango permitido
 //     if (birthdate >= minDate && birthdate <= maxDate) {
 //         // La fecha de nacimiento es válida
 //         this.nextElementSibling.innerText = "";
 //         this.isOK = true;
+//         console.log("Fecha de nacimiento ingresada:", birthdate);
 //     } else {
 //         // La fecha de nacimiento no está dentro del rango permitido
 //         this.nextElementSibling.innerText = "La fecha de nacimiento debe indicar que la persona es mayor de edad y tiene menos de 100 años.";
 //         this.isOK = false;
+//         console.log("Fecha de nacimiento ingresada:", birthdate);
 //     }
 // });
 
@@ -155,7 +164,7 @@ elInputdni.addEventListener('blur', function () {
         this.isOK = true
 
     } else {
-        this.nextElementSibling.innerText = "Ingrese su dni, sin puntos";
+        this.nextElementSibling.innerText = "Ingrese su DNI, sin puntos";
         this.isOK = false;
     }
 
@@ -221,10 +230,10 @@ elInputUsername.addEventListener('blur', function () {
     //al menos tenga 3 caracteres
     //la 1* letra sea con mayuscula
     //no puede contener signos ni espacios
-    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{3,}$/;
+    const regex = /^[A-Za-z0-9_-]{3,10}$/;
 
     this.value = this.value.trim();
-    this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();
+    this.value = this.value.toLowerCase();
 
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
@@ -300,7 +309,13 @@ elInputconfirmarPassword.addEventListener('blur', function () {
 
 });
 
+/**********************
+ *       Submit       *
+ **********************/
+
 elBtnSubmit.addEventListener('click', function (event) {
+
+    event.preventDefault();
 
     // en esta variable vamos a guardar todos los errores que se junten de cada input
     let erroresInput = '';
@@ -308,7 +323,7 @@ elBtnSubmit.addEventListener('click', function (event) {
     // caputramos el formulario, para poder acceder  a cada campo(input)
     elForm.querySelectorAll('input').forEach(function (campo) {
 
-        event.preventDefault()
+        
         if (!campo.isOK) {
             //aqui guarda el error que ese encuentra en cada input, con la propiedad name
             erroresInput += `Error en el campo ${campo.name}\n`
@@ -320,7 +335,9 @@ elBtnSubmit.addEventListener('click', function (event) {
         this.nextElementSibling.style.color = 'green'
     } else {
         this.nextElementSibling.innerText = erroresInput;
-        this.nextElementSibling.style.color = 'red'
+        this.nextElementSibling.style.color = 'red';
+
+       
         
     }
 

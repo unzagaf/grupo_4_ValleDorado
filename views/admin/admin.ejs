@@ -10,9 +10,9 @@
             </section>
             <!-- FORMULARIO PARA CREAR -->
             <section id="crear__paquetes__admin">
-                <form method="POST" action="/admin" class="form__search-admin" enctype="multipart/form-data">
+                <form method="POST" action="/admin" id="productForm" class="form__search-admin" enctype="multipart/form-data">
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input  type="text" name="destination" placeholder="Ingrese el nombre del paquete"
+                    <input type="text" name="destination" id="destination"placeholder="Ingrese el nombre del paquete"
                             class ="form-control <%= locals.errors && errors.destination? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.destination: null %>" >
                     <% if(locals.errors && errors.destination){%>
@@ -22,7 +22,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="city_depart" placeholder="Ingrese provincia de salida"
+                    <input type="text" name="city_depart" id="city_depart"placeholder="Ingrese provincia de salida"
                             class ="form-control <%= locals.errors && errors.city_depart? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.city_depart: null %>" >
                     <% if(locals.errors && errors.city_depart){%>
@@ -32,7 +32,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="price" placeholder="Ingrese precio del paquete"
+                    <input type="number" name="price" id="price"placeholder="Ingrese precio del paquete"
                             class ="form-control <%= locals.errors && errors.price? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.price: null %>" >
                     <% if(locals.errors && errors.price){%>
@@ -42,7 +42,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="group_size" placeholder="Ingrese la cantidad base de personas"
+                    <input type="number" name="group_size" id="group_size"placeholder="Ingrese la cantidad base de personas"
                             class ="form-control <%= locals.errors && errors.group_size? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.group_size: null %>" >
                     <% if(locals.errors && errors.group_size){%>
@@ -52,7 +52,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="start_date" placeholder="Ingrese fecha de inicio del paquete"
+                    <input type="date" name="start_date" id="start_date"placeholder="Ingrese fecha de inicio del paquete"
                             class ="form-control <%= locals.errors && errors.start_date? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.start_date: null %>" >
                     <% if(locals.errors && errors.start_date){%>
@@ -62,7 +62,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="finish_date" placeholder="Ingrese fecha de finalizacion del paquete"
+                    <input type="date" name="finish_date"id="finish_date" placeholder="Ingrese fecha de finalizacion del paquete"
                             class ="form-control <%= locals.errors && errors.finish_date? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.finish_date: null %>" >
                     <% if(locals.errors && errors.finish_date){%>
@@ -72,7 +72,7 @@
                     <% }%>
 
                     <label for="" class="input__txt__places section__login--label">Imagenes</label>
-                    <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1"
+                    <input type="file" multiple name="imagen_producto" id="imagen_producto" placeholder="Ingrese la URL de la imagen 1"
                             class ="form-control <%= locals.errors && errors.imagen_producto? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.imagen_producto: null %>" >
                     <% if(locals.errors && errors.imagen_producto){%>
@@ -161,7 +161,8 @@
         </main>
         <%- include("../partials/footer.ejs") %>
     </body>
-    <script src="js/general.js"></script>
+    <script src="js/general.js" defer></script>
+    <script src="/js/validation_products.js" defer></script>
     
     
 </html>

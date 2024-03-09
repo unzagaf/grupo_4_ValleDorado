@@ -28,6 +28,13 @@
     background-color: #3D348B;
 }
 
+.msjerrorLogin{ 
+    color:red;
+    font-size: 0.8rem;
+    margin-top:2px;
+    text-align:start;
+}
+
 
 /*
 Medias Queries
