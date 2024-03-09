@@ -1,5 +1,5 @@
 //Se capturan los input de los campos a validar
-
+const elForm = document.getElementById('registerForm')
 const elInputName = document.getElementById('name');
 const elInputSurname = document.getElementById('surname');
 const elInputBirthdate = document.getElementById('birthdate');
@@ -9,7 +9,7 @@ const elInputEmail = document.getElementById('email');
 const elInputUsername = document.getElementById('username');
 const elInputpassword = document.getElementById('password');
 const elInputconfirmarPassword = document.getElementById('confirmarPassword')
-const elInputimagenUsuario = document.getElementById('imagenUsuario');
+//const elInputimagenUsuario = document.getElementById('imagenUsuario');
 const elBtnSubmit = document.getElementById('submit');
 
 
@@ -23,14 +23,16 @@ const elBtnSubmit = document.getElementById('submit');
 elInputName.addEventListener('blur', function () {
     //Expresion regular que verifica:
     //al menos tenga 3 caracteres
-    //la 1* letra sea con mayuscula
     //no puede contener signos ni espacios
-    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{3,}$/;
+    //Comienza con una letra mayúscula (incluyendo caracteres acentuados en español).
+    //Seguido por al menos tres letras minúsculas.
+    //Opcionalmente seguido por un espacio y otro nombre que también cumpla con los mismos criterios
+    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ\s]+(?:\s+[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ\s]+)?$/
+
 
     //sanitizacion de campos:
     //para que no queden espacios la inicio del campo
     //el 1* caracter con mayúscula.
-    // se permiten ñ.
     this.value = this.value.trim();
     this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();
 
@@ -44,11 +46,10 @@ elInputName.addEventListener('blur', function () {
     } else {
         //si no lo pasa
         // este es el mensaje de error si se completa erroneamente el campo
-        this.nextElementSibling.innerText = 'Campo obligatorio, debe contener al menos 3 letras';
+        this.nextElementSibling.innerText = 'Ingrese un solo nombre, debe contener al menos 3 letras';
         this.isOK = false
     }
 });
-
 
 
 /*****************************************
@@ -80,35 +81,62 @@ elInputSurname.addEventListener('blur', function () {
     } else {
         //si no lo pasa
         // este es el mensaje de error si se completa erroneamente el campo
-        this.nextElementSibling.innerText = 'Campo obligatorio, debe contener al menos 3 letras';
+        this.nextElementSibling.innerText = 'Campo obligatorio, debe contener al menos 4 letras';
         this.isOK = false;
     }
 
 });
+
+// elInputBirthdate.addEventListener('blur', function () {
+//     // Obtener la fecha actual
+//     const currentDate = new Date();
+
+//     // Calcular la fecha mínima para ser mayor de edad (18 años atrás)
+//     const minDate = new Date(currentDate.getFullYear() - 18, currentDate.getMonth(), currentDate.getDate());
+
+//     // Calcular la fecha máxima (100 años atrás)
+//     const maxDate = new Date(currentDate.getFullYear() - 100, currentDate.getMonth(), currentDate.getDate());
+
+//     // Obtener la fecha de nacimiento ingresada por el usuario
+//     const birthdate = new Date(this.value);
+
+//     // Verificar si la fecha de nacimiento está dentro del rango permitido
+//     if (birthdate >= minDate && birthdate <= maxDate) {
+//         // La fecha de nacimiento es válida
+//         this.nextElementSibling.innerText = "";
+//         this.isOK = true;
+//     } else {
+//         // La fecha de nacimiento no está dentro del rango permitido
+//         this.nextElementSibling.innerText = "La fecha de nacimiento debe indicar que la persona es mayor de edad y tiene menos de 100 años.";
+//         this.isOK = false;
+//     }
+// });
 
 
 /*****************************************
  * Validaciones para el campo birthdate   *
  *****************************************/
 
-elInputBirthdate.addEventListener('blur', function () {
-    // Expresión regular valida el siguiente formato:
-    // dd: Día, acepta valores de 01 a 31.
-    // mm: Mes, acepta valores de 01 a 12.
-    // aaaa: Año, acepta cualquier año de cuatro dígitos.
-    const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+// elInputBirthdate.addEventListener('blur', function () {
+//     // Expresión regular valida el siguiente formato:
+//     // dd: Día, acepta valores de 01 a 31.
+//     // mm: Mes, acepta valores de 01 a 12.
+//     // aaaa: Año, acepta cualquier año de cuatro dígitos.
+//     const regex =  /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
 
-    this.value = this.value.trim();
+//     if (regex.test(this.value)) {
+//         this.nextElementSibling.innerText = "";
+//         this.isOK = true
+//         console.log(elInputBirthdate)
 
-    if (regex.test(this.value)) {
-        this.nextElementSibling.innerText = "";
-        this.isOK = true
-    } else {
-        this.nextElementSibling.innerText = "El formato debe ser DD/MM/AAAA";
-        this.isOK = false;
-    }
+//     } else {
+//         this.nextElementSibling.innerText = "El formato debe ser DD/MM/AAAA";
+//         this.isOK = false;
+//         console.log(elInputBirthdate)
+//     }
 
-});
+//     console.log(elInputBirthdate)
+// });
 
 /*****************************************
  * Validaciones para el campo dni   *
@@ -125,10 +153,35 @@ elInputdni.addEventListener('blur', function () {
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
         this.isOK = true
+
     } else {
         this.nextElementSibling.innerText = "Ingrese su dni, sin puntos";
         this.isOK = false;
     }
+
+});
+
+/*****************************************
+ *  Validaciones para el campo teléfono   *
+ *****************************************/
+
+elInputTelephone.addEventListener('blur', function () {
+    //El texto debe comenzar (^) con exactamente 3 dígitos.
+    //Después de los primeros 3 dígitos, debe haber exactamente 7 dígitos adicionales
+    // El $ asegura que la cadena termine aquí.
+    const regex = /^\d{3}\d{7}$/;
+
+    this.value = this.value.trim();
+
+    if (regex.test(this.value)) {
+        this.nextElementSibling.innerText = "";
+        this.isOK = true
+
+    } else {
+        this.nextElementSibling.innerText = "Ingrese el área + el número sin espacios";
+        this.isOK = false
+    }
+
 
 });
 
@@ -157,5 +210,124 @@ elInputEmail.addEventListener('blur', function () {
         this.isOK = false
     }
 });
+
+/*****************************************
+ * Validaciones para el campo user name  *
+ *****************************************/
+
+elInputUsername.addEventListener('blur', function () {
+
+    //Expresion regular que verifica:
+    //al menos tenga 3 caracteres
+    //la 1* letra sea con mayuscula
+    //no puede contener signos ni espacios
+    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{3,}$/;
+
+    this.value = this.value.trim();
+    this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();
+
+    if (regex.test(this.value)) {
+        this.nextElementSibling.innerText = "";
+        this.isOK = true;
+
+    } else {
+
+        this.nextElementSibling.innerText = 'Campo obligatorio, ingrese cual sera su nombre de usuario debe contener al menos 3 letras';
+        this.isOK = false;
+    }
+
+});
+
+/*****************************************
+ *  Validaciones para el campo password   *
+ *****************************************/
+
+// Mensaje que mostrará los requirimientos para llenar el campo
+const passwordCriteria = 'La contraseña debe tener al menos 8 caracteres\n' +
+    'Debe poseer al menos una letra Mayúscula\n' +
+    'Debe poseer al menos una letra Minúscula\n' +
+    'Debe poseer al menos un caracter especial\n' +
+    'Lista de caracteres especiales: !@#$%^&*()-_=+{};:,<.>'
+
+elInputpassword.addEventListener('focus', function () {
+
+    //se muestran los requirimientos al usuario
+    //  muestro esos requerimientos en azul, si es rojo sería molestos para el usuario, si es verde quedaria como correcto, por eso se elegi otro color
+    this.nextElementSibling.innerText = passwordCriteria;
+    this.nextElementSibling.style.color = "#F18701"
+});
+
+
+elInputpassword.addEventListener('blur', function () {
+
+    const regex = /^(?=.*[!@#$%^&*()-_=+{};:,<.>])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+
+    this.value = this.value.trim();
+
+    if (regex.test(this.value)) {
+
+        this.nextElementSibling.innerText = "";
+        this.isOK = true
+
+    } else {
+
+        this.nextElementSibling.innerText = "Ingrese su contraseña con los parametros indicados";
+        this.nextElementSibling.style.color = "red";
+        this.isOK = false
+    }
+
+});
+
+/*******************************************
+ * Validaciones para campo Confirmar Password *
+ *******************************************/
+
+elInputconfirmarPassword.addEventListener('blur', function () {
+
+    this.value = this.value.trim();
+
+    if (this.value === elInputpassword.value) {
+
+        this.nextElementSibling.innerText = "Contraseña ingresada correctamente";
+        this.nextElementSibling.style.color = "green";
+        this.isOK = true;
+
+    } else {
+        this.nextElementSibling.innerText = 'Ingrese nuevamente su contraseña';
+        this.nextElementSibling.style.color = "red";
+        this.isOK = false;
+    }
+
+});
+
+elBtnSubmit.addEventListener('click', function (event) {
+
+    // en esta variable vamos a guardar todos los errores que se junten de cada input
+    let erroresInput = '';
+
+    // caputramos el formulario, para poder acceder  a cada campo(input)
+    elForm.querySelectorAll('input').forEach(function (campo) {
+
+        event.preventDefault()
+        if (!campo.isOK) {
+            //aqui guarda el error que ese encuentra en cada input, con la propiedad name
+            erroresInput += `Error en el campo ${campo.name}\n`
+        }
+    });
+
+    if (erroresInput=== '') {
+        this.nextElementSibling.innerText = 'Estan todos bien';
+        this.nextElementSibling.style.color = 'green'
+    } else {
+        this.nextElementSibling.innerText = erroresInput;
+        this.nextElementSibling.style.color = 'red'
+        
+    }
+
+})
+
+
+
+
 
 

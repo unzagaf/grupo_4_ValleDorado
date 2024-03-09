@@ -9,7 +9,7 @@
             <section class="section__login">
                 <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
                 
-                <form action="/users/register" method="post" enctype="multipart/form-data" class="register_form ">
+                <form action="/users/register" method="post" enctype="multipart/form-data" id="registerForm"class="register_form ">
 
                     <label for="" class="input__txt__places section__login--label">Nombre</label>
                     <input type="text" name="name" id="name" placeholder="nombre" 
@@ -111,6 +111,7 @@
 
                     <!-- AGREGAR EL INPUT AL BOTON -->
                     <button class="botonAgregar" type="submit" id="submit">Agregar</button>
+                    <p id="msjerror"></p>
                 </form>
             </section>
         </main>
