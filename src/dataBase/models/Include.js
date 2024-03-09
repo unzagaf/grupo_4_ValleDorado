@@ -13,11 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         include: {
             type: DataTypes.STRING(100),
             allowNull: false
-        },
-        // details: {
-        //     type: DataTypes.STRING(350),
-        //     allowNull: false
-        // }
+        }
     };
 
     const config = {
@@ -26,6 +22,15 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Include = sequelize.define(alias, cols, config);
-
+    // Asociación con el modelo Product
+    Include.associate = (model)=>{
+        Include.belongsToMany(model.Product,{
+            as:"products",
+            through: "product_includes",
+            foreignKey: "include_id",
+            otherKey: "product_id",
+            timestamps: true
+        })
+    }
     return Include;
 }

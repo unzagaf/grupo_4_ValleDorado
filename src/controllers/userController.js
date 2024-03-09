@@ -58,16 +58,26 @@ const userController = {
                     oldData: req.body,
                 });
             }
-            const { username, password } = req.body;
-            
-            const user = await userServices.login(username, password);
-            req.session.usuarioLogueado = user;
+            const { username, password } = req.body; 
+            const user = await userServices.login(username);
+
+            if(!user){
+                throw new Error('Usuario no encontrado');
+            }
+            const passwordMatch = await bcrypt.compare(password, user.account.password);
+            if (!passwordMatch) {
+                throw new Error('Contraseña incorrecta');
+            }
+            req.session.logined = true;
+            req.session.userid = user.account.id
+            req.session.username = user.account.username
+            req.session.name = user.user.name
             req.session.save(err => {
                 if (err) {
                     console.log("Error al guardar la sesión", err);
                 } else {
                     console.log("Sesión guardada correctamente");
-                    console.log("Usuario logueado:", req.session.usuarioLogueado);
+                    console.log("Usuario logueado:" +user.account.username);
                     res.redirect('/');
                 }
             });
@@ -150,7 +160,7 @@ const userController = {
     },
 
     logout:(req, res)=>{
-        req.session.usuarioLogueado = null;
+        req.session.logined = false;
 
         res.redirect('/');
     }
