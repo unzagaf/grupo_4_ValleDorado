@@ -51,6 +51,13 @@ gap: 1rem;
 margin-top: 3rem;
 margin-bottom: 2rem; */
 
+.msjerror{ 
+    color:red;
+    font-size: 0.8rem;
+    margin-top:2px;
+    text-align:start;
+}
+
 .register_form label{
     margin-top: -.3rem;
     margin-bottom: -.9rem;
