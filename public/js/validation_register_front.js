@@ -90,7 +90,42 @@ elInputSurname.addEventListener('blur', function () {
 /*****************************************
  * Validaciones para el campo birthdate   *
  *****************************************/
-elInputBirthdate.isOk = true;
+
+elInputBirthdate.addEventListener('focus', function () {
+
+    this.nextElementSibling.innerText = 'La fecha debe ser posterior 01/01/1920\n' + 'Debes ser mayor de 18 años para continuar';
+    this.nextElementSibling.style.color = "blue"
+});
+
+elInputBirthdate.addEventListener('blur', function () {
+
+    let birthdate = new Date('0001-01-01')
+    if (this.value) {
+        birthdate = new Date(this.value);
+    }
+
+    // Declaramos la fecha mínima
+    const minDate = new Date('1920-01-01');
+
+    // Calculamos la fecha hace 18 años
+    const eighteenYearsAgo = new Date();
+    eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
+
+    // Validar si la fecha está dentro del rango
+    if (birthdate > eighteenYearsAgo || birthdate < minDate) {
+        // Mostrar mensaje de error
+        this.nextElementSibling.innerText = 'La fecha debe ser posterior 01/01/1920\n' + 'Debes ser mayor de 18 años para continuar';
+        // Puedes agregar estilos CSS para que el mensaje sea visible
+        this.nextElementSibling.style.color = "red"
+
+    } else {
+        // Limpiar el mensaje de error si la fecha es válida
+        this.nextElementSibling.innerText = '';
+        elInputBirthdate.isOk = true;
+    }
+
+})
+
 
 
 // elInputBirthdate.addEventListener('blur', function () {
