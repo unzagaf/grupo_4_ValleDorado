@@ -7,8 +7,9 @@
 
 const elFormLogin = document.getElementById('formLogin');
 const elInputUsername = document.getElementById('username');
-const elInputpassword = document.getElementById('password');    
-const elBtnSubmit = document.getElementById('submit')    
+const elInputpassword = document.getElementById('password');
+const elCheckBox = document.getElementById('recordar');
+const elBtnSubmit = document.getElementById('submit');
 
 
 /*****************************************
@@ -28,12 +29,12 @@ elInputUsername.addEventListener('blur', function () {
 
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
-        this.isOK = true;
+        this.isOk = true;
 
     } else {
 
         this.nextElementSibling.innerText = 'Campo obligatorio, ingrese el usuario que generó al registrarse ';
-        this.isOK = false;
+        this.isOk = false;
     };
 
 
@@ -64,16 +65,22 @@ elInputpassword.addEventListener('blur', function () {
     if (regex.test(this.value)) {
 
         this.nextElementSibling.innerText = "";
-        this.isOK = true
+        this.isOk = true
 
     } else {
 
         this.nextElementSibling.innerText = "Ingrese su contraseña con los parametros indicados anteriormente";
         this.nextElementSibling.style.color = "red";
-        this.isOK = false
+        this.isOk = false
     }
 
 });
+
+/**********************
+ *      Checkbox      *
+ **********************/
+//Se coloca en true ya que no es necesario validarlo pero si corre en el forEach del submit
+elCheckBox.isOk = true;
 
 /**********************
  *       Submit       *
@@ -81,14 +88,14 @@ elInputpassword.addEventListener('blur', function () {
 
 elBtnSubmit.addEventListener('click', function (event) {
 
-    event.preventDefault();
+    
     // en esta variable vamos a guardar todos los errores que se junten de cada input
     let erroresInput = '';
 
     // caputramos el formulario, para poder acceder  a cada campo(input)
     elFormLogin.querySelectorAll('input[type="text"], input[type="password"]').forEach(function (campo) {
 
-        if (!campo.isOK) {
+        if (!campo.isOk) {
             //aqui guarda el error que ese encuentra en cada input, con la propiedad name
             erroresInput += `Error en el campo ${campo.name}\n`
 
@@ -102,9 +109,7 @@ elBtnSubmit.addEventListener('click', function (event) {
     } else {
         this.nextElementSibling.innerText = erroresInput;
         this.nextElementSibling.style.color = 'red';
-        
-   
-
-  }
+        event.preventDefault();
+    }
 
 })

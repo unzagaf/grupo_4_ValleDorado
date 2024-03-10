@@ -41,13 +41,13 @@ elInputName.addEventListener('blur', function () {
         // sacamos el msj de erro que pueda haber estado
         //guardamos en una variable que está todo correcto.(para ser usado en el submit)
         this.nextElementSibling.innerText = "";
-        this.isOK = true;
+        this.isOk = true;
 
     } else {
         //si no lo pasa
         // este es el mensaje de error si se completa erroneamente el campo
         this.nextElementSibling.innerText = 'Ingrese un solo nombre, debe contener al menos 3 letras';
-        this.isOK = false
+        this.isOk = false
     }
 });
 
@@ -62,7 +62,7 @@ elInputSurname.addEventListener('blur', function () {
     //al menos tenga 3 caracteres
     //la 1* letra sea con mayuscula
     //no puede contener signos ni espacios
-    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{3,}$/;
+    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{2,}$/;
 
     //sanitizacion de campos:
     //para que no queden espacios la inicio del campo
@@ -76,13 +76,13 @@ elInputSurname.addEventListener('blur', function () {
         // sacamos el msj de erro que pueda haber estado
         //guardamos en una variable que está todo correcto.(para ser usado en el submit)
         this.nextElementSibling.innerText = "";
-        this.isOK = true;
+        this.isOk = true;
 
     } else {
         //si no lo pasa
         // este es el mensaje de error si se completa erroneamente el campo
         this.nextElementSibling.innerText = 'Campo obligatorio, debe contener al menos 4 letras';
-        this.isOK = false;
+        this.isOk = false;
     }
 
 });
@@ -94,12 +94,14 @@ elInputSurname.addEventListener('blur', function () {
 elInputBirthdate.addEventListener('focus', function () {
 
     this.nextElementSibling.innerText = 'La fecha debe ser posterior 01/01/1920\n' + 'Debes ser mayor de 18 años para continuar';
-    this.nextElementSibling.style.color = "blue"
+    this.nextElementSibling.style.color = "#3d348bcc"
 });
 
 elInputBirthdate.addEventListener('blur', function () {
 
+    //Se inicializa birthdate para que siempre se dispare el efecto al hacer blur
     let birthdate = new Date('0001-01-01')
+
     if (this.value) {
         birthdate = new Date(this.value);
     }
@@ -117,74 +119,16 @@ elInputBirthdate.addEventListener('blur', function () {
         this.nextElementSibling.innerText = 'La fecha debe ser posterior 01/01/1920\n' + 'Debes ser mayor de 18 años para continuar';
         // Puedes agregar estilos CSS para que el mensaje sea visible
         this.nextElementSibling.style.color = "red"
+        this.isOk = false;
 
     } else {
         // Limpiar el mensaje de error si la fecha es válida
         this.nextElementSibling.innerText = '';
-        elInputBirthdate.isOk = true;
+        this.isOk = true;
     }
 
-})
+});
 
-
-
-// elInputBirthdate.addEventListener('blur', function () {
-//     // Obtener la fecha actual
-//     const currentDate = new Date();
-//     console.log("Fecha actual:", currentDate);
-
-//     // Calcular la fecha mínima para ser mayor de edad (18 años atrás)
-//     const minDate = new Date(currentDate.getFullYear() - 18, currentDate.getMonth(), currentDate.getDate());
-//     console.log("Fecha mínima para ser mayor de edad:", minDate);
-
-//     // Calcular la fecha máxima (100 años atrás)
-//    // Calcular la fecha máxima (100 años atrás)
-// const maxDate = new Date(currentDate.getFullYear() - 100, currentDate.getMonth(), currentDate.getDate());
-
-//     console.log("Fecha máxima:", maxDate);
-
-//     // Obtener la fecha de nacimiento ingresada por el usuario
-//     const birthdate = new Date(this.value.replace(/-/g, '/')); // Reformatear la cadena de fecha
-//     console.log("Fecha de nacimiento ingresada:", birthdate);
-    
-
-//     // Verificar si la fecha de nacimiento está dentro del rango permitido
-//     if (birthdate >= minDate && birthdate <= maxDate) {
-//         // La fecha de nacimiento es válida
-//         this.nextElementSibling.innerText = "";
-//         this.isOK = true;
-//         console.log("Fecha de nacimiento ingresada:", birthdate);
-//     } else {
-//         // La fecha de nacimiento no está dentro del rango permitido
-//         this.nextElementSibling.innerText = "La fecha de nacimiento debe indicar que la persona es mayor de edad y tiene menos de 100 años.";
-//         this.isOK = false;
-//         console.log("Fecha de nacimiento ingresada:", birthdate);
-//     }
-// });
-
-// Otra opcion de validacion
-
-
-// elInputBirthdate.addEventListener('blur', function () {
-//     // Expresión regular valida el siguiente formato:
-//     // dd: Día, acepta valores de 01 a 31.
-//     // mm: Mes, acepta valores de 01 a 12.
-//     // aaaa: Año, acepta cualquier año de cuatro dígitos.
-//     const regex =  /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
-
-//     if (regex.test(this.value)) {
-//         this.nextElementSibling.innerText = "";
-//         this.isOK = true
-//         console.log(elInputBirthdate)
-
-//     } else {
-//         this.nextElementSibling.innerText = "El formato debe ser DD/MM/AAAA";
-//         this.isOK = false;
-//         console.log(elInputBirthdate)
-//     }
-
-//     console.log(elInputBirthdate)
-// });
 
 /*****************************************
  * Validaciones para el campo dni   *
@@ -200,11 +144,11 @@ elInputdni.addEventListener('blur', function () {
 
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
-        this.isOK = true
+        this.isOk = true
 
     } else {
         this.nextElementSibling.innerText = "Ingrese su DNI, sin puntos";
-        this.isOK = false;
+        this.isOk = false;
     }
 
 });
@@ -223,11 +167,11 @@ elInputTelephone.addEventListener('blur', function () {
 
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
-        this.isOK = true
+        this.isOk = true
 
     } else {
         this.nextElementSibling.innerText = "Ingrese el área + el número sin espacios";
-        this.isOK = false
+        this.isOk = false
     }
 
 
@@ -251,16 +195,16 @@ elInputEmail.addEventListener('blur', function () {
 
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
-        this.isOK = true
+        this.isOk = true
 
     } else {
         this.nextElementSibling.innerText = "Formato incorrecto, debe ingresar @ y el dominio";
-        this.isOK = false
+        this.isOk = false
     }
 });
 
 /*****************************************
- * Validaciones para el campo user name  *
+ * Validaciones para el campo user NAME  *
  *****************************************/
 
 elInputUsername.addEventListener('blur', function () {
@@ -276,12 +220,12 @@ elInputUsername.addEventListener('blur', function () {
 
     if (regex.test(this.value)) {
         this.nextElementSibling.innerText = "";
-        this.isOK = true;
+        this.isOk = true;
 
     } else {
 
         this.nextElementSibling.innerText = 'Campo obligatorio, ingrese cual sera su nombre de usuario debe contener al menos 3 letras';
-        this.isOK = false;
+        this.isOk = false;
     }
 
 });
@@ -315,13 +259,13 @@ elInputpassword.addEventListener('blur', function () {
     if (regex.test(this.value)) {
 
         this.nextElementSibling.innerText = "";
-        this.isOK = true
+        this.isOk = true
 
     } else {
 
         this.nextElementSibling.innerText = "Ingrese su contraseña con los parametros indicados";
         this.nextElementSibling.style.color = "red";
-        this.isOK = false
+        this.isOk = false
     }
 
 });
@@ -338,12 +282,12 @@ elInputconfirmarPassword.addEventListener('blur', function () {
 
         this.nextElementSibling.innerText = "Contraseña ingresada correctamente";
         this.nextElementSibling.style.color = "green";
-        this.isOK = true;
+        this.isOk = true;
 
     } else {
         this.nextElementSibling.innerText = 'Ingrese nuevamente su contraseña';
         this.nextElementSibling.style.color = "red";
-        this.isOK = false;
+        this.isOk = false;
     }
 
 });
@@ -360,27 +304,26 @@ elInputimagenUsuario.isOk = true;
 
 elBtnSubmit.addEventListener('click', function (event) {
 
-    event.preventDefault();
-
     // en esta variable vamos a guardar todos los errores que se junten de cada input
     let erroresInput = '';
 
     // caputramos el formulario, para poder acceder  a cada campo(input)
     elForm.querySelectorAll('input').forEach(function (campo) {
 
-        
-        if (!campo.isOK) {
+        if (!campo.isOk) {
             //aqui guarda el error que ese encuentra en cada input, con la propiedad name
             erroresInput += `Error en el campo ${campo.name}\n`
         }
     });
 
-    if (erroresInput=== '') {
+    if (erroresInput === '') {
         this.nextElementSibling.innerText = 'Estan todos bien';
         this.nextElementSibling.style.color = 'green'
+
     } else {
         this.nextElementSibling.innerText = erroresInput;
         this.nextElementSibling.style.color = 'red';
+        event.preventDefault();
 
     }
 
