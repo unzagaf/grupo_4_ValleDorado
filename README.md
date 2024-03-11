@@ -36,6 +36,8 @@ DER de la base de datos, se deja link al pdf y a los archivos de estructura y vo
 <a href="./src/dataBase/seeders/diagrama_relacional.pdf" download>descargar DER.pdf</a>
 
 
-<a href='./src/dataBase/seeders/valle_dorado_structured.sql'>Link al archivo structured</a>
+<a href='./src/dataBase/seeders/db_grupo_cuatro.sql'>Link al archivo general de la base de datos</a>
 
-<a href='./src/dataBase/seeders/valle_dorado_data.sql'>Link al archivo data.sql</a>
+<a href='./src/dataBase/seeders/data_volcado_datos.sql'>Link al archivo data.sql</a>
+
+<a href='./src/dataBase/seeders/structured_db.sql '>Link al archivo structured.sql</a>

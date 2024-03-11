@@ -34,7 +34,6 @@ const productDetailController = {
                 icono: obtenerIcono(opcion.include),
               }));
               res.render('./products/productDetail.ejs', {
-                  stylesheetPath: '/css/productDetail.css',
                   product: product,
                   products: products,
                   usuarioLogueado: req.session.logined,

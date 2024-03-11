@@ -23,7 +23,6 @@ const userController = {
     register: (req, res) => {
         res.render('./users/register.ejs',
             {
-                stylesheetPath: '/css/register.css',
                 usuarioLogueado: req.session.usuarioLogueado
             });
     },
@@ -36,11 +35,8 @@ const userController = {
     //GET
     login: (req, res) => {
         res.render('./users/login.ejs',
-        {
-            stylesheetPath: '/css/login.css',
-            usuarioLogueado: req.session.usuarioLogueado
-        });
-
+        { usuarioLogueado: req.session.usuarioLogueado });
+        //Las variables guardadas en session se pueden acceder desde todas las vistas sin la necesidad de enviarlas
     },
 
     // **** Implementación del formulario de login
@@ -53,7 +49,6 @@ const userController = {
             if (validacion.errors.length > 0) {
                 console.log('hubo un error');
                 res.render('./users/login.ejs', {
-                    stylesheetPath: 'css/login.css',
                     errors: validacion.mapped(),
                     oldData: req.body,
                 });
@@ -68,22 +63,35 @@ const userController = {
             if (!passwordMatch) {
                 throw new Error('Contraseña incorrecta');
             }
-            req.session.logined = true;
+
+            //Completando el session con los datos del user
+            req.session.isLogued = true;
             req.session.userid = user.account.id
             req.session.username = user.account.username
             req.session.name = user.user.name
-            req.session.save(err => {
-                if (err) {
-                    console.log("Error al guardar la sesión", err);
-                } else {
-                    console.log("Sesión guardada correctamente");
-                    console.log("Usuario logueado:" +user.account.username);
-                    res.redirect('/');
-                }
-            });
+            req.session.avatar = user.account.avatar;
+
+            console.log('');
+            console.log('-----------------------------------------------');
+            console.log('---------------Logueando Usuario---------------');
+            console.log('-----------------------------------------------');
+            console.log('Valor de req.session.isLogued :' + req.session.isLogued );
+            console.log('Valor de req.session.userid   :' + req.session.userid   );
+            console.log('Valor de req.session.name     :' + req.session.name     );
+            console.log('Valor de req.session.username :' + req.session.username );
+            console.log('Valor de req.session.avatar   :' + req.session.avatar   );
+            console.log('-----------------------------------------------');
+            console.log("Sesión guardada correctamente");
+            console.log("Usuario logueado:" + user.account.username);
+            console.log('-----------------------------------------------');
+
+            console.log('');
+
+            res.redirect('/')
+
         } catch (error) {
             console.log("Error al iniciar sesión:", error.message);
-            return res.status(500).send("Error al iniciar sesión");
+            return res.status(500).redirect("/users/login");
         }
     },
 
@@ -158,9 +166,18 @@ const userController = {
     delete: (req, res) => {
         // Do the magic
     },
+    
+
+    //--------------
+    //    Logout
+    //--------------
 
     logout:(req, res)=>{
-        req.session.logined = false;
+        req.session.isLogued = false;
+        req.session.userid = null;
+        req.session.username = null;
+        req.session.name = null;
+        req.session.avatar = null;
 
         res.redirect('/');
     }
