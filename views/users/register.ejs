@@ -13,7 +13,9 @@
 <body>
   <!-- HEADER -->
   <%- include("../partials/header.ejs") %>
+
     <main class="main__login">
+
       <section class="section__login">
         <h2>Bienvenido a nuestra agencia de viajes Valle Dorado</h2>
 
@@ -23,7 +25,7 @@
           <label for="name" class="input__txt__places section__login--label">Nombre</label>
           <input type="text" name="name" id="name" placeholder="nombre"
             class="form-control <%= locals.errors && errors.name? 'is-invalid': null %>"
-            value="<%= locals.oldData? oldData.name: null %>" autofocus>
+            value="<%= locals.oldData? oldData.name: null %>">
           <p class="msjerror">
             <% if(locals.errors && errors.name) {%>
               <%= errors.name.msg %>

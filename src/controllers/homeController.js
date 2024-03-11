@@ -9,7 +9,6 @@ const homeController = {
         productServices.getAll()
             .then(products=>{
                 res.render('./products/home.ejs', {
-                    stylesheetPath: 'css/home.css',
                     products: products,
                     usuarioLogueado: req.session.logined
                 });

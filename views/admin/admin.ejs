@@ -1,6 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include("../partials/head") %>
+<html lang="es">
+
+    <head>
+        <%- include("../partials/head") %>
+        <meta name="author" content="Grupo_cuatro">
+        <link rel="stylesheet" href="/css/admin.css">
+        <title>Valle Dorado - Registro Producto</title>
+        
+    </head>
     <body>
         <%- include("../partials/header.ejs") %>
         <main class="admin__main">
@@ -8,7 +15,10 @@
                 <p id="crear_paquete" class="underline" onclick="displayAdmin()">Crear paquetes</p>
                 <p id="lista_paquete" onclick="displayAdmin()">Lista de paquetes</p>
             </section>
+
+            <!-- --------------------- -->
             <!-- FORMULARIO PARA CREAR -->
+            <!-- --------------------- -->
             <section id="crear__paquetes__admin">
                 <form method="POST" action="/admin" id="productForm" class="form__search-admin" enctype="multipart/form-data">
                     <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
@@ -114,8 +124,11 @@
                     <button type="submit" id="submit">Crear paquete</button>
                 </form>
             </section>
-            
+
+            <!-- -------------- -->
             <!-- TABLA PAQUETES -->
+            <!-- -------------- -->
+
             <section id="lista__paquetes__admin" class="admin__hidden">
                 <table>
                     <thead>
