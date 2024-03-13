@@ -21,71 +21,72 @@
             <!-- --------------------- -->
             <section id="crear__paquetes__admin">
                 <form method="POST" action="/admin" id="productForm" class="form__search-admin" enctype="multipart/form-data">
-                    <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
+
+                    <label for="destination" class="input__txt__places section__login--label">Nombre paquete</label>
                     <input type="text" name="destination" id="destination"placeholder="Ingrese el nombre del paquete"
                             class ="form-control <%= locals.errors && errors.destination? 'is-invalid': null %>" 
-                            value = "<%= locals.oldData? oldData.destination: null %>" >
-                            <p class="text-danger">
+                            value = "<%= locals.oldData? oldData.destination: null %>" autofocus >
+                            <p class="msjErrorAdmin">
                                 <% if(locals.errors && errors.destination){%>
                                 <%=errors.destination.msg %>
                                 <% }%>
                             </p>
 
-                    <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
+                    <label for="city_depart" class="input__txt__places section__login--label">Provincia de salida</label>
                     <input type="text" name="city_depart" id="city_depart"placeholder="Ingrese provincia de salida"
                             class ="form-control <%= locals.errors && errors.city_depart? 'is-invalid': null %>" 
                             value = "<%= locals.oldData? oldData.city_depart: null %>" >
-                            <p class="text-danger">
+                            <p class="msjErrorAdmin">
                                 <% if(locals.errors && errors.city_depart){%>
                                 <%=errors.city_depart.msg %>
                                 <% }%>
                             </p>
 
-                    <label for="" class="input__txt__places section__login--label">Precio</label>
+                    <label for="price" class="input__txt__places section__login--label">Precio</label>
                     <input type="number" name="price" id="price"placeholder="Ingrese precio del paquete"
                     class ="form-control <%= locals.errors && errors.price? 'is-invalid': null %>" 
                     value = "<%= locals.oldData? oldData.price: null %>" >
-                    <p class="text-danger">
+                    <p class="msjErrorAdmin">
                         <% if(locals.errors && errors.price){%>
                         <%=errors.price.msg %>
                         <% }%>
                     </p>
 
-                    <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
+                    <label for="group_size" class="input__txt__places section__login--label">Cantidad de personas</label>
                     <input type="number" name="group_size" id="group_size"placeholder="Ingrese la cantidad base de personas"
                     class ="form-control <%= locals.errors && errors.group_size? 'is-invalid': null %>" 
                     value = "<%= locals.oldData? oldData.group_size: null %>" >
-                    <p class="text-danger">
+                    <p class="msjErrorAdmin">
                         <% if(locals.errors && errors.group_size){%>
                         <%=errors.group_size.msg %>
                         <% }%>
                     </p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
+                    <label for="start_date" class="input__txt__places section__login--label">Fecha de inicio</label>
                     <input type="date" name="start_date" id="start_date"placeholder="Ingrese fecha de inicio del paquete"
                     class ="form-control <%= locals.errors && errors.start_date? 'is-invalid': null %>" 
                     value = "<%= locals.oldData? oldData.start_date: null %>" >
-                    <p class="text-danger">
+                    <p class="msjErrorAdmin">
                         <% if(locals.errors && errors.start_date){%>
                         <%=errors.start_date.msg %>
                         <% }%>
                     </p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
+                    <label for="finish_date" class="input__txt__places section__login--label">Fecha de finalizacion</label>
                     <input type="date" name="finish_date"id="finish_date" placeholder="Ingrese fecha de finalizacion del paquete"
                     class ="form-control <%= locals.errors && errors.finish_date? 'is-invalid': null %>" 
                     value = "<%= locals.oldData? oldData.finish_date: null %>" >
-                    <p class="text-danger">
+                    <p class="msjErrorAdmin">
                         <% if(locals.errors && errors.finish_date){%>
                         <%=errors.finish_date.msg %>
                         <% }%>
                     </p>
 
-                    <label for="" class="input__txt__places section__login--label">Imagenes</label>
+                    <label for="imagen_producto" class="input__txt__places section__login--label">Imagenes</label>
                     <input type="file" multiple name="imagen_producto" id="imagen_producto" placeholder="Ingrese la URL de la imagen 1"
                     class ="form-control <%= locals.errors && errors.imagen_producto? 'is-invalid': null %>" 
                     value = "<%= locals.oldData? oldData.imagen_producto: null %>" >
-                    <p class="text-danger">
+                    <p class="msjErrorAdmin">
                         <% if(locals.errors && errors.imagen_producto){%>
                         <%=errors.imagen_producto.msg %>
                         <% }%>
@@ -122,6 +123,7 @@
                         </div>
                     </div>
                     <button type="submit" id="submit">Crear paquete</button>
+                    <p class="msjErrorAdmin"></p>
                 </form>
             </section>
 
@@ -172,9 +174,11 @@
             </section>
         </main>
         <%- include("../partials/footer.ejs") %>
+
+        <script src="js/general.js" defer></script>
+        <script src="/js/validation_products.js" defer></script>
     </body>
-    <script src="js/general.js" defer></script>
-    <script src="/js/validation_products.js" defer></script>
+   
     
     
 </html>

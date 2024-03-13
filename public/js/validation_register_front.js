@@ -16,9 +16,10 @@ const elBtnSubmit = document.getElementById('submit');
 //Se usaran expresiones regulares para la validacion de los campos.
 
 
-/*****************************************
- * Validaciones para el campo name   *
- *****************************************/
+/*******************************
+ *           Name              *
+ *******************************/
+
 
 elInputName.addEventListener('blur', function () {
     //Expresion regular que verifica:
@@ -27,18 +28,18 @@ elInputName.addEventListener('blur', function () {
     //Comienza con una letra mayúscula (incluyendo caracteres acentuados en español).
     //Seguido por al menos tres letras minúsculas.
     //Opcionalmente seguido por un espacio y otro nombre que también cumpla con los mismos criterios
-    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ\s]+(?:\s+[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ\s]+)?$/
+    const regex = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ\s]+(?: [A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ\s]+)*$/;
 
 
     //sanitizacion de campos:
     //para que no queden espacios la inicio del campo
     //el 1* caracter con mayúscula.
     this.value = this.value.trim();
-    this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();
+    this.value = this.value.replace(/\b\w/g, c => c.toUpperCase()); // Capitaliza cada palabra
 
     if (regex.test(this.value)) {
         // si pasa el test:
-        // sacamos el msj de erro que pueda haber estado
+        // sacamos el msj de error que pueda haber estado
         //guardamos en una variable que está todo correcto.(para ser usado en el submit)
         this.nextElementSibling.innerText = "";
         this.isOk = true;
@@ -52,9 +53,10 @@ elInputName.addEventListener('blur', function () {
 });
 
 
-/*****************************************
- * Validaciones para el campo surname   *
- *****************************************/
+/**********************************
+ *             Surname            *
+ **********************************/
+
 
 elInputSurname.addEventListener('blur', function () {
 
@@ -73,7 +75,7 @@ elInputSurname.addEventListener('blur', function () {
 
     if (regex.test(this.value)) {
         // si pasa el test:
-        // sacamos el msj de erro que pueda haber estado
+        // sacamos el msj de error que pueda haber estado
         //guardamos en una variable que está todo correcto.(para ser usado en el submit)
         this.nextElementSibling.innerText = "";
         this.isOk = true;
@@ -87,9 +89,9 @@ elInputSurname.addEventListener('blur', function () {
 
 });
 
-/*****************************************
- * Validaciones para el campo birthdate   *
- *****************************************/
+/**********************************
+ *             Birthdate          *
+ **********************************/
 
 elInputBirthdate.addEventListener('focus', function () {
 
@@ -130,9 +132,9 @@ elInputBirthdate.addEventListener('blur', function () {
 });
 
 
-/*****************************************
- * Validaciones para el campo dni   *
- *****************************************/
+/*****************************
+ *            DNI            *
+ *****************************/
 
 elInputdni.addEventListener('blur', function () {
 
@@ -154,7 +156,7 @@ elInputdni.addEventListener('blur', function () {
 });
 
 /*****************************************
- *  Validaciones para el campo teléfono   *
+ *             Telefono                  *
  *****************************************/
 
 elInputTelephone.addEventListener('blur', function () {
@@ -179,7 +181,7 @@ elInputTelephone.addEventListener('blur', function () {
 
 
 /*****************************************
- * Validaciones para el campo email   *
+ *                Email                  *
  *****************************************/
 
 elInputEmail.addEventListener('blur', function () {
@@ -204,16 +206,19 @@ elInputEmail.addEventListener('blur', function () {
 });
 
 /*****************************************
- * Validaciones para el campo user NAME  *
+ *              user NAME                *
  *****************************************/
 
 elInputUsername.addEventListener('blur', function () {
 
     //Expresion regular que verifica:
-    //al menos tenga 3 caracteres
-    //la 1* letra sea con mayuscula
-    //no puede contener signos ni espacios
-    const regex = /^[A-Za-z0-9_-]{3,10}$/;
+    //Letras mayúsculas y minúsculas (a-z, A-Z).
+    //Números (0-9).
+    //Guiones bajos (_).
+    //Guiones (-).
+    //Puntos (.).
+    const regex = /^[a-zA-Z0-9_\-\.]{3,20}$/;
+
 
     this.value = this.value.trim();
     this.value = this.value.toLowerCase();
@@ -231,7 +236,7 @@ elInputUsername.addEventListener('blur', function () {
 });
 
 /*****************************************
- *  Validaciones para el campo password   *
+ *             Password                 *
  *****************************************/
 
 // Mensaje que mostrará los requirimientos para llenar el campo
@@ -271,7 +276,7 @@ elInputpassword.addEventListener('blur', function () {
 });
 
 /*******************************************
- * Validaciones para campo Confirmar Password *
+ *            Confirmar Password           *
  *******************************************/
 
 elInputconfirmarPassword.addEventListener('blur', function () {

@@ -132,6 +132,15 @@ table {
   margin-right: 0;
 }
 
+
+.msjErrorAdmin{ 
+  color:#F18701;
+  font-size: 0.8rem;
+  margin-top:2px;
+  text-align:start;
+  font-weight: 800;
+}
+
 @media screen and (min-width: 768px) {
     .table__hidden{
         display: table-cell!important;
