@@ -12,17 +12,20 @@ const elCheckBox = document.getElementById('recordar');
 const elBtnSubmit = document.getElementById('submit');
 
 
-/*****************************************
- * Validaciones para el campo user name  *
- *****************************************/
+/*************************
+ *        user name      *
+ ************************/
 
 elInputUsername.addEventListener('blur', function () {
 
     //Expresion regular que verifica:
-    //al menos tenga 3 caracteres
-    //la 1* letra sea con mayuscula
-    //no puede contener signos ni espacios
-    const regex =/^[A-Za-z0-9_-]{3,10}$/;
+    //Letras mayúsculas y minúsculas (a-z, A-Z).
+    //Números (0-9).
+    //Guiones bajos (_).
+    //Guiones (-).
+    //Puntos (.).
+    const regex = /^[a-zA-Z0-9_\-\.]{3,20}$/;
+
 
     this.value = this.value.trim();
     this.value = this.value.toLowerCase();
@@ -41,16 +44,16 @@ elInputUsername.addEventListener('blur', function () {
 });
 
 
-/*****************************************
- *  Validaciones para el campo password   *
- *****************************************/
+/***********************
+ *   campo password    *
+ ***********************/
 
 elInputpassword.addEventListener('focus', function () {
 
     // Mensaje que mostrará los requirimientos para llenar el campo
-const passwordCriteriaLogin = 'La contraseña debe ser la misma que uso al registrarse\n' +
-'Cumpliendo el mismo parametro'
- 
+    const passwordCriteriaLogin = 'La contraseña debe ser la misma que uso al registrarse\n' +
+        'Cumpliendo el mismo parametro'
+
     this.nextElementSibling.innerText = passwordCriteriaLogin;
     this.nextElementSibling.style.color = "#F18701"
 });
@@ -88,7 +91,7 @@ elCheckBox.isOk = true;
 
 elBtnSubmit.addEventListener('click', function (event) {
 
-    
+
     // en esta variable vamos a guardar todos los errores que se junten de cada input
     let erroresInput = '';
 
@@ -103,7 +106,7 @@ elBtnSubmit.addEventListener('click', function (event) {
         }
     });
 
-    if (erroresInput=== '') {
+    if (erroresInput === '') {
         this.nextElementSibling.innerText = 'Estan todos bien';
         this.nextElementSibling.style.color = 'green'
     } else {
