@@ -1,0 +1,46 @@
+.perfil_container {
+   text-align: center;
+}
+.perfil_container h2{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.container_datos{
+ margin: 1rem;
+}
+
+.fondo_datos {
+    flex: 1; /* Para que ambos elementos ocupen el mismo ancho */
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+.fondo_datos p{
+    margin-bottom: 0.5rem;
+}
+.profile-image{
+    max-height: 420px;
+}
+#pasajes{
+    max-height: 200px;
+    margin-top: 1.2rem;
+    opacity: 0.5;
+}
+
+@media screen and (min-width: 1024px){
+    .container_datos{
+        margin: auto;
+        display: flex;
+        justify-content: center; /* Centra los elementos horizontalmente */
+        gap: 20px; /* Espacio entre los elementos */
+        max-width: 800px; /* Ancho máximo del contenedor */
+    }
+    .fondo_datos p{
+        text-align: left; /* Alinea el texto al inicio */
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+ }

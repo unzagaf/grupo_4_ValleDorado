@@ -123,7 +123,7 @@ const userController = {
                 errors: errores,
                 oldData: req.body,
                 newUser: newUser,
-                usuarioLogueado: req.session.usuarioLogueado
+                usuarioLogueado: req.session.isLogued
             });
         }
     
@@ -134,7 +134,7 @@ const userController = {
             console.log('Usuario creado con éxito:', user);
             res.render('./users/login.ejs', {
                 stylesheetPath: '/css/login.css',
-                usuarioLogueado: req.session.usuarioLogueado
+                usuarioLogueado: req.session.isLogued
             });
         } catch (error) {
             console.error('Error al crear usuario:', error);
@@ -144,11 +144,14 @@ const userController = {
 
     //***************************************************************************************** */
 
-    profile: (req, res) => {
-        // const user = req.session.user;
+    profile: async(req, res) => {
+        const accountData = await userServices.getOneById(req.session.userid);
         res.render('./users/profile.ejs', {
             stylesheetPath: 'css/home.css',
-            usuarioLogueado: req.session.usuarioLogueado
+            usuarioLogueado: req.session.isLogued,
+            accountData: accountData
+            // username: req.session.username,
+            // avatar: req.session.avatar
         });
     },
 
