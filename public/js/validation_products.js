@@ -14,6 +14,10 @@
 // input type="checkbox" name="incluye[]" value="Excursiones según programa">
 // input type="checkbox" name="incluye[]" value="Traslados de ingreso y egreso">
 
+
+
+// Declaraciones de variables para cada campo del formulario
+
 const elFormCreate = document.getElementById('productForm')
 const elInputDestination = document.getElementById("destination");
 const elInputCityDepart = document.getElementById("city_depart");
@@ -24,6 +28,7 @@ const elInputFinishDate = document.getElementById("finish_date");
 const elInputImagenProducto = document.getElementById("imagen_producto");
 const elBtnSubmitAdmin=document.getElementById('submit');
 const elCheckboxesIncluye = document.querySelectorAll('input[name="incluye[]"]');
+
 /*******************************************
  *            Destino          *
  *******************************************/
@@ -176,36 +181,43 @@ elInputFinishDate.addEventListener('blur', function () {
 elInputImagenProducto.isOK = true;
 
 
+
+
 /**********************
  *      Submit       *
  **********************/
 
+
 elBtnSubmitAdmin.addEventListener('click', function (event) {
 
-    // en esta variable vamos a guardar todos los errores que se junten de cada input
+   
     let erroresInput = '';
 
-    // caputramos el formulario, para poder acceder  a cada campo(input)
     elFormCreate.querySelectorAll('input').forEach(function (campo) {
-
-        if (!campo.isOK) {
-            //aqui guarda el error que ese encuentra en cada input, con la propiedad name
-            erroresInput += `Error en el campo ${campo.name}\n`
+        if (!campo.isOK && campo.type !== 'checkbox') {
+            erroresInput += `Error en el campo ${campo.name}\n`;
         }
     });
 
-    if (erroresInput === '') {
-        this.nextElementSibling.innerText = 'Estan todos bien';
-        this.nextElementSibling.style.color = 'green'
+    // Validación para los checkboxes
+    const checkboxesChecked = Array.from(elCheckboxesIncluye).some(function (checkbox) {
+        return checkbox.checked;
+    });
 
+    if (!checkboxesChecked) {
+        erroresInput += 'Debe seleccionar al menos una opción de incluye\n';
+    }
+
+    if (erroresInput === '') {
+        this.nextElementSibling.innerText = 'Todos los campos están bien';
+        this.nextElementSibling.style.color = 'green';
     } else {
         this.nextElementSibling.innerText = erroresInput;
         this.nextElementSibling.style.color = '#F18701';
         event.preventDefault();
-
+        
     }
-
-})
+});
 
 
 
