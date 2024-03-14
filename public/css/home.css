@@ -77,7 +77,7 @@ Main
   /* Estilos para las imágenes dentro de las tarjetas */
   .main__card__img__container img {
     width: 100%;
-    height: auto;
+    /* height: auto; */
     transition: transform 0.3s ease;
   }
   

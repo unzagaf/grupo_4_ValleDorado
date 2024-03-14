@@ -41,6 +41,18 @@ const userServices = {
                 });
         });
     },
+    getOneById:async(account_id)=>{
+        try {
+            const account = await db.Account.findByPk(account_id, {
+                include: [{association: "user"}]
+            });
+            // console.log("ESTE ES EL GET ONE: ", account);
+            return account; // Devolver el usuario correctamente
+        } catch (error) {
+            console.error('Error al obtener el usuario:', error);
+            throw error; // Lanzar el error para manejarlo en el código que llama a getOne
+        }
+    },
     generatePasswordHash: (password) => {
         const saltRounds = 10;
         return bcrypt.hash(password, saltRounds);

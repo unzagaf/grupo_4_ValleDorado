@@ -14,8 +14,8 @@ const authMiddleware = (req, res, next) => {
         next();
     } else {
         console.log('Redirecting to login');
-        res.send('Esta pagina es solo para logueados');
-        // res.redirect('/users/login');
+        // res.send('Esta pagina es solo para logueados');
+        res.redirect('/users/login');
     }
 };
 
