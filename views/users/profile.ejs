@@ -18,13 +18,13 @@
           <div class="fondo_datos">
             <p>Nombre: <b><%= accountData.user.name%></b></p>
             <p>Apellido: <b><%=accountData.user.surname%></b></p>
-            <!-- <p>Telefono: <b></b></p> -->
             <p>Usuario: <b><%= accountData.username%></b></p>
             <p>Email: <b><%= accountData.email%></b></p>
+            <img id="pasajes" src="/img/pasajesDeAvion.png" alt="">
           </div>
           <div class="fondo_datos">
             <p>Imagen de perfil:</p>
-            <img src="/img/users/<%=session.avatar%>" alt="Imagen de perfil del usuario">
+            <img class="profile-image" src="/img/users/<%=session.avatar%>" alt="Imagen de perfil del usuario">
           </div>
         </section>
       </main>
