@@ -1,4 +1,44 @@
-Retrospectiva del Sexto Sprint
+
+# Retrospectiva del Septimo Sprint
+
+**Duración:** 17/02/24 - 06/03/24
+
+## 📌 Comenzar a hacer:
+1. **Planificación más Estricta de Tareas:**
+   - Mejorar la planificación para asegurar que las tareas pendientes se completen de manera oportuna.
+   - Establecer horarios específicos para abordar las clases y los desafíos propuestos en ellas.
+
+## 📌 Hacer más:
+1. **Incrementar Frecuencia de Reuniones:**
+   - Mantener la frecuencia de las reuniones para sincronizar el progreso y abordar cualquier obstáculo de manera más oportuna y efectiva.
+   - Utilizar estas reuniones para discutir y planificar la implementación de las tareas restantes del sprint.
+
+## 📌 Continuar haciendo:
+1. **Colaboración Activa:**
+   - Continuar con la colaboración efectiva entre los miembros del equipo para abordar los desafíos y completar las tareas pendientes.
+   - Aprovechar el apoyo mutuo para resolver problemas y avanzar en el proyecto.
+2. **Finalización de Tareas Pendientes:**
+   - Continuar completando las tareas pendientes del sprint anterior y del actual de manera oportuna.
+
+## Logros y Desafíos Recientes 🚀
+**Logros:**
+- Progreso significativo en la implementación de funcionalidades pendientes del sprint anterior.
+- La colaboración continua entre los miembros del equipo fue fundamental para estos logros.
+
+**Desafíos:**
+- Dificultades con la planificación personal, lo que dificultó el manejo eficiente del tiempo y la finalización de todas las tareas propuestas.
+
+## Próximos Pasos 🚧
+- Asegurar una revisión exhaustiva para corregir posibles errores y mejorar la calidad del código.
+- Programar reuniones de seguimiento adicionales para garantizar que todas las tareas pendientes se completen antes de la fecha límite del sprint.
+
+## Conclusiones
+A pesar de los desafíos enfrentados, como la falta de planificación personal, el equipo ha logrado un progreso significativo en las tareas pendientes de los sprints anteriores y actuales. La colaboración continua y la dedicación han sido clave en este progreso. Sin embargo, es importante mantener la frecuencia de las reuniones para garantizar una finalización exitosa del sprint actual. Con un enfoque renovado y una mayor organización, estamos seguros de que alcanzaremos nuestros objetivos de manera efectiva.
+
+
+******✅✅✅✅✅✅✅✅✅**********
+
+# Retrospectiva del Sexto Sprint
 Sexto Sprint: 16/01/24 al 14/02/24
 📌 Comenzar a hacer:
 1.	Planificación más Estricta de Tareas:

@@ -1,3 +1,37 @@
+# Weekly Standup Summary 7* Sprint (17/02/24 al 08/03/2024) 📊
+
+**Duración:** 17/02/24 - 06/03/24
+
+## Introducción
+Este informe destaca las actividades y progresos del equipo durante el nuevo sprint, abordando los desafíos enfrentados, el avance del proyecto y las medidas tomadas para superar obstáculos.
+
+## Participantes
+Dos integrantes
+
+## Desafíos y Situación Actual 🚀
+- **Inicio de un Nuevo Desafío:** El equipo ha comenzado un nuevo desafío sin haber podido completar el anterior al 100%.
+- **Equipo Reducido:** Con solo dos integrantes en el equipo, se presenta un desafío adicional para distribuir la carga de trabajo de manera efectiva y mantener la productividad.
+- **Atraso en el Estudio de Temas:** Uno de los integrantes del equipo viene atrasado en el estudio de los temas relevantes para el proyecto.
+- **Dificultades Personales:** Ambos integrantes han enfrentado dificultades personales que han impactado su capacidad para avanzar en el proyecto.
+- **Preocupación por los Plazos:** Se ha planteado la preocupación por la falta de cumplimiento en los plazos establecidos.
+- **Diálogo Constante sobre Avance de Tareas:** Se ha mantenido un diálogo constante sobre el avance de las tareas.
+- **Reuniones Casi Diarias:** Esta vez se están llevando a cabo reuniones casi diarias.
+
+## Progreso del Proyecto
+- **Avance Actual:** Al cierre de esta weekly, el proyecto ha avanzado hasta un 85%.
+
+## Próximos Pasos y Medidas Tomadas 🚧
+- **Priorización de Tareas:** Se revisarán y priorizarán las tareas restantes.
+- **Apoyo Mutuo:** Se reforzará el apoyo mutuo entre los integrantes del equipo.
+- **Planificación Realista:** Se ajustará la planificación del sprint.
+- **Comunicación Continua:** Se mantendrá una comunicación abierta y constante.
+
+## Conclusiones
+A pesar de los desafíos enfrentados, el equipo ha logrado un progreso significativo en el proyecto, demostrando compromiso y determinación para superar obstáculos.
+
+
+
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
 
 # Weekly Standup Summary 6* Sprint (16/01/24 al 14/02/2024) 📊
 

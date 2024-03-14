@@ -175,9 +175,6 @@ elInputFinishDate.addEventListener('blur', function () {
 
 elInputImagenProducto.isOK = true;
 
-elCheckboxesIncluye.isOK=true;
-
-
 
 /**********************
  *      Submit       *

@@ -45,6 +45,7 @@ const userController = {
         try{
             const validacion = validationResult(req);
             let usuarioALoguearse;
+        
 
             if (validacion.errors.length > 0) {
                 console.log('hubo un error');
@@ -63,6 +64,8 @@ const userController = {
             if (!passwordMatch) {
                 throw new Error('Contraseña incorrecta');
             }
+
+            
 
             //Completando el session con los datos del user
             req.session.isLogued = true;
