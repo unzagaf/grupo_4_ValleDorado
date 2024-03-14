@@ -11,28 +11,36 @@
         <%- include("../partials/header.ejs") %>
         <main class="admin__main">
             <h1>Formulario para editar paquete <%= product.nombre_producto %></h1>
+
             <!-- FORMULARIO PARA CREAR -->
             <section id="crear__paquetes__admin">
                 <form method="POST" action="/admin/edit/<%= product.id %>?_method=PUT" class="form__search-admin" enctype="multipart/form-data">
                     
-                    <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" name="destination" placeholder="Ingrese el nombre del paquete" value="<%= product.destination %>">
+                    <label for="destination" class="input__txt__places section__login--label">Nombre paquete</label>
+                    <input type="text" name="destination" id ="destination" placeholder="Ingrese el nombre del paquete" value="<%= product.destination %>">
+                    <p class="msjErrorAdmin"></p>
 
-                    <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="city_depart" placeholder="Ingrese provincia de salida" value="<%= product.city_depart %>">
+                    <label for="city_depart" class="input__txt__places section__login--label">Provincia de salida</label>
+                    <input type="text" name="city_depart" id="city_depart" placeholder="Ingrese provincia de salida" 
+                    value="<%= product.city_depart %>">
+                    <p class="msjErrorAdmin"></p>
 
-                    <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="price" placeholder="Ingrese precio del paquete" value="<%= product.price %>">
+                    <label for="price" class="input__txt__places section__login--label">Precio</label>
+                    <input type="number" name="price"  id="price" placeholder="Ingrese precio del paquete" value="<%= product.price %>">
+                    <p class="msjErrorAdmin"></p>
 
-                    <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="group_size" placeholder="Ingrese la cantidad base de personas" value="<%= product.group_size %>">
+                    <label for="group_size" class="input__txt__places section__login--label">Cantidad de personas</label>
+                    <input type="number" name="group_size" id="group_size" placeholder="Ingrese la cantidad base de personas" value="<%= product.group_size %>">
+                    <p class="msjErrorAdmin"></p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="start_date" placeholder="Ingrese fecha de inicio del paquete" value="<%= product.start_date %>">
+                    <label for="start_date" class="input__txt__places section__login--label">Fecha de inicio</label>
+                    <input type="date" name="start_date" id= "start_date"placeholder="Ingrese fecha de inicio del paquete" value="<%= product.start_date %>">
+                    <p class="msjErrorAdmin"></p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="finish_date" placeholder="Ingrese fecha de finalizacion del paquete" value="<%= product.finish_date %>">
-                            
+                    <label for="finish_date" class="input__txt__places section__login--label">Fecha de finalizacion</label>
+                    <input type="date" name="finish_date" id="finish_date" placeholder="Ingrese fecha de finalizacion del paquete" value="<%= product.finish_date %>">
+                    <p class="msjErrorAdmin"></p>
+
                     <!-- FALTA ENLAZAR INCLUYE E IMAGENES -->
 
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
@@ -46,46 +54,53 @@
                         <div class="incluye-option">
                             <input type="checkbox" name="incluye" value="Hoteles 5 estrellas" <%= product.includes.some(item => item.include === "Hoteles 5 estrellas") ? 'checked' : '' %>>
                             <label>Hoteles 5 estrellas</label>
+                            <p class="msjErrorAdmin"></p>
+                            
+
                         </div>
 
                         <div class="incluye-option">
                             <input type="checkbox" name="incluye" value="Coordinador y guias locales" <%= product.includes.some(item => item.include === "Coordinador y Guias locales") ? 'checked' : '' %>>
                             <label>Coordinador y guias locales</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
 
                         <div class="incluye-option">
                             <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido" <%= product.includes.some(item => item.include === "Régimen de comidas todo incluido") ? 'checked' : '' %>>
                         <label>Régimen de comidas todo incluido</label>
+                        <p class="msjErrorAdmin"></p>
                         </div>
 
                         <div class="incluye-option">
                             <input type="checkbox" name="incluye" value="Excursiones según programa" <%= product.includes.some(item => item.include === "Excursiones Segun Programa") ? 'checked' : '' %>>
                             <label>Excursiones según programa</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
 
                         <div class="incluye-option">
                             <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso" <%= product.includes.some(item => item.include === "Traslados de ingreso y egreso") ? 'checked' : '' %>>
                         <label>Traslados de ingreso y egreso</label>
+                        <p class="msjErrorAdmin"></p>
                         </div>
                     </div>
                     
                     <label for="" class="input__txt__places section__login--label">Imagenes</label>
                     <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1">
-
                     <label>Imágenes Actuales:</label>
                     <ul>
                     <% product.images.forEach(function(image) { %>
                         <li><img class="fotos-varias" src="<%= image.route %>" alt=""></li>
                     <% }); %>
-
-                    
                     </ul>
+
                     <button type="submit">Editar paquete</button>
+                    <p class="msjErrorAdmin"></p>
                 </form>
             </section>
             
         </main>
         <%- include("../partials/footer.ejs") %>
+        <script src="/js/validation_product_edit.js"  type="text/javascript" defer></script> 
     </body>
     <!-- <script src="js/general.js"></script> -->
 </html>
