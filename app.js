@@ -58,6 +58,7 @@ app.listen(3000,()=> {
 // *** Seccion HOME *** 
 app.use ('/', rutaHome);
 
+
 // *** Seccion PRODUCTS ***
 app.use ('/productDetail', rutaProductDetail);
 app.use ('/productCart', rutaProductCart);
@@ -65,8 +66,12 @@ app.use ('/productCart', rutaProductCart);
 // *** Seccion USERS ***
 
 app.use('/admin', rutaAdmin);
-
 app.use('/users',rutaUser);
+
+//** Seccion APIS*/
+
+app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiProductsRouter);
 
 
 
