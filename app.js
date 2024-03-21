@@ -9,6 +9,9 @@ const authMiddleware = require('./src/middlewares/authMiddleware');
 const guestMiddleware = require('./src/middlewares/guestMiddleware');
 const recordarMiddleware=require('./src/middlewares/recordar.Middleware.js')
 
+const apiProductsRouter = require ('./src/router/apiProducts');
+const apiUsersRouter = require ('./src/router/apiUsers');
+
 
 // *** Middlewares *** 
 app.use(express.urlencoded({ extended: false }));
@@ -69,9 +72,9 @@ app.use('/admin', rutaAdmin);
 app.use('/users',rutaUser);
 
 //** Seccion APIS*/
-
 app.use('/api/products', apiProductsRouter);
-app.use('/api/users', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
+
 
 
 

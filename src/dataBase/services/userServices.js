@@ -5,6 +5,16 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 
 const userServices = {
+
+    getAll: async ()=>{
+        let allAccounts=await db.Account.findAll({
+            
+            include:['user']})
+
+            return allAccounts
+    },
+
+
     createUser: (userData, accountData) => {
         let createdUser;
         let createdAccount;
