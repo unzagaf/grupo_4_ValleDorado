@@ -31,13 +31,16 @@ Estos cinco sitios web son plataformas de viajes y turismo que ofrecen una ampli
 ## Enlace a la base de datos
 DER de la base de datos, se deja link al pdf y a los archivos de estructura y volcado de datos de la BD a continuacion
 
-![DER](./src/dataBase/seeders/DiagramaER.jpg)
-
-<a href="./src/dataBase/seeders/diagrama_relacional.pdf" download>descargar DER.pdf</a>
 
 
-<a href='./src/dataBase/seeders/db_grupo_cuatro.sql'>Link al archivo general de la base de datos</a>
+[⬇️ Descargar DER.pdf](./src/dataBase/seeders/diagrama_relacional.pdf)
 
-<a href='./src/dataBase/seeders/data_volcado_datos.sql'>Link al archivo data.sql</a>
 
-<a href='./src/dataBase/seeders/structured_db.sql '>Link al archivo structured.sql</a>
+[📥 Link al archivo completo con los datos y estructura de la base de datos](./src/dataBase/seeders/db_grupo_cuatro.sql)
+
+
+[🔽 Link para descargar el Script del volcado de datos (data.sql)](./src/dataBase/seeders/data_volcado_datos.sql)
+
+[🔗 Link para el Script de Estructura (structured.sql)](./src/dataBase/seeders/structured_db.sql)
+
+

@@ -9,8 +9,7 @@ const userServices = {
     getAll: async (page = 1, pageSize = 5) => {
 
         try {
-
-            const offset = (page - 1) * pageSize;
+     const offset = (page - 1) * pageSize;
 
             // Usa count() para obtener el total de cuentas
             const totalAccounts = await db.Account.count();
