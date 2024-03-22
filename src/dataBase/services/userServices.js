@@ -6,12 +6,38 @@ const bcrypt = require('bcrypt');
 
 const userServices = {
 
-    getAll: async ()=>{
-        let allAccounts=await db.Account.findAll({
-            
-            include:['user']})
+    getAll: async (page = 1, pageSize = 5) => {
 
-            return allAccounts
+        try {
+
+            const offset = (page - 1) * pageSize;
+
+            // Usa count() para obtener el total de cuentas
+            const totalAccounts = await db.Account.count();
+
+            //Metodo que nos da Sequelize
+            let allAccounts = await db.Account.findAll(
+                {
+                    include: ['user'],
+                    offset: offset,
+                    limit: pageSize
+                }
+
+            );
+
+
+            // Calcula si hay más cuentas después de la página actual
+            const totalPages = Math.ceil(totalAccounts / pageSize);
+            const hasNext = page < totalPages;
+
+            // Devuelve tanto las cuentas de la página actual como el indicador hasNext
+            return { totalUsers: totalAccounts, totalPages: totalPages ,userList: allAccounts, hasNext: hasNext };
+
+        } catch (error) {
+            console.error('Error al obtener todas las cuentas:', error.message);
+            throw new Error('No se pudieron obtener todos los usuarios. Detalle: ' + error.message);
+        }
+
     },
 
 
@@ -51,10 +77,10 @@ const userServices = {
                 });
         });
     },
-    getOneById:async(account_id)=>{
+    getOneById: async (account_id) => {
         try {
             const account = await db.Account.findByPk(account_id, {
-                include: [{association: "user"}]
+                include: [{ association: "user" }]
             });
             // console.log("ESTE ES EL GET ONE: ", account);
             return account; // Devolver el usuario correctamente
@@ -69,20 +95,20 @@ const userServices = {
     },
     login: async (username) => {
         try {
-        // Buscar el usuario por el username
-        const account = await db.Account.findOne({ where: { username } });
-        // Verificar si se encontró el usuario
-        if (!account) {
-            throw new Error('Usuario no encontrado');
-        }
-        // Si se encontro el usuario,buscamos datos de usuario
-        const user = await db.User.findByPk(account.user_id);
-        if (!user) {
-            throw new Error('Datos de usuario no encontrados');
-        }
-        return { account, user };
+            // Buscar el usuario por el username
+            const account = await db.Account.findOne({ where: { username } });
+            // Verificar si se encontró el usuario
+            if (!account) {
+                throw new Error('Usuario no encontrado');
+            }
+            // Si se encontro el usuario,buscamos datos de usuario
+            const user = await db.User.findByPk(account.user_id);
+            if (!user) {
+                throw new Error('Datos de usuario no encontrados');
+            }
+            return { account, user };
         } catch (error) {
-        throw error;
+            throw error;
         }
     }
 }

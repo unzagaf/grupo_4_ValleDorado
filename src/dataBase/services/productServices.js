@@ -3,20 +3,29 @@ const Product = require('../models/Product');
 const sequelize = db.Sequelize;
 
 const productService = {
-    getAll: async () => {
+    getAll: async (page = 1, pageZise =5) => {
         try {
-            const products = await db.Product.findAll({
-                include: [{association: "images"}, {association: "includes"}]
-            });
+            const offset = (page -1) * pageSize;
+
+            //Metodo sequelize
+            const products = await db.Product.findAll(
+                {
+                include: [{ association: "images" }, { association: "includes" }],
+                offset : offset,
+                limit: pageSize
+            }
+            );
+ 
             return products;
+            
         } catch (error) {
             throw new Error('Error al obtener los productos de la base de datos: ' + error);
         }
     },
-    getOne: async(product_id)=>{
+    getOne: async (product_id) => {
         try {
             const product = await db.Product.findByPk(product_id, {
-                include: [{association: "images"}, {association: "includes"}]
+                include: [{ association: "images" }, { association: "includes" }]
             });
             // console.log("ESTE ES EL GET ONE: ", product);
             return product; // Devolver el producto correctamente
@@ -25,7 +34,7 @@ const productService = {
             throw error; // Lanzar el error para manejarlo en el código que llama a getOne
         }
     },
-    createProduct: async(data) => {
+    createProduct: async (data) => {
         try {
             // Crear el producto en la tabla 'products'
             const createdProduct = await db.Product.create(data);
@@ -33,7 +42,7 @@ const productService = {
             // Obtener las inclusiones seleccionadas del cuerpo de la solicitud
             const includes = data.incluye;
 
-             // Verificar si se han seleccionado inclusiones
+            // Verificar si se han seleccionado inclusiones
             if (includes && includes.length > 0) {
                 // Buscar las inclusiones correspondientes en la tabla 'includes'
                 const selectedIncludes = await db.Include.findAll({
@@ -53,8 +62,8 @@ const productService = {
             }
             // solicitamos las imagenes que vienen de data y las cargamos en la tabla image
             const imagenes = data.imagenes_producto;
-            if(imagenes && imagenes.length > 0){
-                for(let imagen of imagenes){
+            if (imagenes && imagenes.length > 0) {
+                for (let imagen of imagenes) {
                     await db.Image.create({
                         route: imagen,
                         product_id: createdProduct.id
@@ -67,14 +76,14 @@ const productService = {
             throw error;
         }
     },
-    editProduct: async(productId,data)=>{
+    editProduct: async (productId, data) => {
         try {
             const existingProduct = await db.Product.findByPk(productId);
             if (!existingProduct) {
                 throw new Error('Producto no encontrado');
             }
-            await db.Product.update(data,{
-                where:{
+            await db.Product.update(data, {
+                where: {
                     id: productId
                 }
             });
@@ -112,19 +121,19 @@ const productService = {
             throw error;
         }
     },
-    deteleProduct: async(productId)=>{
+    deteleProduct: async (productId) => {
         // busca el producto con el id que llega del controller
-       try {
+        try {
             db.Product.destroy({
-                where:{
+                where: {
                     id: productId
                 }
             })
-            return console.log("Producto: ",productId, " eliminado exitosamente!.");
-       } catch (error) {
-        console.error('Error al borrar el producto: ', error);
+            return console.log("Producto: ", productId, " eliminado exitosamente!.");
+        } catch (error) {
+            console.error('Error al borrar el producto: ', error);
             throw error;
-       }
+        }
     }
 }
 module.exports = productService;
