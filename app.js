@@ -72,7 +72,7 @@ app.use('/admin', rutaAdmin);
 app.use('/users',rutaUser);
 
 //** Seccion APIS*/
-app.use('/api/products', apiProductsRouter);
+//app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
 
 

@@ -4,32 +4,32 @@ const sequelize = db.Sequelize;
 
 const productService = {
 
-    getAll: async (page = 1, pageZise =5) => {
-        try {
-            const offset = (page -1) * pageSize;
+    // getAll: async (page = 1, pageZise =5) => {
+    //     try {
+    //         const offset = (page -1) * pageSize;
 
-            const totalProducts =await db.Products.count();
+    //         const totalProducts =await db.Products.count();
 
-            //Metodo sequelize
-            const allProducts = await db.Product.findAll(
-                {
-                include: [{ association: "images" }, { association: "includes" }],
-                offset : offset,
-                limit: pageSize
-            }
-            );
+    //         //Metodo sequelize
+    //         const allProducts = await db.Product.findAll(
+    //             {
+    //             include: [{ association: "images" }, { association: "includes" }],
+    //             offset : offset,
+    //             limit: pageSize
+    //         }
+    //         );
 
-             // Calcula si hay más cuentas después de la página actual
-             const totalPages = Math.ceil(totalProducts / pageSize);
-             const hasNext = page < totalPages;
+    //          // Calcula si hay más cuentas después de la página actual
+    //          const totalPages = Math.ceil(totalProducts / pageSize);
+    //          const hasNext = page < totalPages;
 
-            // Devuelve tanto las cuentas de la página actual como el indicador hasNext    
-            return {totalProducts: totalProducts, totalPages: totalPages, product:allProducts, hasNext:hasNext}
+    //         // Devuelve tanto las cuentas de la página actual como el indicador hasNext    
+    //         return {totalProducts: totalProducts, totalPages: totalPages, product:allProducts, hasNext:hasNext}
             
-        } catch (error) {
-            throw new Error('Error al obtener los productos de la base de datos: ' + error);
-        }
-    },
+    //     } catch (error) {
+    //         throw new Error('Error al obtener los productos de la base de datos: ' + error);
+    //     }
+    // },
     getOne: async (product_id) => {
         try {
             const product = await db.Product.findByPk(product_id, {

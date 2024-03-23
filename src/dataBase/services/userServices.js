@@ -7,39 +7,32 @@ const bcrypt = require('bcrypt');
 const userServices = {
 
     getAll: async (page = 1, pageSize = 5) => {
-
         try {
-     const offset = (page - 1) * pageSize;
+            const offset = (page - 1) * pageSize;
 
-            // Usa count() para obtener el total de cuentas
-            const totalAccounts = await db.Account.count();
+            // Usa count() para obtener el total de usuarios
+            const totalUsers = await db.User.count();
 
-            //Metodo que nos da Sequelize
-            let allAccounts = await db.Account.findAll(
-                {
-                    include: ['user'],
-                    offset: offset,
-                    limit: pageSize
-                }
+            // Obtiene los usuarios paginados
+            let userList = await db.User.findAll({
+                offset: offset,
+                limit: pageSize
+            });
 
-            );
-
-
-            // Calcula si hay más cuentas después de la página actual
-            const totalPages = Math.ceil(totalAccounts / pageSize);
+            // Calcula si hay más usuarios después de la página actual
+            const totalPages = Math.ceil(totalUsers / pageSize);
             const hasNext = page < totalPages;
 
-            // Devuelve tanto las cuentas de la página actual como el indicador hasNext
-            return { totalUsers: totalAccounts, totalPages: totalPages ,userList: allAccounts, hasNext: hasNext };
-
+            // Devuelve tanto los usuarios de la página actual como el indicador hasNext
+            return { totalUsers, totalPages, userList, hasNext };
         } catch (error) {
-            console.error('Error al obtener todas las cuentas:', error.message);
+            console.error('Error al obtener todos los usuarios:', error.message);
             throw new Error('No se pudieron obtener todos los usuarios. Detalle: ' + error.message);
         }
-
     },
 
 
+   
     createUser: (userData, accountData) => {
         let createdUser;
         let createdAccount;
