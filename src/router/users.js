@@ -5,7 +5,7 @@ const router = express.Router();
 const userController = require ('../controllers/userController.js')
 
 //********     Middlewares   ********//
-const userUpload = require('../middlewares/multerUsers'); // middleware que carga una imagén
+const userUpload         = require ('../middlewares/multerUsers'          ); // middleware que carga una imagén
 const validacionRegister = require ('../middlewares/validacionRegister.js');
 const validacionLogin    = require ('../middlewares/validacionLogin.js'   );
 const guestMiddleware    = require ('../middlewares/guestMiddleware'      );
