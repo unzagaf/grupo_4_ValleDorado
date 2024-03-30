@@ -1,6 +1,81 @@
+# Weekly Standup Summary 7* Sprint (17/02/24 al 08/03/2024) 📊
+
+**Duración:** 17/02/24 - 06/03/24
+
+## Introducción
+Este informe destaca las actividades y progresos del equipo durante el nuevo sprint, abordando los desafíos enfrentados, el avance del proyecto y las medidas tomadas para superar obstáculos.
+
+## Participantes
+Dos integrantes
+
+## Desafíos y Situación Actual 🚀
+- **Inicio de un Nuevo Desafío:** El equipo ha comenzado un nuevo desafío sin haber podido completar el anterior al 100%.
+- **Equipo Reducido:** Con solo dos integrantes en el equipo, se presenta un desafío adicional para distribuir la carga de trabajo de manera efectiva y mantener la productividad.
+- **Atraso en el Estudio de Temas:** Uno de los integrantes del equipo viene atrasado en el estudio de los temas relevantes para el proyecto.
+- **Dificultades Personales:** Ambos integrantes han enfrentado dificultades personales que han impactado su capacidad para avanzar en el proyecto.
+- **Preocupación por los Plazos:** Se ha planteado la preocupación por la falta de cumplimiento en los plazos establecidos.
+- **Diálogo Constante sobre Avance de Tareas:** Se ha mantenido un diálogo constante sobre el avance de las tareas.
+- **Reuniones Casi Diarias:** Esta vez se están llevando a cabo reuniones casi diarias.
+
+## Progreso del Proyecto
+- **Avance Actual:** Al cierre de esta weekly, el proyecto ha avanzado hasta un 85%.
+
+## Próximos Pasos y Medidas Tomadas 🚧
+- **Priorización de Tareas:** Se revisarán y priorizarán las tareas restantes.
+- **Apoyo Mutuo:** Se reforzará el apoyo mutuo entre los integrantes del equipo.
+- **Planificación Realista:** Se ajustará la planificación del sprint.
+- **Comunicación Continua:** Se mantendrá una comunicación abierta y constante.
+
+## Conclusiones
+A pesar de los desafíos enfrentados, el equipo ha logrado un progreso significativo en el proyecto, demostrando compromiso y determinación para superar obstáculos.
+
+
 
 🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
-# Weekly Standup Summary - Nuevo Sprint (13/12/23 al 16/01/23) 📊
+
+# Weekly Standup Summary 6* Sprint (16/01/24 al 14/02/2024) 📊
+
+**Duración:** 16/01/24 al 14/02/2024 
+
+## Introducción
+Este informe destaca las actividades y el progreso del equipo durante el sprint actual, abordando los logros, desafíos y próximos pasos. El equipo, compuesto por dos integrantes, ha trabajado con autonomía en la selección de tareas, reflejadas en el tablero de trabajo. Aunque se ha tenido una baja cantidad de reuniones programadas, se mantiene un enfoque eficiente en la asignación de tareas, adaptándose a las capacidades y necesidades de los miembros.
+
+**Reuniones Programadas por Semana:** Variable 🗓️  
+No se especifican reuniones programadas debido a la autonomía de los miembros para seleccionar y completar las tareas asignadas.
+
+## Logros y Desafíos Previstos 🚀
+**Logros:**
+1. **Autonomía en la Elección de Tareas:**
+   - Los miembros del equipo han sido capaces de seleccionar y completar las tareas según sus propias preferencias y capacidades.
+2. **Eficiencia en el Trabajo:**
+   - A pesar de la baja cantidad de reuniones programadas, el equipo continúa trabajando de manera eficiente y productiva.
+
+**Desafíos:**
+- **Gestión del Tiempo y Prioridades:**
+  - Mantener un equilibrio entre las tareas seleccionadas y la gestión del tiempo, especialmente considerando el repaso de material por parte de uno de los integrantes.
+
+## Progreso de Tareas
+1. **Desarrollo Individual:**
+   - Cada miembro del equipo ha avanzado en la implementación de las tareas seleccionadas, reflejadas en el tablero de trabajo.
+
+## Próximos Pasos 🚧
+1. **Seguimiento Continuo:**
+   - Realizar un seguimiento constante del progreso de las tareas y ajustar según sea necesario, para cumplir con los objetivos del sprint antes de la entrega.
+2. **Comunicación Abierta:**
+   - Mantener canales abiertos de comunicación para compartir avances, resolver problemas y colaborar en caso de necesidad.
+3. **Revisión Final:**
+   - Programar una revisión al final del sprint para evaluar los resultados obtenidos y prepararse para el siguiente.
+
+## Conclusiones
+El equipo ha demostrado su capacidad para trabajar de manera autónoma y eficiente, seleccionando y completando la mayor parte de tareas del sprint según sus propias preferencias y habilidades. El equipo ha enfrentado desafíos en la gestión del tiempo debido al repaso de material por parte de uno de los integrantes, lo que ha causado un ligero retraso en la finalización de algunas tareas. 
+Tambien debemos aclarar que por el momento las consignas opcionales, no quedaran desarrolladas, ya que el carrito de compars no esta implementado de manera funcional.
+ Sin embargo, se ha mantenido una comunicación sólida y se están tomando medidas para ajustar prioridades y finalizar el sprint de manera satisfactoria.
+
+
+
+
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
+# Weekly Standup Summary 5* Sprint (13/12/23 al 16/01/23) 📊
 
 **Duración:** 13/12/23 al 16/01/23
 

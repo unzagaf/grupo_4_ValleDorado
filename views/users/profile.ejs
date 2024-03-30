@@ -1,22 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="es">
-    <!-- HEAD -->
-    <%- include("../partials/head") %>
+<!-- HEAD -->
+<head>
+  <%- include("../partials/head") %>
+  <meta name="author" content="Dante Delprato">
+  <link rel="stylesheet" href="/css/profile.css">
+  <title>Valle Dorado - Datos Personales</title> 
+</head>
 
-    <body>
-        <!-- HEADER -->
-        <%- include("../partials/header.ejs") %>
-        <h1 style="color: red;">PERFIL PROXIMAMENTE EN CINES</h1>
-        <h1>hola <%= usuarioLogueado.nombre %></h1>
+  <body>
+    <!-- HEADER -->
+    <%- include("../partials/header.ejs") %>
+      <main class="perfil_container">
+        
+        <h2>Datos Personales</h2>
+        <section class="container_datos">
+          <div class="fondo_datos">
+            <p>Nombre: <b><%= accountData.user.name%></b></p>
+            <p>Apellido: <b><%=accountData.user.surname%></b></p>
+            <p>Usuario: <b><%= accountData.username%></b></p>
+            <p>Email: <b><%= accountData.email%></b></p>
+            <img id="pasajes" src="/img/pasajesDeAvion.png" alt="">
+          </div>
+          <div class="fondo_datos">
+            <p>Imagen de perfil:</p>
+            <img class="profile-image" src="/img/users/<%=session.avatar%>" alt="Imagen de perfil del usuario">
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <%- include("../partials/footer.ejs") %>
+        <script src="/js/general.js"></script>
+        <script src="/js/validation_register_front.js" type="text/javascript" defer></script>
+  </body>
 
-
-        <!-- FOOTER -->
-        <%- include("../partials/footer.ejs") %>
-        <script>
-            
-        </script>
-    </body>
-    <script src="js/general.js"></script>
 </html>
-

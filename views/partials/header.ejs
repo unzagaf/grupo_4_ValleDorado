@@ -4,10 +4,10 @@
     <nav id="nav__menu" class="nav__menu nav__menu-hidden">
         <ul class="ul__menu__perfil">
             <li id="li__menu__close__hamburguer" onclick="displayMenu('nav__menu-hidden', 'nav__menu-visible')">X</li>
-            <% if (typeof usuarioLogueado !== 'undefined' && usuarioLogueado !== null) { %>
-                <li class="li__menu__nombre">Hola, <%= usuarioLogueado.nombre %>!</li>
+            <% if (session.isLogued) { %>
+                <li class="li__menu__nombre">Hola, <%= session.name %>!</li>
                 <li class="li__menu__miPerfil"><a href="/users/profile">Mi perfil</a></li>
-                <li class="li__menu__img__user"><img src="/img/logo.png" alt="User"></li>
+                <li class="li__menu__img__user"><img src="/img/users/<%=session.avatar%>" alt="User"></li>
             <% } else { %>
                 <li class="li__menu__nombre">Bienvenido!</li>
                 <li class="li__menu__miPerfil"><a href="/users/login">Login</a></li>
@@ -16,13 +16,11 @@
         <ul class="ul__menu__navegacion">
             <li><a href="/">Home<i class="fa-solid fa-house li__menu__icon"></i></a></li>
             <li class="li__menu__paquetes"><a href="/productCart">Tu Reserva<i class="fa-solid fa-cart-shopping"></i></a></li>
-            <% if (typeof usuarioLogueado == 'undefined' && usuarioLogueado == null) { %>
-                <li class="li__menu__servicios"><a href="/users/register">Registrate <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
-                <% }%>
-
-            <% if (typeof usuarioLogueado !== 'undefined' && usuarioLogueado !== null) { %>
+            <% if (session.isLogued) { %>
                 <li class="li__menu__servicios"><a href="/admin">Administrar<i class="fa-solid fa-bell-concierge li__menu__icon"></i></a></li>
-                <li class="li__menu__cerrarsesion"><a href="#">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
+                <li class="li__menu__cerrarsesion"><a href="/users/logout">Cerrar sesion<i class="fa-solid fa-right-from-bracket li__menu__icon"></i></a></li>
+            <% }else{%>
+                <li class="li__menu__servicios"><a href="/users/register">Registrate <i class="fa-solid fa-address-book li__menu__icon"></i></a></li>
             <%}%>
         </ul>
     </nav>

@@ -8,9 +8,9 @@
       "/img/excursiones_producto.jpg",
       "/img/bienvenida_producto.jfif"
     ],
-    "provincia_salida": "Kilinochchi",
+    "provincia_salida": "Cordoba-Capital",
     "incluye": [
-      "Asistencia al AUROOOO",
+      "Asistencia al memuero",
       "Hoteles 5 estrellas",
       "Coordinador y guías locales",
       "Régimen de comidas todo incluido",
@@ -18,12 +18,12 @@
       "Traslados de ingreso y egreso"
     ],
     "cantidad_personas": 2,
-    "fecha_inicio": "12/07/2022",
-    "fecha_fin": "02/03/2023",
+    "fecha_inicio": "12/02/2024",
+    "fecha_fin": "02/03/2024",
     "fecha_creacion": "10/03/2023"
   },
   {
-    "id_producto": 4,
+    "id_producto": 2,
     "nombre_producto": "Nueva Zelanda",
     "provincia_salida": "Cordoba -Capital",
     "precio_producto": "360000",
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "id_producto": 5,
+    "id_producto": 3,
     "nombre_producto": "Vancouver",
     "provincia_salida": "Buenos Aires",
     "precio_producto": "400000",
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "id_producto": 3,
+    "id_producto": 4,
     "nombre_producto": "New York",
     "provincia_salida": "Buenos Aires",
     "precio_producto": "360000",

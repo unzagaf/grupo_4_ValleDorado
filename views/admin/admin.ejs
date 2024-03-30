@@ -1,6 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include("../partials/head") %>
+<html lang="es">
+
+    <head>
+        <%- include("../partials/head") %>
+        <meta name="author" content="Grupo_cuatro">
+        <link rel="stylesheet" href="/css/admin.css">
+        <title>Valle Dorado - Registro Producto</title>
+        
+    </head>
     <body>
         <%- include("../partials/header.ejs") %>
         <main class="admin__main">
@@ -8,93 +15,166 @@
                 <p id="crear_paquete" class="underline" onclick="displayAdmin()">Crear paquetes</p>
                 <p id="lista_paquete" onclick="displayAdmin()">Lista de paquetes</p>
             </section>
+
+            <!-- --------------------- -->
             <!-- FORMULARIO PARA CREAR -->
+            <!-- --------------------- -->
             <section id="crear__paquetes__admin">
-                <form method="POST" action="/admin" class="form__search-admin" enctype="multipart/form-data">
-                    <label for="" class="input__txt__places section__login--label">Nombre paquete</label>
-                    <input type="text" name="nombre_producto" placeholder="Ingrese el nombre del paquete">
+                <form method="POST" action="/admin" id="productForm" class="form__search-admin" enctype="multipart/form-data">
 
-                    <label for="" class="input__txt__places section__login--label">Provincia de salida</label>
-                    <input type="text" name="provincia_salida" placeholder="Ingrese provincia de salida">
+                    <label for="destination" class="input__txt__places section__login--label">Nombre paquete</label>
+                    <input type="text" name="destination" id="destination"placeholder="Ingrese el nombre del paquete"
+                            class ="form-control <%= locals.errors && errors.destination? 'is-invalid': null %>" 
+                            value = "<%= locals.oldData? oldData.destination: null %>" autofocus >
+                            <p class="msjErrorAdmin">
+                                <% if(locals.errors && errors.destination){%>
+                                <%=errors.destination.msg %>
+                                <% }%>
+                            </p>
 
-                    <label for="" class="input__txt__places section__login--label">Precio</label>
-                    <input type="number" name="precio_producto" placeholder="Ingrese precio del paquete">
+                    <label for="city_depart" class="input__txt__places section__login--label">Provincia de salida</label>
+                    <input type="text" name="city_depart" id="city_depart"placeholder="Ingrese provincia de salida"
+                            class ="form-control <%= locals.errors && errors.city_depart? 'is-invalid': null %>" 
+                            value = "<%= locals.oldData? oldData.city_depart: null %>" >
+                            <p class="msjErrorAdmin">
+                                <% if(locals.errors && errors.city_depart){%>
+                                <%=errors.city_depart.msg %>
+                                <% }%>
+                            </p>
 
-                    <label for="" class="input__txt__places section__login--label">Cantidad de personas</label>
-                    <input type="number" name="cantidad_personas" placeholder="Ingrese la cantidad base de personas">
+                    <label for="price" class="input__txt__places section__login--label">Precio</label>
+                    <input type="number" name="price" id="price"placeholder="Ingrese precio del paquete"
+                    class ="form-control <%= locals.errors && errors.price? 'is-invalid': null %>" 
+                    value = "<%= locals.oldData? oldData.price: null %>" >
+                    <p class="msjErrorAdmin">
+                        <% if(locals.errors && errors.price){%>
+                        <%=errors.price.msg %>
+                        <% }%>
+                    </p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de inicio</label>
-                    <input type="date" name="fecha_inicio" placeholder="Ingrese fecha de inicio del paquete">
+                    <label for="group_size" class="input__txt__places section__login--label">Cantidad de personas</label>
+                    <input type="number" name="group_size" id="group_size"placeholder="Ingrese la cantidad base de personas"
+                    class ="form-control <%= locals.errors && errors.group_size? 'is-invalid': null %>" 
+                    value = "<%= locals.oldData? oldData.group_size: null %>" >
+                    <p class="msjErrorAdmin">
+                        <% if(locals.errors && errors.group_size){%>
+                        <%=errors.group_size.msg %>
+                        <% }%>
+                    </p>
 
-                    <label for="" class="input__txt__places section__login--label">Fecha de finalizacion</label>
-                    <input type="date" name="fecha_fin" placeholder="Ingrese fecha de finalizacion del paquete">
+                    <label for="start_date" class="input__txt__places section__login--label">Fecha de inicio</label>
+                    <input type="date" name="start_date" id="start_date"placeholder="Ingrese fecha de inicio del paquete"
+                    class ="form-control <%= locals.errors && errors.start_date? 'is-invalid': null %>" 
+                    value = "<%= locals.oldData? oldData.start_date: null %>" >
+                    <p class="msjErrorAdmin">
+                        <% if(locals.errors && errors.start_date){%>
+                        <%=errors.start_date.msg %>
+                        <% }%>
+                    </p>
 
-                    <label for="" class="input__txt__places section__login--label">Imagen 1</label>
-                    <input type="file" multiple name="imagen_producto" placeholder="Ingrese la URL de la imagen 1">
+                    <label for="finish_date" class="input__txt__places section__login--label">Fecha de finalizacion</label>
+                    <input type="date" name="finish_date"id="finish_date" placeholder="Ingrese fecha de finalizacion del paquete"
+                    class ="form-control <%= locals.errors && errors.finish_date? 'is-invalid': null %>" 
+                    value = "<%= locals.oldData? oldData.finish_date: null %>" >
+                    <p class="msjErrorAdmin">
+                        <% if(locals.errors && errors.finish_date){%>
+                        <%=errors.finish_date.msg %>
+                        <% }%>
+                    </p>
+
+                    <label for="imagen_producto" class="input__txt__places section__login--label">Imagenes</label>
+                    <input type="file" multiple name="imagen_producto" id="imagen_producto" placeholder="Ingrese la URL de la imagen 1"
+                    class ="form-control <%= locals.errors && errors.imagen_producto? 'is-invalid': null %>" 
+                    value = "<%= locals.oldData? oldData.imagen_producto: null %>" >
+                    <p class="msjErrorAdmin">
+                        <% if(locals.errors && errors.imagen_producto){%>
+                        <%=errors.imagen_producto.msg %>
+                        <% }%>
+                    </p>
+
 
                     <label for="" class="input__txt__places section__login--label">Incluye</label>
 
                     <div id="incluye-options">
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Asistencia al Viajero">
+                            <input type="checkbox" name="incluye[]" value="Asistencia al Viajero">
                             <label>Asistencia al Viajero</label>
+                            <p class="msjErrorAdmin"></p>
+
                             
                         </div>
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Hoteles 5 estrellas">
+                            <input type="checkbox" name="incluye[]" value="Hoteles 5 estrellas">
                             <label>Hoteles 5 estrellas</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
+
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Coordinador y guias locales">
+                            <input type="checkbox" name="incluye[]" value="Coordinador y guias locales">
                             <label>Coordinador y guias locales</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
+
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Régimen de comidas todo incluido">
+                            <input type="checkbox" name="incluye[]" value="Régimen de comidas todo incluido">
                             <label>Régimen de comidas todo incluido</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
+
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Excursiones según programa">
+                            <input type="checkbox" name="incluye[]" value="Excursiones según programa">
                             <label>Excursiones según programa</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
+
                         <div class="incluye-option">
-                            <input type="checkbox" name="incluye" value="Traslados de ingreso y egreso">
+                            <input type="checkbox" name="incluye[]" value="Traslados de ingreso y egreso">
                             <label>Traslados de ingreso y egreso</label>
+                            <p class="msjErrorAdmin"></p>
                         </div>
+
                     </div>
-                    <button type="submit">Crear paquete</button>
+                    
+                    <button type="submit" id="submit">Crear paquete</button>
+                    <p class="msjErrorAdmin"></p>
                 </form>
             </section>
+
+            <!-- -------------- -->
             <!-- TABLA PAQUETES -->
+            <!-- -------------- -->
+
             <section id="lista__paquetes__admin" class="admin__hidden">
                 <table>
                     <thead>
                         <tr>
+                            <th>id</th>
                             <th>Nombre</th>
                             <th class="table__hidden">Cantidad de Personas</th>
                             <th>Precio</th>
                             <th class="table__hidden">Fecha de Inicio</th>
                             <th class="table__hidden">Fecha de Finalización</th>
-                            <!-- <th class="table__hidden">Imagen</th> -->
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% products.forEach(products => { %>
+                        <% products.forEach(product => { %>
                         <tr>
-                            <td><%= products.nombre_producto %></td>
-                            <td class="table__hidden"><%= products.cantidad_personas %></td>
-                            <td>$<%= products.precio_producto %></td>
-                            <td class="table__hidden"><%= products.fecha_inicio %></td>
-                            <td class="table__hidden"><%= products.fecha_fin %></td>
+                            <td><%= product.id %></td>
+                            <td><%= product.destination %></td>
+                            <td class="table__hidden"><%= product.group_size %></td>
+                            <td>$<%= product.price %></td>
+                            <td class="table__hidden"><%= product.start_date %></td>
+                            <td class="table__hidden"><%= product.finish_date %></td>
                             <!-- <td class="table__hidden"><img src="imagen1.jpg" alt="Imagen del paquete 1" width="50"></td> -->
                             <td>
-                                <a href="/admin/edit/<%= products.id_producto %>">
+                                <a href="/admin/edit/<%= product.id %>">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>
                             <td>
-                                <form method="POST" action="/admin/delete/<%= products.id_producto %>?_method=DELETE">
+                                <form method="POST" action="/admin/delete/<%= product.id %>">
                                     <button type="submit">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
@@ -107,8 +187,11 @@
             </section>
         </main>
         <%- include("../partials/footer.ejs") %>
+
+        <script src="js/general.js" defer></script>
+        <script src="/js/validation_products.js" defer></script>
     </body>
-    <script src="js/general.js"></script>
+   
     
     
 </html>

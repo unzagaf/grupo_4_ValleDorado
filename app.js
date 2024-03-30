@@ -9,6 +9,9 @@ const authMiddleware = require('./src/middlewares/authMiddleware');
 const guestMiddleware = require('./src/middlewares/guestMiddleware');
 const recordarMiddleware=require('./src/middlewares/recordar.Middleware.js')
 
+const apiProductsRouter = require ('./src/router/apiProducts');
+const apiUsersRouter = require ('./src/router/apiUsers');
+
 
 // *** Middlewares *** 
 app.use(express.urlencoded({ extended: false }));
@@ -19,6 +22,13 @@ app.use(session({
     resave: false,
     saveUninitialized: false
   }));
+
+  //Con esto se pasa el objeto session a TODAS las vistas
+//Es un Middleware
+app.use(function(req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 
 app.use(methodOverride('_method'));
 app.use(cookieParser());
@@ -51,6 +61,7 @@ app.listen(3000,()=> {
 // *** Seccion HOME *** 
 app.use ('/', rutaHome);
 
+
 // *** Seccion PRODUCTS ***
 app.use ('/productDetail', rutaProductDetail);
 app.use ('/productCart', rutaProductCart);
@@ -58,8 +69,12 @@ app.use ('/productCart', rutaProductCart);
 // *** Seccion USERS ***
 
 app.use('/admin', rutaAdmin);
-
 app.use('/users',rutaUser);
+
+//** Seccion APIS*/
+//app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
+
 
 
 

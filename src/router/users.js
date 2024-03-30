@@ -17,14 +17,14 @@ router.get('/', userController.index);
 router.get('/login',guestMiddleware,userController.login);
 router.post('/login',validacionLogin, userController.processLogin);
 
-router.get('/viendo', function(req, res) {
-    if (req.session.usuarioLogueado == undefined || req.session.usuarioLogueado === null) {
-        res.send("No estás logueado");
-    } else {
-        console.log('Usuario logueado:', req.session.usuarioLogueado);
-        res.send("El usuario logueado es correcto " + req.session.usuarioLogueado.nombre);
-    }
-});
+// router.get('/viendo', function(req, res) {
+//     if (req.session.usuarioLogueado == undefined || req.session.usuarioLogueado === null) {
+//         res.send("No estás logueado");
+//     } else {
+//         console.log('Usuario logueado:', req.session.usuarioLogueado);
+//         res.send("El usuario logueado es correcto " + req.session.usuarioLogueado.nombre);
+//     }
+// });
 
 
 //Ruta que muestra y procesa el formulario de Registracion
@@ -32,7 +32,7 @@ router.get('/viendo', function(req, res) {
 router.get('/register',guestMiddleware,userController.register);
 router.post('/register', userUpload.single('imagenUsuario'),validacionRegister, userController.storeUser);
 router.get('/profile',authMiddleware,userController.profile);
-
+router.get('/logout',userController.logout)
 
 
 
