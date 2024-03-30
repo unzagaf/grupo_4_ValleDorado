@@ -9,7 +9,7 @@ const validacionRegister = [
 
     body('fechaNacimiento').notEmpty().withMessage('Completar con tu fecha de nacimiento').bail(),
 
-    body('dni').notEmpty().withMessage('Completar tu dni').bail().isLength({ min: 6 }).withMessage('El dni debe tener como mínimo 8 números'),
+    body('dni').notEmpty().withMessage('Completar tu dni').bail().isLength({ min: 6 }, { max: 8 }).withMessage('El dni debe tener como mínimo 8 números'),
 
     body('email').notEmpty().withMessage('Completar con tu email').bail().isEmail().withMessage ('Debes escribir un formato válido'),
 
@@ -21,14 +21,14 @@ const validacionRegister = [
     body('imagenUsuario').custom((value, { req }) => {
         const file = req.file;
         const acceptedExtension = ['.jpg', '.png', '.gif']
-        const fileExtension =path.extname(file.originalname);
+        const fileExtension = path.extname(file.originalname);
 
         if (!file) {
             throw new Error('Tienes que subir una imagen');
         } else {
             const fileExtension = path.extname(file.originalname);
             if (!acceptedExtension.includes(fileExtension)) {
-                throw new Error(`Las extensiones permitidas de archivo son  ${acceptedExtension.join(',')}`);
+                throw new Error(`Las extensiones permitidas de archivo son  ${acceptedExtension.join(', ')}`);
 
             }
 
