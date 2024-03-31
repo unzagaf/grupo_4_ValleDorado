@@ -6,4 +6,4 @@ const apiUserController= require('../controllers/apiUsersController.js');
 router.get('/', apiUserController.list);
 router.get('/:id', apiUserController.detail);
 
-module.exports= router
+module.exports = router

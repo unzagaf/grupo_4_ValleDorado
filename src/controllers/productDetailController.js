@@ -10,7 +10,7 @@ const obtenerIcono = (opcion) => {
   // Lógica para asociar opciones con iconos
   // Puedes personalizar esto según tus necesidades
   const iconos = {
-    'Asistencia al Viajero':'fa-user-doctor',
+    'Asistencia al Viajero': 'fa-user-doctor',
     'Hoteles 5 estrellas': 'fa-hotel',
     'Coordinador y guias locales': 'fa-user',
     'Régimen de comidas todo incluido': 'fa-utensils',
@@ -22,32 +22,33 @@ const obtenerIcono = (opcion) => {
 };
 
 const productDetailController = {
-    index:(req, res) => {
-        const productId = req.params.id;
-        productServices.getOne(productId)
-        .then(product => {
-          return productServices.getAll()
-            .then(products => {
-              // Asocia opciones con iconos
-              const incluyeConIconos = product.includes.map(opcion => ({
-                opcion: opcion.include, // Asumiendo que el include de lo que incluye está en la propiedad 'include'
-                icono: obtenerIcono(opcion.include),
-              }));
-              res.render('./products/productDetail.ejs', {
-                  product: product,
-                  products: products,
-                  usuarioLogueado: req.session.logined,
-                  incluyeConIconos: incluyeConIconos
-              });
-            });
-        })
-        .catch(error => {
-          console.error('Error al obtener el producto:', error);
-          // Manejar el error adecuadamente
-        });
+  index: async (req, res) => {
+    try {
+      const productId = req.params.id;
+
+      let product = await productServices.getOne(productId)
+
+      const products = await productServices.getAll()
+
+      // Asocia opciones con iconos
+      const incluyeConIconos = product.includes.map(opcion => ({
+        opcion: opcion.include, // Asumiendo que el include de lo que incluye está en la propiedad 'include'
+        icono: obtenerIcono(opcion.include),
+      }));
+
+      res.render('./products/productDetail.ejs', {
+        product: product,
+        products: products.products,
+        usuarioLogueado: req.session.logined,
+        incluyeConIconos: incluyeConIconos
+      });
+    } catch {
+      error => {
+        console.error('Error al obtener el producto:', error);
+        // Manejar el error adecuadamente
+      };
     }
+  }
 }
-
-
 
 module.exports = productDetailController;

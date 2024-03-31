@@ -31,8 +31,34 @@ const userServices = {
         }
     },
 
+    getOne: (email) => {
+        return new Promise((resolve, reject) => {
+            db.User.findOne({ where: { email: email } })
+                .then(user => {
+                    if (user) {
+                        resolve(user);
+                    } else {
+                        reject('Usuario no encontrado');
+                    }
+                })
+                .catch(error => {
+                    reject(error);
+                });
+        });
+    },
 
-   
+    getOneById: async (id) => {
+        try {
+            const account = await db.Account.findByPk(id, {
+                include: [{ association: "user" }]
+            });
+            return account; // Devolver el usuario correctamente
+        } catch (error) {
+            console.error('Error al obtener el usuario:', error);
+            throw error; // Lanzar el error para manejarlo en el código que llama a getOne
+        }
+    },
+
     createUser: (userData, accountData) => {
         let createdUser;
         let createdAccount;
@@ -54,33 +80,7 @@ const userServices = {
             throw error;
         });
     },
-    getOne: (email) => {
-        return new Promise((resolve, reject) => {
-            db.User.findOne({ where: { email: email } })
-                .then(user => {
-                    if (user) {
-                        resolve(user);
-                    } else {
-                        reject('Usuario no encontrado');
-                    }
-                })
-                .catch(error => {
-                    reject(error);
-                });
-        });
-    },
-    getOneById: async (account_id) => {
-        try {
-            const account = await db.Account.findByPk(account_id, {
-                include: [{ association: "user" }]
-            });
-            // console.log("ESTE ES EL GET ONE: ", account);
-            return account; // Devolver el usuario correctamente
-        } catch (error) {
-            console.error('Error al obtener el usuario:', error);
-            throw error; // Lanzar el error para manejarlo en el código que llama a getOne
-        }
-    },
+
     generatePasswordHash: (password) => {
         const saltRounds = 10;
         return bcrypt.hash(password, saltRounds);
