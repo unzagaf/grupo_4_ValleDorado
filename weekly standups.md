@@ -1,3 +1,32 @@
+# Weekly Standup Summary 8* Sprint (09/03/2024 al 03/04/2024) 📊
+
+**Duración:** 09/03/2024 - 03/04/2024
+
+## Introducción
+Este informe destaca las actividades y progresos del equipo durante el último sprint, resaltando la colaboración estrecha entre los dos miembros del equipo, así como los logros alcanzados y los detalles pendientes para finalizar el proyecto.
+
+## Participantes
+- Marcos Quinteros
+- Alda Paez
+
+## Desafíos y Situación Actual 🚀
+- **División del Trabajo:** Durante este sprint, el equipo se dividió el trabajo de manera efectiva, con un miembro encargado de la implementación de la API y la gestión de las weekly y retros, mientras que el otro se centró en el desarrollo del dashboard en React.
+- **Comunicación Permanente:** Se mantuvo una comunicación casi diaria entre los dos miembros del equipo, discutiendo el progreso del día a día y proporcionándose apoyo mutuo.
+- **Coordinación con el Tutor y el Profesor:** Se mantuvo contacto regular con el tutor del proyecto para mantenerlo al día sobre la situación y recibir orientación cuando fuera necesario. Además, se tuvo una conversación con el profesor encargado de la cátedra y las clases para comentar la situación actual y recibir retroalimentación.
+- **Proyecto Funcional al 90%:** A pesar de algunos detalles pendientes, el proyecto se considera funcional en un 90%, lo que representa un logro significativo para el equipo.
+
+## Progreso del Proyecto
+- **Avance Actual:** Al cierre de este sprint, el proyecto ha avanzado hasta un 90% de su funcionalidad total. Se completó en su totalidad el sprint 6, se corrigieron los estilos en la vista y se completó el perfil con llenado y guardado de datos
+## Próximos Pasos y Medidas Tomadas 🚧
+- **Finalización de Detalles Pendientes:** Se dedicará tiempo adicional para pulir los detalles restantes y asegurar que el proyecto esté completo y sin errores
+
+## Conclusiones
+El equipo ha demostrado una excelente colaboración y coordinación durante este último sprint, con cada miembro asumiendo responsabilidades específicas y trabajando en estrecha colaboración para alcanzar los objetivos del proyecto. Aunque quedan algunos detalles por pulir, el proyecto se encuentra en un estado avanzado y funcional, lo que refleja el compromiso y la dedicación del equipo.
+
+
+🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩🧩
+
+
 # Weekly Standup Summary 7* Sprint (17/02/24 al 08/03/2024) 📊
 
 **Duración:** 17/02/24 - 06/03/24

@@ -14,7 +14,7 @@
 
             <!-- FORMULARIO PARA CREAR -->
             <section id="crear__paquetes__admin">
-                <form method="POST" action="/admin/edit/<%= product.id %>?_method=PUT" class="form__search-admin" enctype="multipart/form-data">
+                <form method="POST" action="/admin/edit/<%= product.id %>?_method=PUT" id="productFormEdit" class="form__search-admin" enctype="multipart/form-data">
                     
                     <label for="destination" class="input__txt__places section__login--label">Nombre paquete</label>
                     <input type="text" name="destination" id ="destination" placeholder="Ingrese el nombre del paquete" value="<%= product.destination %>">
