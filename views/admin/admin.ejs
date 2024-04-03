@@ -159,7 +159,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% products.forEach(product => { %>
+                        <% if (products && products.products) { %>
+                            <% products.products.forEach(product => { %>
                         <tr>
                             <td><%= product.id %></td>
                             <td><%= product.destination %></td>
@@ -181,7 +182,12 @@
                                 </form>
                             </td>
                         </tr>
-                        <% }) %>
+                        <% }); %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="2">No se encontraron productos.</td>
+                            </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </section>
