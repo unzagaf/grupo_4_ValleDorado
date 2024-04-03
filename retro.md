@@ -1,4 +1,50 @@
+# Retrospectiva del Octavo Sprint
+Octavo Sprint: 09/03/2024 al 03/04/2024
 
+**📌 Comenzar a hacer:**
+1. **Planificación más Estricta de Tareas:**
+   - Establecer horarios específicos para abordar las tareas restantes y garantizar su finalización oportuna.
+
+**📌 Hacer más:**
+
+1. **Incrementar Frecuencia de Reuniones:**
+     - Utilizar estas reuniones para planificar la implementación de las tareas pendientes y revisar el estado del proyecto.
+
+**📌 Continuar haciendo:**
+
+1. **Colaboración Activa:**
+   - Seguir trabajando en estrecha colaboración para abordar desafíos y completar tareas pendientes.
+   - Aprovechar el apoyo mutuo para resolver problemas y avanzar en el proyecto.
+
+2. **Finalización de Tareas Pendientes:**
+   - Continuar con el progreso en la finalización de las tareas pendientes para asegurar el cumplimiento de los objetivos del sprint.
+
+## Logros y Desafíos Recientes 🚀
+**Logros:**
+- Se logró un avance significativo en la implementación de las funcionalidades pendientes del sprint anterior y actual.
+- La colaboración continua entre los miembros del equipo fue fundamental para estos logros.
+
+
+
+## Próximos Pasos 🚧
+- Realizar una revisión exhaustiva para corregir posibles errores y mejorar la calidad del código.
+
+# Conclusiones
+A lo largo del proyecto, el equipo ha enfrentado diversos desafíos y ha superado obstáculos gracias a la colaboración activa y la dedicación. En este último sprint, a pesar de las dificultades iniciales con la planificación personal, hemos logrado avanzar significativamente en la implementación de las funcionalidades restantes. Aunque quedan algunos detalles por pulir, estamos confiados en que podremos completar con éxito el proyecto.
+
+Este sprint marca el final del proyecto, y aunque aún quedan tareas por completar, hemos logrado un progreso notable y hemos demostrado nuestra capacidad para trabajar en equipo y adaptarnos a los desafíos que surgieron en el camino. Apreciamos el apoyo del tutor y del profesor a lo largo del proceso, y estamos orgullosos del resultado final.
+
+ Juntos hemos logrado crear un producto funcional y de calidad que esperamos sea útil para nuestros usuarios.
+
+¡El proyecto está casi completo y estamos listos para celebrar nuestros logros juntos!
+
+******✅✅✅✅✅✅✅✅✅**********
+
+
+
+
+
+******✅✅✅✅✅✅✅✅✅**********
 # Retrospectiva del Septimo Sprint
 
 **Duración:** 17/02/24 - 06/03/24
