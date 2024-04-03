@@ -13,7 +13,7 @@ const adminController = {
     //Formulario de creacion
     //GET
     index: (req, res) => {
-        const products = productServices.getAll()
+        const products = productServices.getAll(1, 100)
             .then(products => {
                 res.render('./admin/admin.ejs', {
                     stylesheetPath: '/css/admin.css',

@@ -29,6 +29,7 @@ const apiProductsController = {
           "id": element.id,
           "destination": element.destination,
           "city_depart": element.city_depart,
+          "group_size": element.group_size,
           "start_date": element.start_date,
           "finish_date": element.finish_date,
           "price": element.price,

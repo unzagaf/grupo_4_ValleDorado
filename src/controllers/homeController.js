@@ -8,7 +8,7 @@ const homeController = {
 
   index: (req, res) => {
     
-    productServices.getAll()
+    productServices.getAll(1, 100)
       .then(rto => {
         console.log(rto);
         res.render('./products/home.ejs', {

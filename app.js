@@ -53,6 +53,13 @@ const rutaUser = require('./src/router/users.js');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// *** Configuracion de los Cors para React***
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5173'); // Reemplaza esta URL con la URL de tu aplicación React
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 app.listen(3000, () => {
   console.log("Servidor corriendo en el puerto 3000");
