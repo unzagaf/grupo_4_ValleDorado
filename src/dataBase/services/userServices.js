@@ -11,10 +11,11 @@ const userServices = {
             const offset = (page - 1) * pageSize;
 
             // Usa count() para obtener el total de usuarios
-            const totalUsers = await db.User.count();
+            const totalUsers = await db.Account.count();
 
             // Obtiene los usuarios paginados
-            let userList = await db.User.findAll({
+            let userList = await db.Account.findAll({
+                include: [{ association: "user" }],
                 offset: offset,
                 limit: pageSize
             });

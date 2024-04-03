@@ -28,7 +28,9 @@ const apiUserController = {
 
       response.results = userList.map(user => ({
         id: user.id,
-        name: user.name,
+        username: user.username,
+        name: user.user.name,
+        surname: user.user.surname,
         email: user.email,
         detail: `/api/users/${user.id}` // URL para obtener el detalle del usuario
       }));
@@ -68,11 +70,12 @@ const apiUserController = {
       // Construir objeto literal del usuario con campos permitidos
       response.results = {
         'id': user.id,
+        'username': user.username,
         'email': user.email,
         'avatar': user.avatar?  '/img/users/' + user.avatar : 'sin imagen de perfil' ,
-        name: user.user.name,
-        surname: user.user.surname,
-        dni:user.user.dni
+        'name': user.user.name,
+        'surname': user.user.surname,
+        'dni':user.user.dni
       }
 
       // Enviar respuesta
