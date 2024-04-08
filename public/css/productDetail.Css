@@ -29,7 +29,9 @@ main {
   background-color: #7678ED;
   ;
 }
-
+.btn_solicitar{
+  background-color: #F18701;
+}
 .img__carrusel{
   border-radius: 5px;
   -webkit-border-radius: 5px;
